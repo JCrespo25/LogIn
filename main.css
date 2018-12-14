@@ -7,6 +7,7 @@ body{
 
 .grid-container{    
   display: grid;
+    height: 100vh;
   grid-gap: 10px;
   grid-template: repeat(100,1fr)/repeat(100,1fr);   
 }
@@ -89,6 +90,11 @@ button:hover {
 }
 
 @media screen and (max-width: 450px) {
+    .grid-container{
+        height: 100vh;
+        
+        
+    }
     .box1 { 
   grid-column: 11/28; 
   grid-row: 2/4;
