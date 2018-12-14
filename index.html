@@ -7,23 +7,20 @@
         <link rel="stylesheet" href="/css/index.css">
     </head>
     <body>
-        <!--///////GRID GENERAL/////-->
-        <main class="grid-container">
-            <div class="box1">
+        <!--GRID PRINCIPAL-->
+        <main class="grid-container-main">
+            <div class="container-box-avatar">
                 <img src="img_avatar2.png" alt="Avatar" class="avatar">
-            </div>  
-            <div class="box2">
-                <label for="uname"><b>Usuario:</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-                <br> <br>       
-                <label for="psw"><b>Contraseña:</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-                <br><br>
-                <button type="submit">Login</button>
-                <br><br>
-                <button type="submit">Registrate</button>
-                <label>
-                    <br><br>
+            </div>
+            <!--GRID LOGIN-->
+            <div class="grid-container-main-login">
+                <label class="lbl-user" for="uname"><b>Usuario:</b></label>
+                <input class="txb-user" type="text" placeholder="Enter Username" name="uname" required>
+                <label class="lbl-password" for="psw"><b>Contraseña:</b></label>
+                <input class="txb-password" type="password" placeholder="Enter Password" name="psw" required>
+                <button class="btn-login" type="submit">ENTRAR</button>
+                <button class="btn-registrate" type="submit">REGISTRATE</button>
+                <label class="lbl-remeber-me">
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
             </div>

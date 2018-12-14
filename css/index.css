@@ -1,44 +1,138 @@
+
+/*
+====================================================================================
+                               CONTENIDO PRINCIPAL                                 
+====================================================================================
+*/
+
+/* BODY */
 body{
   padding: 0;
   margin:0;
 }
 
-
-.grid-container{
-  display: grid;
-  height: 100vh;
-  grid-gap: 10px;
-  grid-template: repeat(100,1fr)/repeat(100,1fr);
+/* APLICACION A TODO EL CONTENIDO DEL MAIN */
+main{
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.8s;
 }
 
-.grid-container div{
+/*CONTAINER MAIN*/
+.grid-container-main{
+  display: grid;
+  height: 100vh;
+  grid-gap: 4px;
+  grid-template: repeat(40,1fr)/repeat(40,1fr);
+}
+
+
+/*APLIACACION A TODOS LOS DIV DENTRO DE .grid-container-main*/
+.grid-container-main div{
   border: 1px solid green;
   border-radius: 3px;
   background-color: blue;
 }
 
-.box1{
-  grid-column: 40/60;
-  grid-row: 3/20;
+/*
+====================================================================================
+                                  BOX AVATAR                   
+====================================================================================
+*/
+
+
+
+.container-box-avatar{
+  grid-column: 10/30;
+  grid-row: 2/15;
 }
 
-.box2{
-  grid-column: 80/20;
-  grid-row: 25/60;    
+/*
+====================================================================================
+                                  GRID LOGIN                  
+====================================================================================
+*/
+.grid-container-main-login{
+  /*Posicion sobre GRID MAIN*/
+  grid-column: 8/32;
+  grid-row: 17/37;
+  /*Template GRID*/
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr;
+  grid-gap: 2px;
+  align-content: center;
+  align-items: center;
 }
 
-input[type=text]{
+
+.lbl-user{
+  grid-column: 2/3;
+  grid-row: 2/3;
+  font-size: 2.5vw;
+  margin: 0;
+  padding: 0;
+}
+
+.txb-user{
+  grid-column: 3/5;
+  grid-row: 2/3;
+  font-size: 3vw;
+  margin: 0;
+  padding: 0;
+}
+
+.lbl-password{
+  grid-column: 2/3;
+  grid-row: 4/5;
+  font-size: 2.5vw;
+  margin: 0;
+  padding: 0;
+}
+
+.txb-password{
+  grid-column: 3/5;
+  grid-row: 4/5;
+  font-size: 3vw;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-login{
+  grid-column: 2/3;
+  grid-row: 6/7;
+  font-size: 3vw;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-registrate{
+  grid-column: 4/5;
+  grid-row: 6/7;
+  font-size: 3vw;
+  margin: 0;
+  padding: 0;
+}
+
+.lbl-remeber-me{
+  grid-column: 1/6;
+  grid-row: 9/10;
+  font-size: 1.5vw;
+  margin: 0;
+  padding: 0;
+} 
+
+/* input[type=text]{
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
   position: relative;
   left: 100px;
-  }
+  } */
 
-input[type=password]{
+
+/* input[type=password]{
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -48,10 +142,10 @@ input[type=password]{
   position: relative;
   position: relative;
   left: 75px;
-}
+} */
 
 
-button{
+/* button{
   background-color: #4da6ff;
   color: white;    
   font-family: Arial;
@@ -63,7 +157,7 @@ button{
   width: 200px;
   position:relative;
   left: 300px;
-}
+} */
 
 button:hover{
   -webkit-transition-duration: 0.4s;
@@ -74,12 +168,12 @@ button:hover{
 
 @media screen and (max-width: 768px){
 
-  .box1{
+  .container-box-avatar{
     grid-column: 30/50; 
     grid-row: 2/6;
   }
 
-  .box2{
+  .grid-container-main-login{
     grid-column: 20/60;
     grid-row: 6/20;
 }
@@ -93,11 +187,11 @@ button:hover{
   .grid-container{
     height: 100vh;
   }
-  .box1 { 
+  .container-box-avatar { 
     grid-column: 11/28; 
     grid-row: 2/4;
   }
-  .box2 { 
+  .grid-container-main-login { 
     grid-column: 5/35; 
     grid-row: 4/10;
   }
