@@ -97,7 +97,7 @@ main{
   padding: 0;
 }
 
-.btn-login{
+.btn-entrar{
   grid-column: 2/3;
   grid-row: 6/7;
   font-size: 3vw;
