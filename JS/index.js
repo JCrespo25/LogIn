@@ -19,22 +19,22 @@ function validar()
         {
             if(getUontraseña != contraseñaC)
             {
-                alert("El usuario " + usuarioC + " existe pero la contraseña es incorrecta");
+                alert("El usuario " + getUsuario + " existe pero la contraseña es incorrecta");
             }
             else if(getUontraseña == contraseñaC)
             {
-                alert("Ha iniciado sesion " + usuarioC);
+                alert("Ha iniciado sesion " + getUsuario);
             }
         }
         else if(getUsuario == usuarioA)
         {
             if(getUontraseña != contraseñaA)
             {
-                alert("El usuario " + usuarioA + " existe pero la contraseña es incorrecta");
+                alert("El usuario " + getUsuario + " existe pero la contraseña es incorrecta");
             }
             else if(getUontraseña == contraseñaA)
             {
-                alert("Ha iniciado sesion " + usuarioA);
+                alert("Ha iniciado sesion " + getUsuario);
             }
         }
     }
