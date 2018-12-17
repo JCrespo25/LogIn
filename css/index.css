@@ -7,9 +7,22 @@
 
 /* BODY */
 body{
-  padding: 0;
-  margin:0;
+    padding: 0;
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-image: url("../images/wallpaper2.jpg");
+      background-size: cover;
+    background-attachment:fixed; 
+    background-position: center 0px;
+    overflow: hidden;
+    padding: 0;
+    margin:0;
+    
 }
+
 
 /* APLICACION A TODO EL CONTENIDO DEL MAIN */
 main{
@@ -28,10 +41,11 @@ main{
 
 /*APLIACACION A TODOS LOS DIV DENTRO DE .grid-container-main*/
 .grid-container-main div{
-  border: 1px solid green;
+ /* border: 1px solid gray;
   border-radius: 3px;
-  background-color: blue;
+  */
 }
+
 
 /*
 ====================================================================================
@@ -42,8 +56,13 @@ main{
 
 
 .container-box-avatar{
-  grid-column: 10/30;
+  grid-column: 19/24;
   grid-row: 2/15;
+    
+    font-family: Impact;
+    font-size: 5em;
+    text-align: center;
+    color: white;
 }
 
 /*
@@ -53,12 +72,12 @@ main{
 */
 .grid-container-main-login{
   /*Posicion sobre GRID MAIN*/
-  grid-column: 8/32;
-  grid-row: 17/37;
+  grid-column: 9/33;
+  grid-row: 17/40;
   /*Template GRID*/
   display: grid;
-  grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr;
+  grid-template-columns: repeat(20,1fr);
+  grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr;
   grid-gap: 2px;
   align-content: center;
   align-items: center;
@@ -71,14 +90,18 @@ main{
   font-size: 2.5vw;
   margin: 0;
   padding: 0;
+    font-family: sans-serif;
+    color: white; 
+    opacity: 0.9;
 }
 
 .txb-user{
-  grid-column: 3/5;
+  grid-column: 8/14;
   grid-row: 2/3;
   font-size: 3vw;
   margin: 0;
   padding: 0;
+      opacity: 0.7;
 }
 
 .lbl-password{
@@ -87,84 +110,101 @@ main{
   font-size: 2.5vw;
   margin: 0;
   padding: 0;
+    font-family: sans-serif;
+    color: white; 
+    opacity: 0.9;
 }
 
 .txb-password{
-  grid-column: 3/5;
-  grid-row: 4/5;
+  grid-column: 8/14;
+  grid-row: 5/6;
   font-size: 3vw;
   margin: 0;
   padding: 0;
+  color: black;
+      opacity: 0.7;
+    
 }
 
 .btn-entrar{
-  grid-column: 2/3;
-  grid-row: 6/7;
-  font-size: 3vw;
+  grid-column: 4/11;
+  grid-row: 8/9;
+  font-size: 1em;
   margin: 0;
   padding: 0;
+      height: 40px;
+    width: 200px;
+    background-color: rgb(45, 101, 169);
+    
 }
 
 .btn-registrate{
-  grid-column: 4/5;
-  grid-row: 6/7;
-  font-size: 3vw;
+  grid-column: 13/19;
+  grid-row: 8/9;
+  font-size: 1em;
+    height: 40px;
+    width: 200px;
   margin: 0;
   padding: 0;
+    background-color: rgb(45, 101, 169);
+    
 }
 
 .lbl-remeber-me{
-  grid-column: 1/6;
-  grid-row: 9/10;
+  grid-column: 17/21;
+  grid-row: 10/11;
   font-size: 1.5vw;
   margin: 0;
   padding: 0;
+      font-family: sans-serif;
+    color: white; 
+    opacity: 0.9;
+    
 } 
 
-/* input[type=text]{
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  position: relative;
-  left: 100px;
-  } */
+ input[type=text]{
+     
+     border-style: none;
+  border-color: black;
+  border-radius: 15px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1em;
+  height: 35px;  
+  } 
 
 
-/* input[type=password]{
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  position: relative;
-  position: relative;
-  left: 75px;
-} */
+ input[type=password]{
+    
+  border-style: none;
+  border-color: black;
+  border-radius: 15px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1em;
+  height: 35px;
+} 
 
 
-/* button{
+ button{
   background-color: #4da6ff;
   color: white;    
-  font-family: Arial;
+  font-family: sans-serif;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   width: 200px;
-  position:relative;
-  left: 300px;
-} */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+} 
 
 button:hover{
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.8s;
   opacity: 0.9;
 }
-
 
 @media screen and (max-width: 768px){
 
@@ -174,13 +214,10 @@ button:hover{
   }
 
   .grid-container-main-login{
-    grid-column: 20/60;
-    grid-row: 6/20;
+    grid-column: 8/38;
+    grid-row: 8/22;
 }
-    button{
-      position:relative;
-      left: 100px;
-    }
+  
 }
 
 @media screen and (max-width: 450px){
