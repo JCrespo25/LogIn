@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log In</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale= 1.0">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="JS/index.js"></script>
+    </head>
+    <body>
+        <!--GRID PRINCIPAL-->
+        <main class="grid-container-main">
+            <div class="container-box-avatar">
+                <div class="lbllogo">IMT</div>
+            </div>
+            <!--GRID LOGIN-->
+            <div class="grid-container-main-login">
+                <!--<label class="lbl-user" for="uname"><b>Usuario:</b></label>-->
+                <input class="txb-user" type="text" placeholder="Enter Username" id="ussername" required>
+                <!--<label class="lbl-password" for="psw"><b>Contraseña:</b></label>-->
+                <input class="txb-password" type="password" placeholder="Enter Password" id="password" required>
+                <button class="btn-entrar" type="submit" onclick="validar()" value="verificar">ENTRAR</button>
+                <button class="btn-registrate" type="submit">REGISTRATE</button>
+                <label class="lbl-remeber-me">
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+        </main>
+    </body>
+</html>
