@@ -41,9 +41,7 @@ main{
 
 /*APLIACACION A TODOS LOS DIV DENTRO DE .grid-container-main*/
 .grid-container-main div{
- /* border: 1px solid gray;
-  border-radius: 3px;
-  */
+
 }
 
 
@@ -56,15 +54,23 @@ main{
 
 
 .container-box-avatar{
-  grid-column: 19/24;
-  grid-row: 2/15;
     
-    font-family: Impact;
-    font-size: 5em;
-    text-align: center;
-    color: white;
+  grid-column: 17/26;
+  grid-row: 2/10;
+    display: grid;
+grid-template-columns: repeat(5,1fr)/repeat(5,1fr);
 }
 
+.lbllogo{
+  grid-column: 1/5;
+  grid-row:1/2;
+    display: grid;
+    text-align: center;
+    font-size: 14vw;
+    font-family: Impact;
+    color: white;
+    opacity: 0.9;
+}
 /*
 ====================================================================================
                                   GRID LOGIN                  
@@ -72,7 +78,7 @@ main{
 */
 .grid-container-main-login{
   /*Posicion sobre GRID MAIN*/
-  grid-column: 9/33;
+  grid-column: 9/34;
   grid-row: 17/40;
   /*Template GRID*/
   display: grid;
@@ -98,7 +104,7 @@ main{
 .txb-user{
   grid-column: 8/14;
   grid-row: 2/3;
-  font-size: 3vw;
+  font-size: 1vw;
   margin: 0;
   padding: 0;
       opacity: 0.7;
@@ -118,7 +124,7 @@ main{
 .txb-password{
   grid-column: 8/14;
   grid-row: 5/6;
-  font-size: 3vw;
+  font-size: 1vw;
   margin: 0;
   padding: 0;
   color: black;
@@ -129,7 +135,7 @@ main{
 .btn-entrar{
   grid-column: 4/11;
   grid-row: 8/9;
-  font-size: 1em;
+  font-size: 1.5vw;
   margin: 0;
   padding: 0;
       height: 40px;
@@ -141,7 +147,7 @@ main{
 .btn-registrate{
   grid-column: 13/19;
   grid-row: 8/9;
-  font-size: 1em;
+  font-size: 1.5vw;
     height: 40px;
     width: 200px;
   margin: 0;
@@ -209,52 +215,29 @@ button:hover{
 @media screen and (max-width: 768px){
 
   .container-box-avatar{
-    grid-column: 30/50; 
-    grid-row: 2/6;
+
   }
 
   .grid-container-main-login{
-    grid-column: 8/38;
-    grid-row: 8/22;
+ 
 }
   
 }
 
 @media screen and (max-width: 450px){
   .grid-container{
-    height: 100vh;
+  
   }
   .container-box-avatar { 
-    grid-column: 11/28; 
-    grid-row: 2/4;
+  
   }
   .grid-container-main-login { 
-    grid-column: 5/35; 
-    grid-row: 4/10;
+  
   }
   button{
-    position:relative;
-    left: 50px;
+ 
   }
 
-  input[type=text]{
-    width: 150px;
-    padding: 8px 2px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px soliSd #ccc;
-    box-sizing: border-box;
-    left:50px;
-  }
 
-  input[type=password] {
-    width: 150px;
-    padding: 8px 2px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px soliSd #ccc;
-    box-sizing: border-box;
-    left: 25px;
-  }
 }
 
