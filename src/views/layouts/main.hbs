@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <header><H1>HEADER</H1></header>
-    <main class="container">
+    {{> navigation}}
+    <main class="container p-4">
         {{> messages }}
         {{> errors }}
         {{{ body }}}
