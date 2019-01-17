@@ -7,18 +7,11 @@
 body {
     margin: 0;
     padding: 0;
-    background: #c31432;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #240b36, #c31432);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #240b36, #c31432);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .grid-total {
     display: grid;
     grid-template: repeat(40, 1fr) / repeat(40, 1fr);
-    height: 120vh;
 }
 
 
@@ -29,8 +22,6 @@ body {
 */
 
 .grid-total-header {
-    grid-row: 1 / 4;
-    grid-column: 1 / -1;
     display: grid;
     grid-template: 1fr / 7fr 50fr 10fr;
     background: rgba(0, 0, 0, 0.589);
@@ -39,27 +30,22 @@ body {
 .header-icon {
     grid-row: 1 / 1;
     grid-column: 1 / 2;
-    color: rgb(255, 255, 255);
     justify-content: center;
     justify-items: center;
     justify-self: center;
     align-content: center;
     align-items: center;
     align-self: center;
-    font-size: 1vw;
+}
+
+.header-icon img {
+    height: auto;
+    width: 50%;
 }
 
 .header-lenguage {
     grid-row: 1 / 2;
     grid-column: 3 / 4;
-    color: rgb(255, 255, 255);
-    justify-content: center;
-    justify-items: center;
-    justify-self: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    font-size: 1vw;
 }
 
 
@@ -70,40 +56,135 @@ body {
 */
 
 .grid-total-footer {
-    grid-row: 33 / -1;
-    grid-column: 1 / -1;
     display: grid;
-    grid-template: 2fr 5fr 2fr / 2fr 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr 2fr;
+    grid-template: 3fr 5fr 1fr / 2fr 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr 2fr;
     grid-gap: 0px 10px;
     background: rgba(0, 0, 0, 0.589);
 }
 
-.footer-whoAreWe {
-    grid-row: 1 / 3;
-    grid-column: 2 / 4;
-    background-color: rgb(255, 0, 0);
+.footer-icons {
+    grid-row: 1 / 2;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
 }
 
-.footer-products {
-    grid-row: 1 / 3;
-    grid-column: 4 / 6;
-    background-color: rgb(247, 0, 255);
+.icon-whoAreWe {
+    grid-column: 2 / 3;
+}
+
+.icon-product {
+    grid-column: 4 / 5;
+}
+
+.icon-social {
+    grid-column: 6 / 7;
+}
+
+.icon-contact {
+    grid-column: 8 / 9;
+}
+
+.icon-copyRight {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    width: 30%;
+}
+
+.footer-title {
+    grid-row: 1 / 2;
+    font-size: 1.5vw;
+    color: white;
+    justify-content: left;
+    justify-items: left;
+    justify-self: left;
+    align-content: left;
+    align-items: left;
+    align-self: center;
+}
+
+.title-whoAreWe {
+    grid-column: 3 / 4;
+}
+
+.title-product {
+    grid-column: 5 / 6;
+}
+
+.title-social {
+    grid-column: 7 / 8;
+}
+
+.title-copyRight {
+    grid-column: 9 / 10;
+}
+
+.parrafo-whoAreWe {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    font-size: 0.8vw;
+    color: white;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: justify;
+}
+
+.footer-productos {
+    grid-row: 2 / 3;
+    grid-column: 5 / 6;
+}
+
+.footer-productos a {
+    color: white;
+    font-size: 1vw;
 }
 
 .footer-redes {
-    grid-row: 1 / 3;
-    grid-column: 6 / 8;
-    background-color: rgb(4, 0, 255);
+    grid-row: 2 / 3;
+    grid-column: 7 / 8;
 }
 
-.footer-contact {
-    grid-row: 1 / 3;
-    grid-column: 8 / 10;
-    background-color: rgb(0, 255, 55);
+.footer-redes img {
+    height: auto;
+    width: 8%;
+}
+
+.footer-redes a {
+    font-size: 0.8vw;
+    color: white;
 }
 
 .footer-copyRight {
     grid-row: 3 / -1;
-    grid-column: 1 / -1;
-    background-color: rgb(251, 255, 0);
+    grid-column: 2 / -1;
+    justify-content: left;
+    justify-items: left;
+    justify-self: left;
+    align-content: left;
+    align-items: left;
+    align-self: center;
+}
+
+.footer-copyRight p {
+    font-size: 0.8vw;
+    color: white;
+}
+
+.footer-contactanos {
+    grid-row: 2 / 3;
+    grid-column: 9 / 10;
+}
+
+.footer-contactanos img {
+    height: auto;
+    width: 8%;
 }
