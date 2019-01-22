@@ -7,54 +7,75 @@ router.get('/users/signin', (req, res) => {
     res.render('users/signin');
 });
 
-router.post('/users/signin', passport.authenticate('local', {
-    successRedirect: '/notes',
-    failureRedirect: '/users/signin',
-    failureFlash: true
-}));
+// router.post('/users/signin', passport.authenticate('local', {
+//     successRedirect: '/notes',
+//     failureRedirect: '/users/signin',
+//     failureFlash: true
+// }));
 
 router.get('/users/signup', (req, res) => {
     res.render('users/signup');
 });
 
-router.post('/users/signup', async(req, res) => {
-    const { name, email, password, confirm_password } = req.body;
+router.post('/users/signin', async(req, res) => {
+    const {
+        empresaName,
+        empresaTradeName,
+        representanteName,
+        representanteApPaterno,
+        representanteApMaterno,
+        contactoNumberFijo,
+        contactoCelular,
+        contactoCorreo
+    } = req.body;
+
     const errors = [];
 
-    if (name == '') {
-        errors.push({ text: 'Ingrese su nombre' });
-    }
-    if (email == '') {
-        errors.push({ text: 'Ingrese su correo' });
-    }
-    if (password == '') {
-        errors.push({ text: 'Ingrese su contraseña' });
-    }
-    if (confirm_password == '') {
-        errors.push({ text: 'Confirme contraseña' });
-    }
-    if (password != confirm_password) {
-        errors.push({ text: 'Las contraseñas no coinciden' });
-    }
-    if (password.lenght <= 4) {
-        errors.push({ text: 'La contraseña tiene que ser mayor a cuatro caracteres' });
+    const emailUser = await User.findOne({ contactoCorreo: contactoCorreo });
+    const companyName = await User.findOne({ empresaName: empresaName });
+    if (emailUser || companyName) {
+        errors.push({ text: 'Ya se ha solicitado la demo' });
+    } else if (empresaName == '' || empresaTradeName == '' ||
+        representanteName == '' || representanteApPaterno == '' ||
+        contactoNumberFijo == '' || contactoCorreo == '') {
+        errors.push({ text: 'Asegurese de que todos los campos requeridos(*) esten completos' });
     }
 
+
     if (errors.length > 0) {
-        res.render('users/signup', { errors, name, email, password, confirm_password });
-    } else {
-        const emailUser = await User.findOne({ email: email });
-        if (emailUser) {
-            req.flash('error', 'Correo ya existente');
-            res.redirect('/users/signup');
-        }
-        const newUser = new User({ name, email, password });
-        newUser.password = await newUser.encryptPassword(password);
+        res.render('users/signin', {
+            errors,
+            empresaName,
+            empresaTradeName,
+            representanteName,
+            representanteApPaterno,
+            representanteApMaterno,
+            contactoNumberFijo,
+            contactoCelular,
+            contactoCorreo
+        });
+    }
+
+
+
+    if (errors.length == 0) {
+        const newUser = new User({
+            empresaName,
+            empresaTradeName,
+            representanteName,
+            representanteApPaterno,
+            representanteApMaterno,
+            contactoNumberFijo,
+            contactoCelular,
+            contactoCorreo
+        });
+        // newUser.password = await newUser.encryptPassword(password);
         await newUser.save();
         req.flash('success_msg', 'Usuario registrado satisfactoriamente');
         res.redirect('/users/signin');
     }
 });
+
 
 router.get('/users/logout', (req, res) => {
     req.logOut();

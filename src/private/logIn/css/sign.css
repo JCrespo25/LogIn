@@ -1,5 +1,5 @@
 .grid-total {
-    height: 120vh;
+    height: 140vh;
 }
 
 .grid-total-header {
@@ -13,13 +13,10 @@
 }
 
 .grid-total-sign {
-    background: black;
-    grid-row: 6/30;
+    grid-row: 6/29;
     grid-column: 3/38;
-    grid-template: 1fr / 5fr 10fr;
     display: grid;
-    /* border-style: solid;
-    border: 3px solid #000000; */
+    grid-template: 1fr / 5fr 10fr;
 }
 
 .grid-total-sign-in {

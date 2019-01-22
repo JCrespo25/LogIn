@@ -57,9 +57,10 @@ body {
 
 .grid-total-footer {
     display: grid;
-    grid-template: 3fr 5fr 1fr / 2fr 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr 2fr;
-    grid-gap: 0px 10px;
-    background: rgba(0, 0, 0, 0.589);
+    grid-template: 1fr 3fr 1fr / 2fr 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr 2fr;
+    grid-gap: 0px 5px;
+    background-color: rgba(0, 0, 0, 0.589);
+    color: white;
 }
 
 .footer-icons {
@@ -99,7 +100,6 @@ body {
 .footer-title {
     grid-row: 1 / 2;
     font-size: 1.5vw;
-    color: white;
     justify-content: left;
     justify-items: left;
     justify-self: left;
@@ -128,7 +128,6 @@ body {
     grid-row: 2 / 3;
     grid-column: 3 / 4;
     font-size: 0.8vw;
-    color: white;
     justify-content: center;
     justify-items: center;
     justify-self: center;
@@ -144,8 +143,8 @@ body {
 }
 
 .footer-productos a {
-    color: white;
     font-size: 1vw;
+    color: white;
 }
 
 .footer-redes {
@@ -163,6 +162,16 @@ body {
     color: white;
 }
 
+.footer-contactanos {
+    grid-row: 2 / 3;
+    grid-column: 9 / 10;
+}
+
+.footer-contactanos img {
+    height: auto;
+    width: 8%;
+}
+
 .footer-copyRight {
     grid-row: 3 / -1;
     grid-column: 2 / -1;
@@ -176,15 +185,4 @@ body {
 
 .footer-copyRight p {
     font-size: 0.8vw;
-    color: white;
-}
-
-.footer-contactanos {
-    grid-row: 2 / 3;
-    grid-column: 9 / 10;
-}
-
-.footer-contactanos img {
-    height: auto;
-    width: 8%;
 }
