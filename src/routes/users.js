@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const profileClient = require('../models/profileClient');
+const profileClient = require('../models/profiles/client');
 const passport = require('passport');
 
 router.get('/users/sign', (req, res) => {
