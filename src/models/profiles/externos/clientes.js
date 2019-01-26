@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const bcrypt = require('bcryptjs');
 
 
 const ProfileClientSchema = new Schema({
@@ -14,4 +15,14 @@ const ProfileClientSchema = new Schema({
     FechaSolicitud: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('profileClient', ProfileClientSchema);
+ProfileClientSchema.methods.encryptPassword = async(password) => {
+    const salt = await bcrypt.genSalt(10);
+    const hash = bcrypt.hash(password, salt);
+    return hash;
+};
+
+ProfileClientSchema.methods.matchPassword = async function(password) {
+    return await bcrypt.compare(password, this.password);
+}
+
+module.exports = mongoose.model('perfilesexternos', ProfileClientSchema);

@@ -1,0 +1,152 @@
+<link rel="stylesheet" href="/clientes/clientes.css">
+<!-- //////////////////////////////TITULO//////////////////////////////////////////////// -->
+            <h1 class="title-cliente">CLIENTES</h1>
+            <!-- //////////////////////////////////////////////////////////////////////////////// -->
+            <!-- <table class="table table-light">
+            <thead class="table-primary">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col-xl">Celular</th>
+                    <th scope="col">Correo</th>
+                </tr>
+            </thead>
+            <tbody class="table-active">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>MIT</td>
+                    <td>Jesus Alberto</td>
+                    <td>Crespo Camacho</td>
+                    <td>6646584123</td>
+                    <td>6645893478</td>
+                    <td>representante@mit.mx</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>MIT</td>
+                    <td>Roberto Eduardo</td>
+                    <td>Medina Austin</td>
+                    <td>6646584123</td>
+                    <td>6645893478</td>
+                    <td>representante@mit.mx</td>
+                </tr>
+            </tbody>
+        </table> -->
+            <div class="table">
+                <div class="table-responsive-xl">
+                    <table class="table">
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Empresa</th>
+                                <th scope="col">Representante</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col-xl">Celular</th>
+                                <th scope="col">Correo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-active">
+                            <tr onclick="input" data-toggle="modal" data-target="#exampleModalCenter">
+                                <th scope="row">1</th>
+                                <td>MIT</td>
+                                <td>Jesus Alberto Crespo Camacho</td>
+                                <td>6646584123</td>
+                                <td>6645893478</td>
+                                <td>representante@mit.mx</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>MIT</td>
+                                <td>Roberto Eduardo Medina Austin</td>
+                                <td>6646584123</td>
+                                <td>6645893478</td>
+                                <td>representante@mit.mx</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>COEN TECHNOLOGIES</td>
+                                <td>Manuel Utrera Davila Hernandez</td>
+                                <td>6646584123</td>
+                                <td>6645893478</td>
+                                <td>representante@coen.mx</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>LFP HYDRAULICS</td>
+                                <td>Juan Valenzuela Castro</td>
+                                <td>6646584123</td>
+                                <td>6645893478</td>
+                                <td>representante@lfphydraulics.mx</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>COE TECHNOLOGIES</td>
+                                <td>Francisco Quiroz Morales</td>
+                                <td>6646584123</td>
+                                <td>6645893478</td>
+                                <td>representante@coen.mx</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- ///////////////////////////////////////////MODAL//////////////////////////////////////////////////// -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Informacion del cliente</h5>
+
+                        <div class="menu-header">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Transferencia"><i class="fas fa-exchange-alt"></i></button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Editar"><i class="far fa-edit"></i></button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Bloquear usuario"><i class="fas fa-ban"></i></button>
+                            <button type="button" class="btn-exit" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Bloquear usuario"><i class="fas fa-times"></i></button>
+                        </div>
+                        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button> -->
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="tittle-empresa">Empresa</h5>
+                        <div class="company-box"><input type="text" class="form-control" id="disabledInput" placeholder="Company Name" disabled></div>
+                        <div class="trade-box"><input type="text" class="form-control" id="disabledInput" placeholder="Trade Name" disabled></div>
+                        <h5 class="tittle-representante">Representante</h5>
+                        <div class="name-box"><input type="text" class="form-control" id="disabledInput" placeholder="Name(s)" disabled></div>
+                        <div class="Lname-box"><input type="text" class="form-control" id="disabledInput" placeholder="Last Name" disabled></div>
+                        <div class="Lscndname-box"><input type="text" class="form-control" id="disabledInput" placeholder="Second Name" disabled></div>
+                        <h5 class="title-contacto">Contacto</h5>
+                        <div class="phone-box"><input type="text" class="form-control" id="disabledInput" placeholder="Phone Number" disabled></div>
+                        <div class="cellphone-box"><input type="text" class="form-control" id="disabledInput" placeholder="Cellphone" disabled></div>
+                        <div class="mail-box"><input type="text" class="form-control" id="disabledInput" placeholder="Mail" disabled></div>
+                        <h5 class="title-cuenta">Cuenta</h5>
+                        <div class="user-box"><input type="text" class="form-control" id="disabledInput" placeholder="Username" disabled></div>
+                        <div class="password-box"><input type="text" class="form-control" id="disabledInput" placeholder="Password" disabled></div>
+                        <h5 class="title-privilegios">Privilegios</h5>
+                        <div class="privilegios">
+                            <div class="form-check">
+
+                                <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 1</h6>
+                                <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 2</h6>
+                                <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 3</h6>
+                                <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 4</h6>
+                                <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 5</h6>
+                                <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 6</h6>
+                                <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 7</h6>
+                                <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 8</h6>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar<i class="far fa-save fa-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>

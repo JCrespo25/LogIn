@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const SchemaprofileInternal = new Schema({
-    nombre: { type: String, required: true },
+
+const ProfileClientSchema = new Schema({
+    empresaName: { type: String, required: true },
     empresaTradeName: { type: String, required: true },
     representanteName: { type: String, required: true },
     representanteApPaterno: { type: String, required: true },
@@ -13,4 +14,4 @@ const SchemaprofileInternal = new Schema({
     FechaSolicitud: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('profileInternal', SchemaprofileInternal);
+module.exports = mongoose.model('perfilesexternos', ProfileClientSchema);

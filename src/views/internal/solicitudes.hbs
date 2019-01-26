@@ -1,0 +1,228 @@
+
+<link rel="stylesheet" href="/solicitudes/solicitudes.css">
+
+            <!-- //////////////////////////////TITULO//////////////////////////////////////////////// -->
+            <!-- <h1 class="title-cliente">Solicitudes</h1> -->
+            <!-- ////////////////////////////////TABLA////////////////////////////////////////////////////////// -->
+            <div class="table">
+                <div class="table-responsive-xl">
+                    <table class="table">
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">IDe</th>
+                                <th scope="col">IDa</th>
+                                <th scope="col">Empresa</th>
+                                <th scope="col">Representante</th>
+                                <th scope="col">Correo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-active">
+                            <tr onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                <th scope="row">**********</th>
+                                <td>1</td>
+                                <td>MIT</td>
+                                <td>Jesus Alberto Crespo Camacho</td>
+                                <td>representante@mit.mx</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">**********</th>
+                                <td>2</td>
+                                <td>MIT</td>
+                                <td>Roberto Eduardo Medina Austin</td>
+                                <td>representante@mit.mx</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">**********</th>
+                                <td>3</td>
+                                <td>COEN TECHNOLOGIES</td>
+                                <td>Manuel Utrera Davila Hernandez</td>
+                                <td>representante@coen.mx</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">**********</th>
+                                <td>4</td>
+                                <td>LFP HYDRAULICS</td>
+                                <td>Juan Valenzuela Castro</td>
+                                <td>representante@lfphydraulics.mx</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">**********</th>
+                                <td>5</td>
+                                <td>COE TECHNOLOGIES</td>
+                                <td>Francisco Quiroz Morales</td>
+                                <td>representante@coen.mx</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- ////////////////////////////////////////////////////MODAL PASO 1/////////////////////////////////////////////////////////////// -->
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <!-- /////////////HEADER MODAL/////////// -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Paso 1: Confirmación</h5>
+                                <div class="menu-header">
+
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Editar"><i class="far fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button>
+                                    <button type="button" class="btn-exit" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Bloquear usuario"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <!-- ////////////////////////BODY MODAL////////////////////////// -->
+                            <div class="modal-body1">
+                                <h5 class="tittle-empresa">Empresa</h5>
+                                <div class="company-box"><input type="text" class="form-control" id="disabledInput" placeholder="Company Name" disabled></div>
+                                <div class="trade-box"><input type="text" class="form-control" id="disabledInput" placeholder="Trade Name" disabled></div>
+                                <h5 class="tittle-representante">Representante</h5>
+                                <div class="name-box"><input type="text" class="form-control" id="disabledInput" placeholder="Name(s)" disabled></div>
+                                <div class="Lname-box"><input type="text" class="form-control" id="disabledInput" placeholder="Last Name" disabled></div>
+                                <div class="Lscndname-box"><input type="text" class="form-control" id="disabledInput" placeholder="Second Name" disabled></div>
+                                <h5 class="title-contacto">Contacto</h5>
+                                <div class="phone-box"><input type="text" class="form-control" id="disabledInput" placeholder="Phone Number" disabled></div>
+                                <div class="cellphone-box"><input type="text" class="form-control" id="disabledInput" placeholder="Cellphone" disabled></div>
+                                <div class="mail-box"><input type="text" class="form-control" id="disabledInput" placeholder="Mail" disabled></div>
+                            </div>
+                            <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg2">Siguiente<i class="fas fa-arrow-circle-right"></i></button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- ////////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- ////////////MODAL PASO 2///////////// -->
+            <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <!-- /////////////HEADER MODAL/////////// -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Paso 2: Facturación</h5>
+                                <div class="menu-header">
+
+                                    <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Editar"><i class="far fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button> -->
+                                    <button type="button" class="btn-exit" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Bloquear usuario"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <!-- ////////////////////////BODY MODAL////////////////////////// -->
+                            <div class="modal-body2">
+                                <div class="razon-social"><input type="text" class="form-control" placeholder="Razón Social"></div>
+                                <div class="rfc"><input type="text" class="form-control" placeholder="RFC"></div>
+                                <h5 class="title-direccion">Dirección</h5>
+                                <div class="colonia"><input type="text" class="form-control" placeholder="Colonia"></div>
+                                <div class="calle"><input type="text" class="form-control" placeholder="Calle"></div>
+                                <div class="no-exterior"><input type="text" class="form-control" placeholder="No. Exterior"></div>
+                                <div class="no-interior"><input type="text" class="form-control" placeholder="No. Interior"></div>
+                                <div class="entre-calles"><input type="text" class="form-control" placeholder="Entre calles"></div>
+                                <div class="mail"><input type="text" class="form-control" placeholder="Correo"></div>
+
+                            </div>
+                            <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg3">Siguiente<i class="fas fa-arrow-circle-right"></i></button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- ////////////MODAL PASO 3///////////// -->
+            <div class="modal fade bd-example-modal-lg3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <!-- /////////////HEADER MODAL/////////// -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Paso 3: Privilegios</h5>
+                                <div class="menu-header">
+
+                                    <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Editar"><i class="far fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button> -->
+                                    <button type="button" class="btn-exit" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Bloquear usuario"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <!-- ////////////////////////BODY MODAL////////////////////////// -->
+                            <div class="modal-body3">
+                                <h5 class="title-privilegios">Privilegios</h5>
+                                <div class="privilegios">
+                                    <div class="form-check">
+
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 1</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 2</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 3</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 4</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 5</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 6</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 7</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 8</h6>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg4">Siguiente<i class="fas fa-arrow-circle-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- ////////////MODAL PASO 4///////////// -->
+            <div class="modal fade bd-example-modal-lg4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <!-- /////////////HEADER MODAL/////////// -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Paso 4: Asignación</h5>
+                                <div class="menu-header">
+
+                                    <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Editar"><i class="far fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button> -->
+                                    <button type="button" class="btn-exit" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Bloquear usuario"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <!-- ////////////////////////BODY MODAL////////////////////////// -->
+                            <div class="modal-body4">
+
+                                <div class="user"><input type="text" class="form-control" placeholder="Username"></div>
+                                <div class="password"><input type="text" class="form-control" placeholder="Contraseña"></div>
+                                <div class="confirm-password"><input type="text" class="form-control" placeholder="Confirmar Contraseña"></div>
+                            </div>
+                            <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar<i class="far fa-save fa-lg"></i></button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>

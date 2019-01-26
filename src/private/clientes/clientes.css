@@ -1,0 +1,274 @@
+/*
+====================================================================================
+                            CONTENEDORES PRINCIPALES                               
+====================================================================================
+*/
+
+.grid-total {
+    height: 100vh;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.grid-total-header {
+    grid-row: 1 / 3;
+    grid-column: 1 / -1;
+}
+
+.grid-total-footer {
+    grid-row: 32 / -1;
+    grid-column: 1 / -1;
+}
+
+.header {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+}
+
+.title-cliente {
+    grid-row: 7/6;
+    grid-column: 18/25;
+    font-size: 3vw;
+    color: rgb(54, 54, 54);
+}
+
+
+/* /////////////////////////HEADER DE NAVEGACION ////////////////////////////////*/
+
+.navbar-brand img {
+    width: 50px;
+    height: auto;
+}
+
+#clientes {
+    left: 25%;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: gray;
+    padding: 3px 20px;
+    font-size: 2.2vw;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    right: 1%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 135px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1vw;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    text-decoration: none;
+    color: #45b93b;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    right: 0px;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: transparent;
+    color: gray;
+}
+
+@media screen and (max-width: 1000px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+        left: 0px;
+    }
+}
+
+.menu-header {
+    padding-right: 20px;
+}
+
+
+/* //////////////////////////////////////////////////////////////////////// */
+
+.table {
+    text-align: center;
+    grid-row: 8/35;
+    grid-column: 4/38;
+    font-size: 1.5vw;
+}
+
+thead {
+    font-size: 1.5vw;
+}
+
+tbody {
+    font-size: 1vw;
+}
+
+tbody tr:hover {
+    background: rgb(241, 182, 94);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+/* ///////////////////////////////////////MODAL/////////////////////////////////////////////////////// */
+
+.modal-body {
+    display: grid;
+    grid-template: repeat(9, 1fr)/repeat(90, 1fr);
+}
+
+.modal-title {
+    font-size: 1.5vw;
+}
+
+.tittle-empresa {
+    color: black;
+    grid-row: 1/2;
+    grid-column: 2/5;
+    font-size: 1.5vw;
+}
+
+.company-box {
+    grid-row: 2/3;
+    grid-column: 2/30;
+}
+
+.trade-box {
+    grid-row: 2/3;
+    grid-column: 40/62;
+}
+
+.tittle-representante {
+    grid-row: 3/4;
+    grid-column: 2/5;
+    font-size: 1.5vw;
+}
+
+.name-box {
+    grid-row: 4/5;
+    grid-column: 2/24;
+}
+
+.Lname-box {
+    grid-row: 4/5;
+    grid-column: 25/41;
+}
+
+.Lscndname-box {
+    grid-row: 4/5;
+    grid-column: 42/62;
+}
+
+.title-contacto {
+    grid-row: 5/6;
+    grid-column: 2/5;
+    font-size: 1.5vw;
+}
+
+.phone-box {
+    grid-row: 6/7;
+    grid-column: 2/30;
+}
+
+.cellphone-box {
+    grid-row: 6/7;
+    grid-column: 32/62;
+}
+
+.mail-box {
+    grid-row: 7/8;
+    grid-column: 2/30;
+}
+
+.user-box {
+    grid-row: 9/10;
+    grid-column: 2/30;
+}
+
+.password-box {
+    grid-row: 9/10;
+    grid-column: 32/62;
+}
+
+.modal-header button {
+    font-size: 1.5vw;
+}
+
+.modal-body input {
+    font-size: 1.2vw;
+}
+
+.modal-footer button {
+    font-size: 1.5vw;
+}
+
+.modal-footer button i {
+    padding-left: 10px;
+}
+
+.tittle-contacto {
+    grid-row: 7/8;
+    grid-column: 2/5;
+    font-size: 1.5vw;
+}
+
+.title-cuenta {
+    grid-row: 8/9;
+    grid-column: 2/5;
+    font-size: 1.5vw;
+}
+
+.btn-exit {
+    position: relative;
+    background-color: transparent;
+    border-style: none;
+    left: 10px;
+}
+
+.title-privilegios {
+    color: black;
+    grid-row: 1/2;
+    grid-column: 68/75;
+    font-size: 1.5vw;
+}
+
+.privilegios {
+    display: grid;
+    grid-template: 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr 4fr/1fr 4fr 1fr;
+    background: transparent;
+    /* border-style: solid; */
+    grid-row: 2/10;
+    grid-column: 66/88;
+}
+
+.privilegios h6 {
+    font-size: 1.3vw;
+}
+
+.form-check {
+    grid-column: 2/3;
+    grid-row: 1/10;
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

@@ -3,7 +3,41 @@
 {{/if}} --}}
 
 {{#if user}}
-    
+    <div class="header">
+            <!-- ////////////HEADER DE NAVEGACION ////////////////////-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/SYS/dashboard">
+                    <img src="/solicitudes/images/logo.png">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/SYS/dashboard">Inicio<span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <a class="nav-link">Clientes</a>
+                                <div class="dropdown-content">
+                                    <a href="#">Dar de alta cliente</a>
+                                    <a href="/SYS/clientes">Mostrar clientes</a>
+                                    <a href="/SYS/solicitudes">Ver solicitudes</a>
+                                </div>
+                        </li>
+                    </ul>
+                    <div class="dropdown">
+                        <button class="dropbtn">...</button>
+                        <div class="dropdown-content">
+                            <a href="#">Configuracion</a>
+                            <a href="#">Mi perfil</a>
+                            <a href="/users/logout">Cerrar Sesion</a>
+                        </div>
+                    </div>
+                    </div>
+            </nav>
+            </div>
 {{else}}
 <div class="header-icon">
     <img src="/logIn/sign-in/Microsoft-icon.png">
