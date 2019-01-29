@@ -16,43 +16,22 @@
                                 <th scope="col">Correo</th>
                             </tr>
                         </thead>
+                        {{#each solicitantes}}
                         <tbody class="table-active">
                             <tr onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg">
-                                <th scope="row">**********</th>
+                                <th scope="row">{{_id}}</th>
+                                <script>
+                                    if(Selection)
+                                    {console.log("Esta es la id: " + {{{_id}}});}
+                                    console.log("Esta es la id: " + {{{_id}}});
+                                </script>
                                 <td>1</td>
-                                <td>MIT</td>
-                                <td>Jesus Alberto Crespo Camacho</td>
-                                <td>representante@mit.mx</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">**********</th>
-                                <td>2</td>
-                                <td>MIT</td>
-                                <td>Roberto Eduardo Medina Austin</td>
-                                <td>representante@mit.mx</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">**********</th>
-                                <td>3</td>
-                                <td>COEN TECHNOLOGIES</td>
-                                <td>Manuel Utrera Davila Hernandez</td>
-                                <td>representante@coen.mx</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">**********</th>
-                                <td>4</td>
-                                <td>LFP HYDRAULICS</td>
-                                <td>Juan Valenzuela Castro</td>
-                                <td>representante@lfphydraulics.mx</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">**********</th>
-                                <td>5</td>
-                                <td>COE TECHNOLOGIES</td>
-                                <td>Francisco Quiroz Morales</td>
-                                <td>representante@coen.mx</td>
+                                <td>{{empresaName}}</td>
+                                <td>{{representanteName}} </td>
+                                <td>{{contactoCorreo}}</td>
                             </tr>
                         </tbody>
+                        {{/each}}
                     </table>
                 </div>
             </div>
@@ -74,16 +53,16 @@
                             <!-- ////////////////////////BODY MODAL////////////////////////// -->
                             <div class="modal-body1">
                                 <h5 class="tittle-empresa">Empresa</h5>
-                                <div class="company-box"><input type="text" class="form-control" id="disabledInput" placeholder="Company Name" disabled></div>
-                                <div class="trade-box"><input type="text" class="form-control" id="disabledInput" placeholder="Trade Name" disabled></div>
+                                <div class="company-box"><input type="text" class="form-control" id="disabledInput" placeholder="{{empresaName}}" disabled></div>
+                                <div class="trade-box"><input type="text" class="form-control" id="disabledInput" placeholder="{{empresaTradeName}}" disabled></div>
                                 <h5 class="tittle-representante">Representante</h5>
-                                <div class="name-box"><input type="text" class="form-control" id="disabledInput" placeholder="Name(s)" disabled></div>
-                                <div class="Lname-box"><input type="text" class="form-control" id="disabledInput" placeholder="Last Name" disabled></div>
-                                <div class="Lscndname-box"><input type="text" class="form-control" id="disabledInput" placeholder="Second Name" disabled></div>
+                                <div class="name-box"><input type="text" class="form-control" id="disabledInput" placeholder="{{representanteName}}" disabled></div>
+                                <div class="Lname-box"><input type="text" class="form-control" id="disabledInput" placeholder="{{representanteApPaterno}}" disabled></div>
+                                <div class="Lscndname-box"><input type="text" class="form-control" id="disabledInput" placeholder="{{representanteApMaterno}}" disabled></div>
                                 <h5 class="title-contacto">Contacto</h5>
-                                <div class="phone-box"><input type="text" class="form-control" id="disabledInput" placeholder="Phone Number" disabled></div>
-                                <div class="cellphone-box"><input type="text" class="form-control" id="disabledInput" placeholder="Cellphone" disabled></div>
-                                <div class="mail-box"><input type="text" class="form-control" id="disabledInput" placeholder="Mail" disabled></div>
+                                <div class="phone-box"><input type="text" class="form-control" id="disabledInput" placeholder="{{contactoNumberFijo}}" disabled></div>
+                                <div class="cellphone-box"><input type="text" class="form-control" id="disabledInput" placeholder="{{contactoCelular}}" disabled></div>
+                                <div class="mail-box"><input type="text" class="form-control" id="disabledInput" placeholder="{{contactoCorreo}}" disabled></div>
                             </div>
                             <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
                             <div class="modal-footer">
@@ -134,18 +113,11 @@
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
                                 <button type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg3">Siguiente<i class="fas fa-arrow-circle-right"></i></button>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
-            <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
             <!-- ////////////MODAL PASO 3///////////// -->
             <div class="modal fade bd-example-modal-lg3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -155,7 +127,6 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Paso 3: Privilegios</h5>
                                 <div class="menu-header">
-
                                     <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Editar"><i class="far fa-edit"></i></button>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button> -->
                                     <button type="button" class="btn-exit" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Bloquear usuario"><i class="fas fa-times"></i></button>
@@ -166,7 +137,6 @@
                                 <h5 class="title-privilegios">Privilegios</h5>
                                 <div class="privilegios">
                                     <div class="form-check">
-
                                         <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 1</h6>
                                         <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 2</h6>
                                         <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 3</h6>
@@ -175,7 +145,6 @@
                                         <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 6</h6>
                                         <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 7</h6>
                                         <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 8</h6>
-
                                     </div>
                                 </div>
 
@@ -189,8 +158,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
             <!-- ////////////MODAL PASO 4///////////// -->
             <div class="modal fade bd-example-modal-lg4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -226,3 +193,34 @@
                     </div>
                 </div>
             </div>
+
+
+
+{{!-- <div class="row">
+    {{#each notes}}
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center">
+                    {{title}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+                </h4>
+                <p>{{description}}</p>
+                <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn btn-danger btn-block btn-sm" type="submit">
+                        delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{else}}
+        <div class="card mx-auto">
+            <div class="card-body">
+                <h1>Hola {{user.name}}</h1>
+                <p class="lead">No existen notas</p>
+                <a href="/notes/add" class="btn btn-success btn-block">Crear</a>
+            </div>
+        </div>
+    {{/each}}
+</div> --}}

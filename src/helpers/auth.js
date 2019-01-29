@@ -5,7 +5,7 @@ helpers.isAuthenticated = (req, res, next) => {
         return next();
     }
     req.flash('error_msg', 'No tienes autorizacion');
-    res.redirect('/users/signin');
+    res.redirect('/users/sign');
 };
 
 module.exports = helpers;

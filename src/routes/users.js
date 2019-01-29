@@ -4,18 +4,6 @@ const profileClient = require('../models/profiles/externos/solicitudesDEMO');
 const ProfileInterno = require('../models/profiles/internos/master');
 const passport = require('passport');
 
-router.get('/SYS/dashboard', (req, res) => {
-    res.render('internal/dashboard');
-});
-
-router.get('/SYS/clientes', (req, res) => {
-    res.render('internal/clientes');
-});
-
-router.get('/SYS/solicitudes', (req, res) => {
-    res.render('internal/solicitudes');
-});
-
 router.post('/users/master', async(req, res) => {
     const {
         nombre,
@@ -42,7 +30,6 @@ router.post('/users/master', async(req, res) => {
     await newProfileInterno.save();
     req.flash('success_msg', 'Su solicitud se ha enviado correctamente favor de esperar una de nuestras llamadas ya que alguno de nuestros agentes se comunicara con usted a la brevedad');
     res.redirect('/users/sign');
-
 });
 
 router.get('/users/sign', (req, res) => {
