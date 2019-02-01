@@ -1,0 +1,305 @@
+
+<link rel="stylesheet" href="/internal/Clientes/Ver_solicitudes/css/verSolicitudes.css">
+
+            <!-- //////////////////////////////TITULO//////////////////////////////////////////////// -->
+            <!-- <h1 class="title-cliente">Solicitudes</h1> -->
+            <!-- ////////////////////////////////TABLA////////////////////////////////////////////////////////// -->
+            <div class="table">
+                <div class="table-responsive-xl">
+                    <table class="table">
+                        <thead class="table">
+                            <tr>
+                                <th scope="col">IDe</th>
+                                <th scope="col">IDa</th>
+                                <th scope="col">Empresa</th>
+                                <th scope="col">Representante</th>
+                                <th scope="col">Correo</th>
+                                <th class="delete"></th>
+                            </tr>
+                        </thead>
+
+
+                        {{#each solicitantes}}
+                                <tr data-toggle="modal" id="modal-information"  data-target=".bd-example-modal-lg">
+                                    <th scope="row">{{_id}}</th>
+                                    <td>{{id_autoIncrement}}</td>
+                                    <td>{{empresaName}}</td>
+                                    <td>{{representanteName}} </td>
+                                    <td>{{contactoCorreo}}</td>
+                                    <td>
+                                      <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button>
+                                      <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Detalles"
+                                      id="id_Modal" data-toggle="modal" data-target=".bd-example-modal-lg" 
+                                            data-id="{{_id}}" 
+                                            data-empresaname="{{empresaName}}" 
+                                            data-empresatradename="{{empresaTradeName}}" 
+                                            data-representantename="{{representanteName}}" 
+                                            data-representanteappaterno="{{representanteApPaterno}}" 
+                                            data-representanteapmaterno="{{representanteApMaterno}}" 
+                                            data-contactonumberfijo="{{contactoNumberFijo}}" 
+                                            data-contactocelular="{{contactoCelular}}" 
+                                            data-contactocorreo="{{contactoCorreo}}"
+                                            data-fechasolicitud="{{FechaSolicitud}}"><i class="fas fa-share-square"></i></button>
+                                    </td>
+                                </tr>
+                            {{/each}}
+
+                            <script>
+                                $(document).on("click", "#id_Modal", function () {
+                                    var id = $(this).data('id');
+                                    var empresaname = $(this).data('empresaname');
+                                    var empresatradename = $(this).data('empresatradename');
+                                    var representantename = $(this).data('representantename');
+                                    var representanteappaterno = $(this).data('representanteappaterno');
+                                    var representanteapmaterno = $(this).data('representanteapmaterno');
+                                    var contactonumberfijo = $(this).data('contactonumberfijo');
+                                    var contactocelular = $(this).data('contactocelular');
+                                    var contactocorreo = $(this).data('contactocorreo');
+                                    var fechasolicitud = $(this).data('fechasolicitud');
+                                    
+                                    $('#empresaName').val(empresaname);
+                                    $('#empresaTradeName').val(empresatradename);
+                                    $('#representanteName').val(representantename);
+                                    $('#representanteApPaterno').val(representanteappaterno);
+                                    $('#representanteApMaterno').val(representanteapmaterno);
+                                    $('#contactoNumberFijo').val(contactonumberfijo);
+                                    $('#contactoCelular').val(contactocelular);
+                                    $('#contactoCorreo').val(contactocorreo);
+                                });
+                            </script>
+                    </table>
+                </div>
+            </div>
+            <!-- ////////////////////////////////////////////////////MODAL PASO 1/////////////////////////////////////////////////////////////// -->
+           <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <!-- /////////////HEADER MODAL/////////// -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Paso 1: Confirmación</h5>
+                                <div class="menu-header">
+
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Editar"><i class="far fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button>
+                                    <button type="button" class="btn-exit" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Cerrar"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <!-- ////////////////////////BODY MODAL////////////////////////// -->
+                            <div class="modal-body1">
+                                <h5 class="tittle-empresa">Empresa</h5>
+                                <div class="company-box"><input type="text" class="form-control" id="empresaName"  placeholder="{{solicitante.empresaName}}" disabled></div>
+                                <div class="trade-box"><input type="text" class="form-control" id="empresaTradeName" placeholder="{{solicitante.empresaTradeName}}" disabled></div>
+                                <h5 class="tittle-representante">Representante</h5>
+                                <div class="name-box"><input type="text" class="form-control" id="representanteName" placeholder="{{solicitante.representanteName}}" disabled></div>
+                                <div class="Lname-box"><input type="text" class="form-control" id="representanteApPaterno" placeholder="{{solicitante.representanteApPaterno}}" disabled></div>
+                                <div class="Lscndname-box"><input type="text" class="form-control" id="representanteApMaterno" placeholder="{{solicitante.representanteApMaterno}}" disabled></div>
+                                <h5 class="title-contacto">Contacto</h5>
+                                <div class="phone-box"><input type="text" class="form-control" id="contactoNumberFijo" placeholder="{{solicitante.contactoNumberFijo}}" disabled></div>
+                                <div class="cellphone-box"><input type="text" class="form-control" id="contactoCelular" placeholder="{{solicitante.contactoCelular}}" disabled></div>
+                                <div class="mail-box"><input type="text" class="form-control" id="contactoCorreo" placeholder="{{solicitante.contactoCorreo}}" disabled></div>
+                                <h5 class="title-cuenta">Cuenta</h5>
+                                <div class="user"><input type="text" class="form-control" placeholder="Usuario"></div>
+                                <div class="password"><input type="text" class="form-control" placeholder="Contraseña"></div>
+                                <div class="confirm-password"><input type="text" class="form-control" placeholder="Confirmar Contraseña"></div>
+                                <div class="form-group">
+                                    <!-- <label for="sel1"></label> -->
+                                    <select class="form-control" id="sel1">
+                                      <option>Selecciona una pregunta de seguridad</option>
+                                      <option></option>
+                                      <option>De que color fue su último vehículo.</option>
+                                      <option>La ciudad que te gustaría jubilarte.</option>
+                                      <option>El nombre de la primera ciudad que visitó.</option>
+                                      <option>Cuál fue el nombre de tu primer mascota.</option>
+                                      <option>Cuál es tu comida favorita.</option>
+                                      <option>Marca de la primer laptop que compré.</option>
+                                    </select>
+                                </div>
+                                <div class="answer"><input type="text" class="form-control" placeholder="Respuesta"></div>
+                            </div>
+                            <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg2"><i class="fas fa-arrow-circle-right"></i></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- ////////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- ////////////MODAL PASO 2///////////// -->
+          <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <!-- /////////////HEADER MODAL/////////// -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Paso 2: Datos Fiscales</h5>
+                                <div class="menu-header">
+
+                                    <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Editar"><i class="far fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button> -->
+                                    <button type="button" class="btn-exit" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Cerrar"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <!-- ////////////////////////BODY MODAL////////////////////////// -->
+                            <div class="modal-body2">
+                                <label class="datos-mex">Datos:</label>
+                                <div class="mexican-flag"></div>
+                                 <div class="nom-empresa"><input type="text" class="form-control" placeholder="Empresa"></div>
+                                 <div class="rs"><input type="text" class="form-control" placeholder="Razón Social"></div>
+                                 <div class="estado"><input type="text" class="form-control" placeholder="Estado Mexicano"></div>
+                                 <div class="ciudad"><input type="text" class="form-control" placeholder="Ciudad Mexicana"></div>
+                                 <div class="cp"><input type="text" class="form-control" placeholder="Código Postal"></div>
+                                 <div class="rfc"><input type="text" class="form-control" placeholder="RFC"></div> 
+                                 <div class="tel"><input type="text" class="form-control" placeholder="Teléfono"></div> 
+                                 <div class="folio-fac"><input type="text" class="form-control" placeholder="Folio(F)"></div> 
+                                 <div class="folio-cp"><input type="text" class="form-control" placeholder="Folio(CP)"></div> 
+                                <!-- <h5 class="title-direccion">Dirección</h5> -->
+                                 <div class="colonia"><input type="text" class="form-control" placeholder="Colonia"></div>
+                                <div class="calle"><input type="text" class="form-control" placeholder="Calle"></div>
+                                <div class="no-exterior"><input type="text" class="form-control" placeholder="No. Exterior"></div>
+                                <div class="no-interior"><input type="text" class="form-control" placeholder="No. Interior"></div>
+                                <div class="entre-calles"><input type="text" class="form-control" placeholder="Entre calles"></div>
+                                 <div class="dir-fiscal"><input type="text" class="form-control" placeholder="Dirección Fiscal"></div>
+                                <label class="datos-us">Datos:</label>
+                                <div class="usa-flag"></div>
+                                <div class="nom-empresaus"><input type="text" class="form-control" placeholder="Empresa"></div>
+                                 {{!-- <div class="razon-socialus"><input type="text" class="form-control" placeholder="Razón Social"></div> 
+                                <div class="rfcus"><input type="text" class="form-control" placeholder="RFC"></div>--}}
+                                <!-- <h5 class="title-direccionus">Dirección</h5> -->
+                                <div class="coloniaus"><input type="text" class="form-control" placeholder="Colonia"></div>
+                                <div class="calleus"><input type="text" class="form-control" placeholder="Calle"></div>
+                                <div class="no-exteriorus"><input type="text" class="form-control" placeholder="No. Exterior"></div>
+                                <div class="no-interiorus"><input type="text" class="form-control" placeholder="No. Interior"></div>
+                                <div class="entre-callesus"><input type="text" class="form-control" placeholder="Entre calles"></div>
+                                <div class="cp-us"><input type="text" class="form-control" placeholder="Codigo Postal"></div> 
+                                <div class="tax-id"><input type="text" class="form-control" placeholder="Tax ID"></div> 
+                                <div class="tel-us"><input type="text" class="form-control" placeholder="Teléfono"></div> 
+                                <div class="folio-cpus"><input type="text" class="form-control" placeholder="Folio(CP)"></div> 
+
+
+                            </div>
+                            <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
+                                <!-- <button type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button> -->
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-arrow-circle-left"></i></button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg3"><i class="fas fa-arrow-circle-right"></i></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- ////////////MODAL PASO 3///////////// -->
+           <div class="modal fade bd-example-modal-lg3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-content">
+                            <!-- /////////////HEADER MODAL/////////// -->
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Paso 3: Módulos</h5>
+                                <div class="menu-header">
+
+                                    <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Editar"><i class="far fa-edit"></i></button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button> -->
+                                    <button type="button" class="btn-exit" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Cerrar"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <!-- ////////////////////////BODY MODAL////////////////////////// -->
+                            <div class="modal-body3">
+                                <h5 class="title-demo">Demo:</h5>
+                                <h5 class="title-otros">Otros:</h5>
+                                <div class="privilegios">
+                                    <div class="form-check">
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 1</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 2</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 3</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 4</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 5</h6>
+                                        <!-- <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 6</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 7</h6>
+                                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 8</h6> -->
+
+                                    </div>
+                                </div>
+
+                                <div class="privilegios2">
+
+
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 1</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 2</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 3</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 4</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 5</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 6</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 7</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 8</h6>
+
+                                </div>
+
+                                <div class="privilegios3">
+
+
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 9</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 10</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 11</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 12</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 13</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 14</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 15</h6>
+                                    <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 16</h6>
+
+                                </div>
+                            </div>
+                            <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg2"><i class="fas fa-arrow-circle-left"></i></button>
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
+                                <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg4"><i class="fas fa-arrow-circle-right"></i></i></button> -->
+                                <button type="button" class="btn btn-info" data-dismiss="modal">Finalizar<i class="far fa-save fa-md"></i></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+{{!-- <div class="row">
+    {{#each notes}}
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center">
+                    {{title}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+                </h4>
+                <p>{{description}}</p>
+                <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn btn-danger btn-block btn-sm" type="submit">
+                        delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{else}}
+        <div class="card mx-auto">
+            <div class="card-body">
+                <h1>Hola {{user.name}}</h1>
+                <p class="lead">No existen notas</p>
+                <a href="/notes/add" class="btn btn-success btn-block">Crear</a>
+            </div>
+        </div>
+    {{/each}}
+</div> --}}

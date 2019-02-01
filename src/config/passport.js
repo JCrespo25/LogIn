@@ -19,9 +19,6 @@ passport.use(new LocalStrategy({
 
         var user = await UserInternal.findOne({ user: userName });
 
-        console.log("User: " + user);
-        console.log("UserName: " + userName);
-
 
         if (!user) {
             return done(null, false, { message: 'No se encontro el usuario' });

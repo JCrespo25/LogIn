@@ -21,31 +21,77 @@ body {
 ====================================================================================
 */
 
-.grid-total-header {
-    display: grid;
-    grid-template: 1fr / 7fr 50fr 10fr;
-    background: rgba(0, 0, 0, 0.589);
+
+/* /////////////////////////HEADER DE NAVEGACION ////////////////////////////////*/
+
+li {
+    padding-top: 20px;
 }
 
-.header-icon {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-    justify-content: center;
-    justify-items: center;
-    justify-self: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-}
-
-.header-icon img {
+.navbar-brand img {
+    padding-top: 20px;
+    width: 50px;
     height: auto;
-    width: 30%;
 }
 
-.header-lenguage {
-    grid-row: 1 / 2;
-    grid-column: 3 / 4;
+#clientes {
+    left: 25%;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: gray;
+    padding: 3px 20px;
+    font-size: 2.2vw;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    right: 1%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 135px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1vw;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    text-decoration: none;
+    color: #45b93b;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    right: 0px;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: transparent;
+    color: gray;
+}
+
+@media screen and (max-width: 1000px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+        left: 0px;
+    }
 }
 
 
@@ -76,12 +122,19 @@ body {
 
 .grid-total-footer {
     display: grid;
-    grid-template: 1fr 3fr 1fr / 2fr 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr 2fr;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 0px 5px;
-    background-color: rgba(0, 0, 0, 0.589);
+    background-color: rgba(0, 0, 0, 0.301);
     color: white;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    justify-items: center;
+    font-size: .7vw;
 }
 
+
+/* 
 .footer-icons {
     grid-row: 1 / 2;
     height: auto;
@@ -204,4 +257,39 @@ body {
 
 .footer-copyRight p {
     font-size: 0.8vw;
+}
+
+.fb-ic .fab fa-facebook-f {
+    grid-column: 3/4;
+    grid-row: 1/2;
+} */
+
+.footer-fb {
+    grid-row: 2/3;
+    grid-column: 4/6;
+}
+
+.footer-gplus {
+    grid-row: 2/3;
+    grid-column: 7/9;
+}
+
+.footer-twitter {
+    grid-row: 2/3;
+    grid-column: 10/12;
+}
+
+.footer-copyright {
+    grid-row: 3/4;
+    grid-column: 6/10;
+}
+
+.correo-contact {
+    grid-row: 3/4;
+    grid-column: 10/12;
+}
+
+.sitio {
+    grid-row: 3/4;
+    grid-column: 4/6;
 }

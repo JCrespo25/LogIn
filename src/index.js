@@ -1,3 +1,4 @@
+//Requires
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
@@ -5,6 +6,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+
 //Initializations
 const app = express();
 require('./database');
@@ -43,10 +45,17 @@ app.use((req, res, next) => {
 });
 
 //Routes
-app.use(require('./routes/index'));
-app.use(require('./routes/notes'));
-app.use(require('./routes/users'));
-app.use(require('./routes/withing'));
+/*RUTAS EXTERNAS*/
+app.use(require('./routes/web-main/main')); //PRINCIPAL (LogIn, Request)
+app.use(require('./routes/web-main/request')); //SEND REQUEST
+app.use(require('./routes/web-main/sign_in')); //LOGIN
+
+/*RUTAS INTERNAS*/
+app.use(require('./routes/internal/withing')); //DENTRO
+app.use(require('./routes/internal/notes')); //NOTAS
+app.use(require('./routes/internal/clientes')); //CLIENTES
+app.use(require('./routes/internal/sign_out')); //AFUERA
+
 
 //Static Files
 app.use(express.static(path.join(__dirname, 'public')));
