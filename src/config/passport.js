@@ -12,14 +12,12 @@ passport.use(new LocalStrategy({
     var numberChars = userName.length;
     var firstCharOfEndThree = numberChars - 3;
     var ThreeChars = userName.substring(firstCharOfEndThree, numberChars);
-    ThreeChars = ThreeChars.toUpperCase();
+    ThreeChars = ThreeChars.toLowerCase();
     var point = userName.charAt(firstCharOfEndThree - 1);
 
-    if (point + ThreeChars == ".NET") {
+    if (point + ThreeChars == ".net") {
 
-        var user = await UserInternal.findOne({ user: userName });
-
-
+        var user = await UserInternal.findOne({ userMaster: userName });
         if (!user) {
             return done(null, false, { message: 'No se encontro el usuario' });
         } else {

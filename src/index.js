@@ -55,6 +55,7 @@ app.use(require('./routes/internal/withing')); //DENTRO
 app.use(require('./routes/internal/notes')); //NOTAS
 app.use(require('./routes/internal/clientes')); //CLIENTES
 app.use(require('./routes/internal/sign_out')); //AFUERA
+app.use(require('./routes/internal/master')); //MASTER
 
 
 //Static Files

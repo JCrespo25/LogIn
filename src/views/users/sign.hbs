@@ -1,15 +1,15 @@
-<link rel="stylesheet" href="/web-main/css/web-main.css">
+<link rel="stylesheet" href="/logIn/css/sign.css">
 
 <div class="grid-total-sign">
-     <form class="grid-total-sign-in" action="/main/sign_in" method="POST">
+     <form class="grid-total-sign-in" action="/users/signin" method="POST">
         <div class="image-logo"></div>
         <div class="image-account"></div>
         <h3>Iniciar Sesión</h3>
         <div class="user-box"><input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" name="userName"></div>
         <div class="password-box"><input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contraseña" name="password"></div>
         <div class="button-enter"><button type="submit" class="btn btn-warning">Entrar</button></div>
-    </form> 
-    <form class="grid-total-sign-up" action="/main/request" method="POST">
+    </form>
+    <form class="grid-total-sign-up" action="/users/request-send" method="POST">
         <h1>Solicita tu demo GRATIS!</h1>
          <div class="empresa"><h3>Empresa</h3></div>
         <div class="namecompany-box-sup"><label>Nombre comercial:</label><input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej: Microsoft" name="empresaName" value="{{empresaName}}"></div>

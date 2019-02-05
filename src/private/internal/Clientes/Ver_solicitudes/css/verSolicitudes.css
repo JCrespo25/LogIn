@@ -73,8 +73,12 @@ tbody {
 tbody tr:hover {
     background: rgb(99, 99, 99);
     color: #ffffff;
-    cursor: pointer;
 }
+
+
+/* .table button {
+    z-index: 999999;
+} */
 
 
 /* ///////////////////////////////////MODAL /////////////////////////////////////////// */
@@ -128,6 +132,12 @@ tbody tr:hover {
     height: 70vh;
     display: grid;
     grid-template: repeat(20, 1fr)/repeat(50, 2fr);
+}
+
+.modal-body1 input {
+    font-size: .8vw;
+    height: 80%;
+    width: 100%;
 }
 
 .tittle-empresa {
@@ -190,6 +200,11 @@ tbody tr:hover {
     grid-column: 2/25;
 }
 
+.date-request {
+    grid-row: 10/11;
+    grid-column: 26/50;
+}
+
 .title-cuenta {
     grid-row: 12/13;
     grid-column: 2/5;
@@ -206,6 +221,18 @@ tbody tr:hover {
     padding-top: 0px;
     grid-column: 26/50;
     grid-row: 16/17;
+}
+
+.ida-box {
+    padding-top: 0px;
+    grid-column: 47/50;
+    grid-row: 14/15;
+}
+
+.ide-box {
+    padding-top: 0px;
+    grid-column: 26/46;
+    grid-row: 14/15;
 }
 
 .confirm-password {

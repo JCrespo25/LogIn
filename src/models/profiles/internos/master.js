@@ -8,7 +8,7 @@ const SchemaProfileInternos = new Schema({
     apMaterno: { type: String },
     typeUser: { type: String, required: true },
     correo: { type: String, required: true },
-    user: { type: String, required: true },
+    userMaster: { type: String, required: true },
     password: { type: String, required: true },
     fechaCreacion: { type: Date, default: Date.now }
 });

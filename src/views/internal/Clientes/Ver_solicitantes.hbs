@@ -14,37 +14,39 @@
                                 <th scope="col">Empresa</th>
                                 <th scope="col">Representante</th>
                                 <th scope="col">Correo</th>
-                                <th class="delete"></th>
+                                <th class="delete"></th> 
                             </tr>
                         </thead>
 
-
                         {{#each solicitantes}}
-                                <tr data-toggle="modal" id="modal-information"  data-target=".bd-example-modal-lg">
+                                <tr  id="modal-information" data-target=".bd-example-modal-lg"> 
                                     <th scope="row">{{_id}}</th>
                                     <td>{{id_autoIncrement}}</td>
                                     <td>{{empresaName}}</td>
                                     <td>{{representanteName}} </td>
                                     <td>{{contactoCorreo}}</td>
                                     <td>
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button>
-                                      <button type="button" class="btn btn-warning" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Detalles"
-                                      id="id_Modal" data-toggle="modal" data-target=".bd-example-modal-lg" 
-                                            data-id="{{_id}}" 
+                                      <button type="button" class="btn btn-danger" data-dismiss="modal"  data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button>
+                                      <button type="button" class="btn btn-warning" data-dismiss="modal"  data-placement="left" title="Detalles"
+                                      id="id_Modal" onclick="informationDefault(this)" data-toggle="modal" data-target=".bd-example-modal-lg" 
+                                            data-id="{{_id}}"
                                             data-empresaname="{{empresaName}}" 
                                             data-empresatradename="{{empresaTradeName}}" 
                                             data-representantename="{{representanteName}}" 
                                             data-representanteappaterno="{{representanteApPaterno}}" 
                                             data-representanteapmaterno="{{representanteApMaterno}}" 
-                                            data-contactonumberfijo="{{contactoNumberFijo}}" 
+                                            data-contactonumberfijo="{{contactoNumberFijo}}"
                                             data-contactocelular="{{contactoCelular}}" 
                                             data-contactocorreo="{{contactoCorreo}}"
-                                            data-fechasolicitud="{{FechaSolicitud}}"><i class="fas fa-share-square"></i></button>
+                                            data-fechasolicitud="{{FechaSolicitud}}"
+                                            data-autoincrement="{{id_autoIncrement}}">
+                                            <i class="fas fa-share-square"></i></button>
                                     </td>
                                 </tr>
                             {{/each}}
 
                             <script>
+
                                 $(document).on("click", "#id_Modal", function () {
                                     var id = $(this).data('id');
                                     var empresaname = $(this).data('empresaname');
@@ -56,7 +58,9 @@
                                     var contactocelular = $(this).data('contactocelular');
                                     var contactocorreo = $(this).data('contactocorreo');
                                     var fechasolicitud = $(this).data('fechasolicitud');
-                                    
+                                    var autoIncrement = $(this).data('autoincrement');
+
+                                    $('#IDe').val(id);
                                     $('#empresaName').val(empresaname);
                                     $('#empresaTradeName').val(empresatradename);
                                     $('#representanteName').val(representantename);
@@ -65,6 +69,80 @@
                                     $('#contactoNumberFijo').val(contactonumberfijo);
                                     $('#contactoCelular').val(contactocelular);
                                     $('#contactoCorreo').val(contactocorreo);
+                                    $('#dataRequest').val(fechasolicitud);
+                                    $('#IDa').val(autoIncrement);
+                                    
+                                    document.getElementById("empresaName").disabled = true;
+                                    document.getElementById("empresaTradeName").disabled = true;
+                                    document.getElementById("representanteName").disabled = true;
+                                    document.getElementById("representanteApPaterno").disabled = true;
+                                    document.getElementById("representanteApMaterno").disabled = true;
+                                    document.getElementById("contactoNumberFijo").disabled = true;
+                                    document.getElementById("contactoCelular").disabled = true;
+                                    document.getElementById("contactoCorreo").disabled = true;
+                                    document.getElementById("empresaName").disabled = true;
+                                    document.getElementById("empresaName").disabled = true;
+                                    document.getElementById("empresaName").disabled = true;
+                                });
+
+                                $(document).on("click", "#TryEdit", function () {
+                                    
+                                    document.getElementById("empresaName").disabled = false;
+                                    document.getElementById("empresaTradeName").disabled = false;
+                                    document.getElementById("representanteName").disabled = false;
+                                    document.getElementById("representanteApPaterno").disabled = false;
+                                    document.getElementById("representanteApMaterno").disabled = false;
+                                    document.getElementById("contactoNumberFijo").disabled = false;
+                                    document.getElementById("contactoCelular").disabled = false;
+                                    document.getElementById("contactoCorreo").disabled = false;
+                                    document.getElementById("empresaName").disabled = false;
+                                    document.getElementById("empresaName").disabled = false;
+                                    document.getElementById("empresaName").disabled = false;
+                                });
+
+                                    var _empresaname;
+                                    var _empresatradename;
+                                    var _representantename;
+                                    var _representanteappaterno;
+                                    var _representanteapmaterno;
+                                    var _contactonumberfijo;
+                                    var _contactocelular;
+                                    var _contactocorreo;
+
+                                function informationDefault(thi){
+
+                                    _empresaname = (thi.getAttribute("data-empresaname"));
+                                    _empresatradename = (thi.getAttribute("data-empresatradename"));
+                                    _representantename = (thi.getAttribute("data-representantename"));
+                                    _representanteappaterno = (thi.getAttribute("data-representanteappaterno"));
+                                    _representanteapmaterno = (thi.getAttribute("data-representanteapmaterno"));
+                                    _contactonumberfijo = (thi.getAttribute("data-contactonumberfijo"));
+                                    _contactocelular = (thi.getAttribute("data-contactocelular"));
+                                    _contactocorreo = (thi.getAttribute("data-contactocorreo"));
+                                }
+
+                                $(document).on("click", "#restore", function () {
+                                    
+                                    $('#empresaName').val(_empresaname);
+                                    $('#empresaTradeName').val(_empresatradename);
+                                    $('#representanteName').val(_representantename);
+                                    $('#representanteApPaterno').val(_representanteappaterno);
+                                    $('#representanteApMaterno').val(_representanteapmaterno);
+                                    $('#contactoNumberFijo').val(_contactonumberfijo);
+                                    $('#contactoCelular').val(_contactocelular);
+                                    $('#contactoCorreo').val(_contactocorreo);
+                                    
+                                    document.getElementById("empresaName").disabled = true;
+                                    document.getElementById("empresaTradeName").disabled = true;
+                                    document.getElementById("representanteName").disabled = true;
+                                    document.getElementById("representanteApPaterno").disabled = true;
+                                    document.getElementById("representanteApMaterno").disabled = true;
+                                    document.getElementById("contactoNumberFijo").disabled = true;
+                                    document.getElementById("contactoCelular").disabled = true;
+                                    document.getElementById("contactoCorreo").disabled = true;
+                                    document.getElementById("empresaName").disabled = true;
+                                    document.getElementById("empresaName").disabled = true;
+                                    document.getElementById("empresaName").disabled = true;
                                 });
                             </script>
                     </table>
@@ -80,7 +158,7 @@
                                 <h5 class="modal-title" id="exampleModalLabel">Paso 1: Confirmación</h5>
                                 <div class="menu-header">
 
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Editar"><i class="far fa-edit"></i></button>
+                                    <button id="TryEdit" type="button" class="btn btn-primary" title="Editar"><i class="far fa-edit"></i></button>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button>
                                     <button type="button" class="btn-exit" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Cerrar"><i class="fas fa-times"></i></button>
                                 </div>
@@ -98,7 +176,10 @@
                                 <div class="phone-box"><input type="text" class="form-control" id="contactoNumberFijo" placeholder="{{solicitante.contactoNumberFijo}}" disabled></div>
                                 <div class="cellphone-box"><input type="text" class="form-control" id="contactoCelular" placeholder="{{solicitante.contactoCelular}}" disabled></div>
                                 <div class="mail-box"><input type="text" class="form-control" id="contactoCorreo" placeholder="{{solicitante.contactoCorreo}}" disabled></div>
+                                <div class="date-request"><input type="text" class="form-control" id="dataRequest" placeholder="{{solicitante.FechaSolicitud}}" disabled></div>
                                 <h5 class="title-cuenta">Cuenta</h5>
+                                <div class="ide-box"><input type="text" class="form-control" id="IDe" placeholder="{{solicitante._id}}" disabled></div>
+                                <div class="ida-box"><input type="text" class="form-control" id="IDa" placeholder="{{solicitante.id_autoIncrement}}" disabled></div>
                                 <div class="user"><input type="text" class="form-control" placeholder="Usuario"></div>
                                 <div class="password"><input type="text" class="form-control" placeholder="Contraseña"></div>
                                 <div class="confirm-password"><input type="text" class="form-control" placeholder="Confirmar Contraseña"></div>
@@ -120,15 +201,15 @@
                             <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
-                                <button type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
+                                    <button id="restore" type="button" class="btn btn-success">
+                                        Restablecer
+                                        <i class="fas fa-window-restore"></i>
+                                    </button>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg2"><i class="fas fa-arrow-circle-right"></i></button>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
-
             </div>
             <!-- ////////////////////////////////////////////////////////////////////////////// -->
 

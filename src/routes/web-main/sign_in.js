@@ -5,7 +5,7 @@ const { isAuthenticated } = require('../../helpers/auth');
 
 router.post('/main/sign_in', passport.authenticate('local', {
     successRedirect: '/SYS/index',
-    failureRedirect: 'web-main/web-main',
+    failureRedirect: '/',
     failureFlash: true
 }));
 

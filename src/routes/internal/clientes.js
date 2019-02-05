@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const RequestDEMO = require('../../models/profiles/externos/solicitudesDEMO');
-const ProfileInterno = require('../../models/profiles/internos/master');
 const { isAuthenticated } = require('../../helpers/auth');
 
 /*ALTA CLIENTE*/
