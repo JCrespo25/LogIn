@@ -56,7 +56,7 @@ app.use(require('./routes/internal/notes')); //NOTAS
 app.use(require('./routes/internal/clientes')); //CLIENTES
 app.use(require('./routes/internal/sign_out')); //AFUERA
 app.use(require('./routes/internal/master')); //MASTER
-
+app.use(require('./routes/internal/empleados')); //EMPLEADOS
 
 //Static Files
 app.use(express.static(path.join(__dirname, 'public')));

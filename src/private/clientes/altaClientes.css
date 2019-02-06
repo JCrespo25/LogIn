@@ -1,0 +1,253 @@
+.grid-total {
+    height: 120vh;
+    /* align-content: center;
+    align-items: center;
+    align-self: center; */
+    background-image: url("/solicitudes/images/wallpaper-4.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.grid-total-header {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+}
+
+.grid-total-footer {
+    grid-row: 36/ -1;
+    grid-column: 1 / -1;
+}
+
+
+/* 
+.header {
+    grid-row: 1/2;
+    grid-column: 1/-1;
+} */
+
+
+/* ///////////////////////CONTENEDOR/////////////// */
+
+.grid-total h2 {
+    color: white;
+    font-size: 2.2vw;
+}
+
+label {
+    color: white;
+    font-size: 1.3vw;
+}
+
+.grid-total input {
+    font-size: 1vw;
+    height: 70%;
+}
+
+.title-empresa {
+    grid-row: 3/4;
+    grid-column: 2/5;
+}
+
+.nom-empresa {
+    grid-row: 5/6;
+    grid-column: 2/10;
+}
+
+.rs {
+    grid-row: 5/6;
+    grid-column: 12/20;
+}
+
+.title-representante {
+    grid-row: 7/8;
+    grid-column: 2/5;
+}
+
+.nom-representante {
+    grid-row: 9/10;
+    grid-column: 2/10;
+}
+
+.ap-pat {
+    grid-row: 9/10;
+    grid-column: 12/20;
+}
+
+.ap-mat {
+    grid-row: 9/10;
+    grid-column: 22/30;
+}
+
+.title-contacto {
+    grid-row: 11/12;
+    grid-column: 2/5;
+}
+
+.num-tel {
+    grid-row: 13/14;
+    grid-column: 2/10;
+}
+
+.celular {
+    grid-row: 13/14;
+    grid-column: 12/20;
+}
+
+.correo {
+    grid-row: 13/14;
+    grid-column: 22/30;
+}
+
+.title-cuenta {
+    grid-row: 15/16;
+    grid-column: 2/5;
+}
+
+.user {
+    grid-row: 17/18;
+    grid-column: 2/10;
+}
+
+.password {
+    grid-row: 17/18;
+    grid-column: 12/20;
+}
+
+.confirm-pass {
+    grid-row: 17/18;
+    grid-column: 22/30;
+}
+
+.form-group {
+    grid-row: 19/20;
+    grid-column: 2/10;
+}
+
+.form-group .form-control {
+    font-size: .9vw;
+}
+
+.answer {
+    grid-row: 19/20;
+    grid-column: 12/30;
+}
+
+.title-fiscales {
+    grid-row: 21/22;
+    grid-column: 2/8;
+}
+
+.mex-flag {
+    width: 50px;
+    height: auto;
+    grid-row: 22/23;
+    grid-column: 2/3;
+}
+
+.us-flag {
+    width: 50px;
+    height: auto;
+    grid-row: 22/23;
+    grid-column: 4/5;
+}
+
+.folio-fac {
+    grid-row: 24/25;
+    grid-column: 2/5;
+}
+
+.folio-cp {
+    grid-row: 25/26;
+    grid-column: 2/5;
+}
+
+.nom-empresafis {
+    grid-row: 26/27;
+    grid-column: 2/10;
+}
+
+.rs-fis {
+    grid-row: 27/28;
+    grid-column: 2/10;
+}
+
+.estado {
+    grid-row: 28/29;
+    grid-column: 2/10;
+}
+
+.ciudad {
+    grid-row: 29/30;
+    grid-column: 2/10;
+}
+
+.colonia {
+    grid-row: 24/25;
+    grid-column: 12/20;
+}
+
+.calle {
+    grid-row: 25/26;
+    grid-column: 12/20;
+}
+
+.no-exterior {
+    grid-row: 26/27;
+    grid-column: 12/20;
+}
+
+.no-interior {
+    grid-row: 27/28;
+    grid-column: 12/20;
+}
+
+.entre-calles {
+    grid-row: 28/29;
+    grid-column: 12/20;
+}
+
+.tel-fis {
+    grid-row: 24/25;
+    grid-column: 22/30;
+}
+
+.rfc-fis {
+    grid-row: 25/26;
+    grid-column: 22/30;
+}
+
+.cp {
+    grid-row: 29/30;
+    grid-column: 12/20;
+}
+
+.dir-fiscal {
+    grid-row: 26/27;
+    grid-column: 22/30;
+}
+
+.title-modulos {
+    grid-row: 31/32;
+    grid-column: 2/5;
+}
+
+.modulos {
+    grid-row: 32/33;
+    grid-column: 3/5;
+}
+
+.modulos2 {
+    grid-row: 32/33;
+    grid-column: 6/11;
+}
+
+.modulos3 {
+    grid-row: 32/33;
+    grid-column: 10/15;
+}
+
+.form-check-label {
+    color: white;
+    font-size: 1vw;
+}

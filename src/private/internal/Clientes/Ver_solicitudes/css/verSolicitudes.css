@@ -120,9 +120,14 @@ tbody tr:hover {
     padding-left: 0px;
 }
 
-.modal-footer .btn-danger {
+.modal-footer .btn-mail .btn-danger {
     position: absolute;
-    left: 20px;
+    left: 10px;
+    bottom: 18px;
+}
+
+.modal-footer .btn-reload .btn-secondary {
+    padding-left: 0;
 }
 
 
@@ -213,11 +218,17 @@ tbody tr:hover {
 
 .user {
     padding-top: 0px;
-    grid-column: 2/25;
+    grid-column: 2/20;
     grid-row: 14/15;
 }
 
 .password {
+    padding-top: 0px;
+    grid-column: 2/25;
+    grid-row: 16/17;
+}
+
+.confirm-password {
     padding-top: 0px;
     grid-column: 26/50;
     grid-row: 16/17;
@@ -233,12 +244,6 @@ tbody tr:hover {
     padding-top: 0px;
     grid-column: 26/46;
     grid-row: 14/15;
-}
-
-.confirm-password {
-    padding-top: 0px;
-    grid-column: 2/25;
-    grid-row: 16/17;
 }
 
 .answer {

@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="/internal/Empleados/css/altaEmpleados.css">
+
+{{!-- Contenedor Personal --}}
+<div class="contenedor-personal">
+        <h2 class="title-personal">Información Personal</h2>
+        <div class="nom-empleado"><label>Nombre: *</label><input type="text" class="form-control" placeholder=""></div>
+        <div class="f-nacimiento"><label>Fecha de nacimiento: *</label><input type="text" class="form-control" placeholder="Ej. 21/09/2019"></div>
+        <div class="domicilio"><label>Domicilio: *</label><input type="text" class="form-control" placeholder="Ej. Blvd Diaz Ordaz"></div>
+        <div class="telefono"><label>Teléfono: *</label><input type="text" class="form-control" placeholder="(664) 53298745"></div>
+        <div class="celular"><label>Celular: *</label><input type="text" class="form-control" placeholder="(664) 64398897"></div>
+        <div class="form-group-puesto">
+                        <label>Puesto:</label>
+                        <select class="form-control" id="sel1">
+                        <option>Administrador</option>
+                        <option>Contabilidad</option>
+                        <option>Despacho</option>
+                        <option>Facturación</option>
+                        <option>Logística</option>
+                        <option>Operaciones</option>
+                        <option>Taller</option>
+                        </select>
+        </div>
+</div>
+{{!-- Contenedor Licencia --}}
+<div class="contenedor-licencia">
+    <h2 class="title-licencia">Información de licencia</h2>
+      <div class="form-group-licencia">
+                        <label>¿Tienes licencia?:</label>
+                        <select class="form-control" id="sel1">
+                        <option>Sí</option>
+                        <option>No</option>
+                        </select>
+        </div>
+        <div class="f-expiracion-licencia"><label>Fecha de expiración de licencia: </label><input type="text" class="form-control" placeholder="Ej. 21/09/2019"></div>
+</div>
+{{!-- Contenedor Visa --}}
+<div class="contenedor-visa">
+    <h2 class="title-visa">Información de visa</h2>
+    <div class="modulos">
+                    <div class="form-check">
+                        <h6 class="form-check-label"><input type="checkbox" class="form-check-input" value="">Tiene visa</h6>
+                    </div>
+    </div>
+    <div class="no-visa"><label>Número de visa: </label><input type="text" class="form-control" placeholder="Ej. 15456875"></div>
+    <div class="f-expiracion-visa"><label>Fecha de expiración de visa: </label><input type="text" class="form-control" placeholder="Ej. dd/mm/aaaa"></div>
+</div>
+{{!-- Contenedor Pasaporte --}}
+<div class="contenedor-pasaporte">
+    <h2 class="title-visa">Información de pasaporte</h2>
+        <div class="modulos-pasaporte">
+                    <div class="form-check">
+                        <h6 class="form-check-label"><input type="checkbox" class="form-check-input" value="">Tiene pasaporte</h6>
+                    </div>
+    </div>
+    <div class="no-pasaporte"><label>Número de pasaporte: </label><input type="text" class="form-control" placeholder="Ej. 45879325"></div>
+    <div class="f-expedicion-pasaporte"><label>Fecha de expedición de pasaporte: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+    <div class="f-expiracion-pasaporte"><label>Fecha de expiración de pasaporte: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+</div>
+{{!-- Contenedor Transporte --}}
+<div class="contenedor-transporte">
+    <h2 class="title-transporte">Información de transporte</h2>
+        <div class="modulos-transporte">
+                    <div class="form-check">
+                        <h6 class="form-check-label"><input type="checkbox" class="form-check-input" value="">Tiene fast</h6>
+                    </div>
+    </div>
+    <div class="no-fast"><label>Número de serie fast: </label><input type="text" class="form-control" placeholder="Ej. 45879325"></div>
+    <div class="f-inicio-fast"><label>Fecha de inicio fast: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+    <div class="f-expiracion-fast"><label>Fecha de expiración fast: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+</div>
+{{!-- Contenedor Medica --}}
+<div class="contenedor-medica">
+    <h2 class="title-medica">Información médica</h2>
+    <div class="no-seguro"><label>Número de seguro: </label><input type="text" class="form-control" placeholder="Ej. 45879325"></div>
+     <div class="modulos-medica">
+                    <div class="form-check">
+                        <h6 class="form-check-label"><input type="checkbox" class="form-check-input" value="">Tiene revisión</h6>
+                    </div>
+    </div>
+    <div class="asunto"><label>Descripción: </label><input type="text" class="form-control" placeholder="El empleado sufre de..."></div>
+    <div class="f-revision"><label>Fecha de revisión médica: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+    <div class="f-expiracion-revision"><label>Fecha de expiración de revisión médica: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+    <div class="modulos-antidoping">
+                    <div class="form-check">
+                        <h6 class="form-check-label"><input type="checkbox" class="form-check-input" value="">Tiene antidoping</h6>
+                    </div>
+    </div>
+    <div class="f-antidoping"><label>Fecha de antidoping: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+    <div class="f-expiracion-antidoping"><label>Fecha de expiracion Antidoping: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+</div>

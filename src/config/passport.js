@@ -29,7 +29,7 @@ passport.use(new LocalStrategy({
             }
         }
     } else {
-        const user = await UserClient.findOne({ user: email });
+        const user = await UserClient.findOne({ userMaster: userName });
         if (!user) {
             return done(null, false, { message: 'No se encontro el usuario' });
         } else {
