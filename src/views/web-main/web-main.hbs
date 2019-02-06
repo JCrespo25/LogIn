@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/web-main/css/web-main.css">
+
+<div class="grid-total-sign">
+     <form class="grid-total-sign-in" action="/main/sign_in" method="POST">
+        <div class="image-logo"></div>
+        <div class="image-account"></div>
+        <h3>Iniciar Sesión</h3>
+        <div class="user-box"><input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Usuario" name="userName"></div>
+        <div class="password-box"><input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contraseña" name="password"></div>
+        <div class="button-enter"><button type="submit" class="btn btn-warning">Entrar</button></div>
+    </form> 
+    <form class="grid-total-sign-up" action="/main/request" method="POST">
+        <h1>Solicita tu demo GRATIS!</h1>
+         <div class="empresa"><h3>Empresa</h3></div>
+        <div class="namecompany-box-sup"><label>Nombre comercial:</label><input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej: Microsoft" name="empresaName" value="{{empresaName}}"></div>
+        <div class="tradename-box-sup"><label>Razón Social:</label><input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej: Microsoft México S.A. de C.V." name="empresaTradeName" value="{{empresaTradeName}}"></div>
+        <div class="representante"><h3>Representante</h3></div>
+        <div class="name-box-sup"><label>Nombre(s):</label><input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej: Jesús Alberto" name="representanteName" value="{{representanteName}}"></div>
+        <div class="lstname-box-sup"><label>Apellido Paterno:</label><input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej: Espinoza" name="representanteApPaterno" value="{{representanteApPaterno}}"></div>
+        <div class="lstscndname-box-sup"><label>Apellido Materno:</label><input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej: Juarez" name="representanteApMaterno" value="{{representanteApMaterno}}"></div>
+        <div class="contacto"><h3>Contacto</h3></div>
+        <div class="phone-box-sup"><label>Número Fijo:</label><input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej: 664 1234567" name="contactoNumberFijo" value="{{contactoNumberFijo}}"></div>
+        <div class="cellphone-box-sup"><label>Número Célular:</label><input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej: 044 664 1234567" name="contactoCelular" value="{{contactoCelular}}"></div>
+        <div class="mail-box-sup"><label>Correo:</label><input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ej: microsoft@gmail.com" name="contactoCorreo" value="{{contactoCorreo}}"></div>
+        <div class="button-register"><button type="submit" class="btn btn-warning">Enviar solicitud</button></div>
+    </form>   
+</div>
