@@ -45,10 +45,15 @@ app.use((req, res, next) => {
 });
 
 //Routes
-/*RUTAS EXTERNAS*/
+/*RUTAS MAIN*/
 app.use(require('./routes/web-main/main')); //PRINCIPAL (LogIn, Request)
 app.use(require('./routes/web-main/request')); //SEND REQUEST
 app.use(require('./routes/web-main/sign_in')); //LOGIN
+
+// RUTAS EXTERNAS
+app.use(require('./routes/external/clientes/dashboard')); //CLIENTES
+app.use(require('./routes/external/clientes/catalogo/conductores')); //CONDUCTORES
+app.use(require('./routes/external/clientes/catalogo/unidades')); //UNIDADES
 
 /*RUTAS INTERNAS*/
 app.use(require('./routes/internal/withing')); //DENTRO

@@ -1,8 +1,14 @@
 <link rel="stylesheet" href="/internal/Empleados/css/altaEmpleados.css">
 
-{{!-- Contenedor Personal --}}
+{{!-- Contenedor Total --}}
+<div class="contenedor-total">
+    {{!-- Separador uno --}}
+<div class="separador-uno"></div>
+  {{!-- Separador dos --}}
+<div class="separador-dos"></div>
+    {{!-- Contenedor Personal --}}
 <div class="contenedor-personal">
-        <h2 class="title-personal">Información Personal</h2>
+        <h2 class="title-personal">Información Personal:</h2>
         <div class="nom-empleado"><label>Nombre: *</label><input type="text" class="form-control" placeholder=""></div>
         <div class="f-nacimiento"><label>Fecha de nacimiento: *</label><input type="text" class="form-control" placeholder="Ej. 21/09/2019"></div>
         <div class="domicilio"><label>Domicilio: *</label><input type="text" class="form-control" placeholder="Ej. Blvd Diaz Ordaz"></div>
@@ -23,7 +29,7 @@
 </div>
 {{!-- Contenedor Licencia --}}
 <div class="contenedor-licencia">
-    <h2 class="title-licencia">Información de licencia</h2>
+    <h2 class="title-licencia">Información de licencia:</h2>
       <div class="form-group-licencia">
                         <label>¿Tienes licencia?:</label>
                         <select class="form-control" id="sel1">
@@ -46,7 +52,7 @@
 </div>
 {{!-- Contenedor Pasaporte --}}
 <div class="contenedor-pasaporte">
-    <h2 class="title-visa">Información de pasaporte</h2>
+    <h2 class="title-visa">Información pasaporte:</h2>
         <div class="modulos-pasaporte">
                     <div class="form-check">
                         <h6 class="form-check-label"><input type="checkbox" class="form-check-input" value="">Tiene pasaporte</h6>
@@ -58,7 +64,7 @@
 </div>
 {{!-- Contenedor Transporte --}}
 <div class="contenedor-transporte">
-    <h2 class="title-transporte">Información de transporte</h2>
+    <h2 class="title-transporte">Información de transporte:</h2>
         <div class="modulos-transporte">
                     <div class="form-check">
                         <h6 class="form-check-label"><input type="checkbox" class="form-check-input" value="">Tiene fast</h6>
@@ -70,7 +76,7 @@
 </div>
 {{!-- Contenedor Medica --}}
 <div class="contenedor-medica">
-    <h2 class="title-medica">Información médica</h2>
+    <h2 class="title-medica">Información médica:</h2>
     <div class="no-seguro"><label>Número de seguro: </label><input type="text" class="form-control" placeholder="Ej. 45879325"></div>
      <div class="modulos-medica">
                     <div class="form-check">
@@ -79,7 +85,7 @@
     </div>
     <div class="asunto"><label>Descripción: </label><input type="text" class="form-control" placeholder="El empleado sufre de..."></div>
     <div class="f-revision"><label>Fecha de revisión médica: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
-    <div class="f-expiracion-revision"><label>Fecha de expiración de revisión médica: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+    <div class="f-expiracion-revision"><label>Fecha expiración de revisión médica: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
     <div class="modulos-antidoping">
                     <div class="form-check">
                         <h6 class="form-check-label"><input type="checkbox" class="form-check-input" value="">Tiene antidoping</h6>
@@ -87,4 +93,5 @@
     </div>
     <div class="f-antidoping"><label>Fecha de antidoping: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
     <div class="f-expiracion-antidoping"><label>Fecha de expiracion Antidoping: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+</div>
 </div>
