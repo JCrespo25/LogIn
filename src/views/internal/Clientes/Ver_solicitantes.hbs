@@ -117,6 +117,37 @@
                         $('#dateRequest').val(_fechasolicitud);
                         $('#IDe').val(_IDe);
                         $('#IDa').val(_IDa);
+
+                        //INPUTS MEX
+                        document.getElementById("mex-FolioF").disabled = true;
+                        document.getElementById("mex-FolioCP").disabled = true;
+                        document.getElementById("mex-Empresa").disabled = true;
+                        document.getElementById("mex-Colonia").disabled = true;
+                        document.getElementById("mex-Calle").disabled = true;
+                        document.getElementById("mex-NoExterior").disabled = true;
+                        document.getElementById("mex-NoInterior").disabled = true;
+                        document.getElementById("mex-EntreCalles").disabled = true;
+                        document.getElementById("mex-DireccionFiscal").disabled = true;
+                        document.getElementById("mex-RazonSocial").disabled = true;
+                        document.getElementById("mex-EstadoMexicano").disabled = true;
+                        document.getElementById("mex-ciudadMexicana").disabled = true;
+                        document.getElementById("mex-RFC").disabled = true;
+                        document.getElementById("mex-Telefono").disabled = true;
+                        //INPUTS EUA
+                        document.getElementById("eua-FolioF").disabled = true;
+                        document.getElementById("eua-Empresa").disabled = true;
+                        document.getElementById("eua-Colonia").disabled = true;
+                        document.getElementById("eua-Calle").disabled = true;
+                        document.getElementById("eua-NoExterior").disabled = true;
+                        document.getElementById("eua-NoInterior").disabled = true;
+                        document.getElementById("eua-EntreCalles").disabled = true;
+                        document.getElementById("eua-CP").disabled = true;
+                        document.getElementById("eua-TaxID").disabled = true;
+                        document.getElementById("eua-telefono").disabled = true;
+                        //BUTTONS FOOTER
+                        document.getElementById("mail").disabled = true;
+                        document.getElementById("backOne").disabled = true;
+                        document.getElementById("nextTwo").disabled = true;
                     });
 
                     $(document).on("click", "#restore", function () {
@@ -251,6 +282,71 @@
                     }
                     
                     reloadInformation();
+
+                    $(document).on("click", "#next", function () {
+                        document.getElementById("mex-FolioF").disabled = false;
+                        document.getElementById("mex-FolioCP").disabled = false;
+                        document.getElementById("mex-Empresa").disabled = false;
+                        document.getElementById("mex-Colonia").disabled = false;
+                        document.getElementById("mex-Calle").disabled = false;
+                        document.getElementById("mex-NoExterior").disabled = false;
+                        document.getElementById("mex-NoInterior").disabled = false;
+                        document.getElementById("mex-EntreCalles").disabled = false;
+                        document.getElementById("mex-DireccionFiscal").disabled = false;
+                        document.getElementById("mex-RazonSocial").disabled = false;
+                        document.getElementById("mex-EstadoMexicano").disabled = false;
+                        document.getElementById("mex-ciudadMexicana").disabled = false;
+                        document.getElementById("mex-RFC").disabled = false;
+                        document.getElementById("mex-Telefono").disabled = false;
+
+                        document.getElementById("eua-FolioF").disabled = false;
+                        document.getElementById("eua-Empresa").disabled = false;
+                        document.getElementById("eua-Colonia").disabled = false;
+                        document.getElementById("eua-Calle").disabled = false;
+                        document.getElementById("eua-NoExterior").disabled = false;
+                        document.getElementById("eua-NoInterior").disabled = false;
+                        document.getElementById("eua-EntreCalles").disabled = false;
+                        document.getElementById("eua-CP").disabled = false;
+                        document.getElementById("eua-TaxID").disabled = false;
+                        document.getElementById("eua-telefono").disabled = false;
+
+                        document.getElementById("mail").disabled = false;
+                        document.getElementById("backOne").disabled = false;
+                        document.getElementById("nextTwo").disabled = false;
+                    });
+
+                    function block(){
+                        //INPUTS MEX
+                        document.getElementById("mex-FolioF").disabled = true;
+                        document.getElementById("mex-FolioCP").disabled = true;
+                        document.getElementById("mex-Empresa").disabled = true;
+                        document.getElementById("mex-Colonia").disabled = true;
+                        document.getElementById("mex-Calle").disabled = true;
+                        document.getElementById("mex-NoExterior").disabled = true;
+                        document.getElementById("mex-NoInterior").disabled = true;
+                        document.getElementById("mex-EntreCalles").disabled = true;
+                        document.getElementById("mex-DireccionFiscal").disabled = true;
+                        document.getElementById("mex-RazonSocial").disabled = true;
+                        document.getElementById("mex-EstadoMexicano").disabled = true;
+                        document.getElementById("mex-ciudadMexicana").disabled = true;
+                        document.getElementById("mex-RFC").disabled = true;
+                        document.getElementById("mex-Telefono").disabled = true;
+                        //INPUTS EUA
+                        document.getElementById("eua-FolioF").disabled = true;
+                        document.getElementById("eua-Empresa").disabled = true;
+                        document.getElementById("eua-Colonia").disabled = true;
+                        document.getElementById("eua-Calle").disabled = true;
+                        document.getElementById("eua-NoExterior").disabled = true;
+                        document.getElementById("eua-NoInterior").disabled = true;
+                        document.getElementById("eua-EntreCalles").disabled = true;
+                        document.getElementById("eua-CP").disabled = true;
+                        document.getElementById("eua-TaxID").disabled = true;
+                        document.getElementById("eua-telefono").disabled = true;
+                        //BUTTONS FOOTER
+                        document.getElementById("mail").disabled = true;
+                        document.getElementById("backOne").disabled = true;
+                        document.getElementById("nextTwo").disabled = true;
+                    }
                 </script>
         </table>
     </div>
@@ -340,40 +436,39 @@
                     {{!-- DATOS MEXICANOS --}}
                     <div class="mexican-flag"></div>
                     <label class="datos-mex">Datos:</label>
-                    <div class="folio-fac"><input type="text" class="form-control" placeholder="Folio(F)"></div> 
-                    <div class="folio-cp"><input type="text" class="form-control" placeholder="Folio(CP)"></div>
-                    <div class="nom-empresa"><input type="text" class="form-control" placeholder="Empresa"></div>
-                    <div class="colonia"><input type="text" class="form-control" placeholder="Colonia"></div>
-                    <div class="calle"><input type="text" class="form-control" placeholder="Calle"></div>
-                    <div class="no-exterior"><input type="text" class="form-control" placeholder="No. Exterior"></div>
-                    <div class="no-interior"><input type="text" class="form-control" placeholder="No. Interior"></div>
-                    <div class="entre-calles"><input type="text" class="form-control" placeholder="Entre calles"></div>
-                    <div class="dir-fiscal"><input type="text" class="form-control" placeholder="Dirección Fiscal"></div>
-                    <div class="rs"><input type="text" class="form-control" placeholder="Razón Social"></div>
-                    <div class="estado"><input type="text" class="form-control" placeholder="Estado Mexicano"></div>
-                    <div class="ciudad"><input type="text" class="form-control" placeholder="Ciudad Mexicana"></div>
-                    <div class="rfc"><input type="text" class="form-control" placeholder="RFC"></div>
-                    <div class="tel"><input type="text" class="form-control" placeholder="Teléfono"></div>
+                    <div class="folio-fac"><input id="mex-FolioF" type="text" class="form-control" placeholder="Folio(F)"></div> 
+                    <div class="folio-cp"><input id="mex-FolioCP" type="text" class="form-control" placeholder="Folio(CP)"></div>
+                    <div class="nom-empresa"><input id="mex-Empresa" type="text" class="form-control" placeholder="Empresa"></div>
+                    <div class="colonia"><input id="mex-Colonia" type="text" class="form-control" placeholder="Colonia"></div>
+                    <div class="calle"><input id="mex-Calle" type="text" class="form-control" placeholder="Calle"></div>
+                    <div class="no-exterior"><input id="mex-NoExterior" type="text" class="form-control" placeholder="No. Exterior"></div>
+                    <div class="no-interior"><input id="mex-NoInterior" type="text" class="form-control" placeholder="No. Interior"></div>
+                    <div class="entre-calles"><input id="mex-EntreCalles" type="text" class="form-control" placeholder="Entre calles"></div>
+                    <div class="dir-fiscal"><input id="mex-DireccionFiscal" type="text" class="form-control" placeholder="Dirección Fiscal"></div>
+                    <div class="rs"><input id="mex-RazonSocial" type="text" class="form-control" placeholder="Razón Social"></div>
+                    <div class="estado"><input id="mex-EstadoMexicano" type="text" class="form-control" placeholder="Estado Mexicano"></div>
+                    <div class="ciudad"><input id="mex-ciudadMexicana" type="text" class="form-control" placeholder="Ciudad Mexicana"></div>
+                    <div class="rfc"><input id="mex-RFC" type="text" class="form-control" placeholder="RFC"></div>
+                    <div class="tel"><input id="mex-Telefono" type="text" class="form-control" placeholder="Teléfono"></div>
                     {{!-- DATOS AMERICANOS --}}
                     <div class="usa-flag"></div>
                     <label class="datos-us">Datos:</label>
-                    <div class="folio-cpus"><input type="text" class="form-control" placeholder="Folio(CP)"></div>
-                    <div class="nom-empresaus"><input type="text" class="form-control" placeholder="Empresa"></div>
-                    <div class="coloniaus"><input type="text" class="form-control" placeholder="Colonia"></div>
-                    <div class="calleus"><input type="text" class="form-control" placeholder="Calle"></div>
-                    <div class="no-exteriorus"><input type="text" class="form-control" placeholder="No. Exterior"></div>
-                    <div class="no-interiorus"><input type="text" class="form-control" placeholder="No. Interior"></div>
-                    <div class="entre-callesus"><input type="text" class="form-control" placeholder="Entre calles"></div>
-                    <div class="cp"><input type="text" class="form-control" placeholder="Código Postal"></div>
-                    <div class="cp-us"><input type="text" class="form-control" placeholder="Codigo Postal"></div>
-                    <div class="tax-id"><input type="text" class="form-control" placeholder="Tax ID"></div>
-                    <div class="tel-us"><input type="text" class="form-control" placeholder="Teléfono"></div>
+                    <div class="folio-cpus"><input id="eua-FolioF" type="text" class="form-control" placeholder="Folio(CP)"></div>
+                    <div class="nom-empresaus"><input id="eua-Empresa"  type="text" class="form-control" placeholder="Empresa"></div>
+                    <div class="coloniaus"><input id="eua-Colonia" type="text" class="form-control" placeholder="Colonia"></div>
+                    <div class="calleus"><input id="eua-Calle" type="text" class="form-control" placeholder="Calle"></div>
+                    <div class="no-exteriorus"><input id="eua-NoExterior" type="text" class="form-control" placeholder="No. Exterior"></div>
+                    <div class="no-interiorus"><input id="eua-NoInterior" type="text" class="form-control" placeholder="No. Interior"></div>
+                    <div class="entre-callesus"><input id="eua-EntreCalles" type="text" class="form-control" placeholder="Entre calles"></div>
+                    <div class="cp-us"><input id="eua-CP" type="text" class="form-control" placeholder="Codigo Postal"></div>
+                    <div class="tax-id"><input id="eua-TaxID" type="text" class="form-control" placeholder="Tax ID"></div>
+                    <div class="tel-us"><input id="eua-telefono" type="text" class="form-control" placeholder="Teléfono"></div>
                 </div>
                 <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-arrow-circle-left"></i></button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg3"><i class="fas fa-arrow-circle-right"></i></button>
+                    <button id="mail" type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
+                    <button id="backOne" type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="block()"><i class="fas fa-arrow-circle-left"></i></button>
+                    <button id="nextTwo" type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg3"><i class="fas fa-arrow-circle-right"></i></button>
                 </div>
             </div>
         </div>
