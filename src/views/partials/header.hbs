@@ -1,10 +1,10 @@
 {{!-- {{#if user}}
 
 {{/if}} --}}
-
 {{#if user}}
-    <!-- ////////////HEADER DE NAVEGACION ////////////////////-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <!-- ////////////HEADER DE NAVEGACION CLIENTE ////////////////////-->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/SYS/index">
             <img src="/header/logo2.png">
         </a>
@@ -14,10 +14,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/SYS/index">Inicio<span class="sr-only"></span></a>
-                </li>
+                    <a class="nav-link" href="/SYS/index">Dashboard<span class="sr-only"></span></a>
+                </li> 
                 {{!-- Reportes --}}
-                <li class="nav-item">
+                  <li class="nav-item">
                     <div class="dropdown">
                         <a class="nav-link">Reportes</a>
                         <div class="dropdown-content">
@@ -27,7 +27,7 @@
                             <a href="#">Choferes</a>
                         </div>
                     </div>
-                </li>
+                </li>  
                 {{!-- Finanzas --}}
                 <li class="nav-item">
                     <div class="dropdown">
@@ -38,24 +38,24 @@
                             <a href="#">Cobranza</a>
                         </div>
                     </div>
-                </li>
+                </li> 
                 {{!-- Logistica --}}
-                <li class="nav-item">
+                 <li class="nav-item">
                     <div class="dropdown">
-                        <a class="nav-link">Logística</a>
+                        <a class="nav-link">Despacho</a>
                         <div class="dropdown-content">
                             <a href="#">Viajes</a>
                             <a href="#">Crear Viaje</a>
                         </div>
                     </div>
-                </li>
+                </li> 
                 {{!-- Catalogo --}}
-                    <li class="nav-item">
+                     <li class="nav-item">
                     <div class="dropdown">
                         <a class="nav-link">Catálogo</a>
                         <div class="dropdown-content">
-                            <a href="#">Empleados</a>
-                            <a href="#">Unidad</a>
+                            <a href="/catalogo/conductores">Conductores</a>
+                            <a href="/catalogo/unidades">Unidades</a>
                             <a href="#">Cajas</a>
                             <a href="#">Mercancías</a>
                             <a href="#">Países</a>
@@ -67,9 +67,11 @@
                             <a href="#">Unidad de medida</a>
                         </div>
                     </div>
-                </li>
+                </li> 
                 {{!-- Inventario --}}
-                <li class="nav-item"><a class="nav-link">Inventario</a></li>
+                <li class="nav-item"><a class="nav-link">Almacen</a></li> 
+                {{!-- Mantenimiento --}}
+                <li class="nav-item"><a class="nav-link">Mantenimiento</a></li>
                 {{!-- Mantenimiento --}}
                 <li class="nav-item"><a class="nav-link">Mantenimiento</a></li>
                 {{!-- Alertas --}}
@@ -85,26 +87,17 @@
                         </div>
                     </div>
                 </li>
-                  {{!-- Departamentos --}}
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <a class="nav-link">Departamentos</a>
-                        <div class="dropdown-content">
-                            <a href="#">Alta Departamentos</a>
-                            <a href="#">Ver Departamentos</a>
-                        </div>
-                    </div>
-                </li>
                 {{!-- Empleados --}}
-                <li class="nav-item">
+             <li class="nav-item">
                     <div class="dropdown">
-                        <a class="nav-link">Empleados</a>
+                        <a class="nav-link">Personal</a>
                         <div class="dropdown-content">
-                            <a href="/SYS/empleados/altaEmpleados">Alta Empleados</a>
-                            <a href="#">Ver empleados</a>
+                            <a href="/SYS/empleados/altaEmpleados">Alta de personal</a>
+                            <a href="#">Ver personal</a>
                         </div>
                     </div>
                 </li>
+                <li class="nav-item"><a class="nav-link">Borradores</a></li>
             </ul>
             <div class="dropdown">
                 <button class="dropbtn">...</button>
@@ -115,7 +108,7 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </nav> 
 {{else}}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">
