@@ -13,7 +13,6 @@
                     <th class="delete"></th> 
                 </tr>
             </thead>
-
             {{#each solicitantes}}
                     <tr  id="modal-information" data-target=".bd-example-modal-lg"> 
                         <th scope="row">{{_id}}</th>
@@ -36,7 +35,8 @@
                                 data-contactocorreo="{{contactoCorreo}}"
                                 data-fechasolicitud="{{FechaSolicitud}}"
                                 data-autoincrement="{{id_autoIncrement}}">
-                                <i class="fas fa-share-square"></i></button>
+                                <i class="fas fa-share-square"></i>
+                            </button>
                         </td>
                     </tr>
                 {{/each}}
@@ -87,27 +87,27 @@
                     var _euaTaxID;
                     var _euatelefono;
 
-                    var _moduleDemo_1;
-                    var _moduleDemo_2;
-                    var _moduleDemo_2;
-                    var _moduleDemo_4;
-                    var _moduleDemo_5;
-                    var _moduleOthers_1;
-                    var _moduleOthers_2;
-                    var _moduleOthers_3;
-                    var _moduleOthers_4;
-                    var _moduleOthers_5;
-                    var _moduleOthers_6;
-                    var _moduleOthers_7;
-                    var _moduleOthers_8;
-                    var _moduleOthers_9;
-                    var _moduleOthers_10;
-                    var _moduleOthers_11;
-                    var _moduleOthers_12;
-                    var _moduleOthers_13;
-                    var _moduleOthers_14;
-                    var _moduleOthers_15;
-                    var _moduleOthers_16;
+                    var checkBoxModule_Demo_1
+                    var checkBoxModule_Demo_2
+                    var checkBoxModule_Demo_3
+                    var checkBoxModule_Demo_4
+                    var checkBoxModule_Demo_5
+                    var checkModule_others_1
+                    var checkModule_others_2
+                    var checkModule_others_3
+                    var checkModule_others_4
+                    var checkModule_others_5
+                    var checkModule_others_6
+                    var checkModule_others_7
+                    var checkModule_others_8
+                    var checkModule_others_9
+                    var checkModule_others_10
+                    var checkModule_others_11
+                    var checkModule_others_12
+                    var checkModule_others_13
+                    var checkModule_others_14
+                    var checkModule_others_15
+                    var checkModule_others_16
 
                     /*console.log(
                         _empresaname + ' ' +
@@ -275,9 +275,9 @@
                         var b = setInterval("valuesModalTwo();",1);
                     }
 
-                    /*function reloadInformationModalThree(){
+                    function reloadInformationModalThree(){
                         var c = setInterval("valuesModalThree();",1);
-                    }*/
+                    }
 
                     function valuesGet(){
                         _empresaname = document.getElementById("empresaName").value;
@@ -516,64 +516,61 @@
 
                     function valuesModalThree(){
 
-                        _moduleDemo_1 = document.getElementById("module-demo-1").value;
-                        _moduleDemo_2 = document.getElementById("module-demo-2").value;
-                        _moduleDemo_2 = document.getElementById("module-demo-3").value;
-                        _moduleDemo_4 = document.getElementById("module-demo-4").value;
-                        _moduleDemo_5 = document.getElementById("module-demo-5").value;
+                    checkBoxModule_Demo_1 = document.getElementById("module-demo-1");
+                    checkBoxModule_Demo_2 = document.getElementById("module-demo-2");
+                    checkBoxModule_Demo_3 = document.getElementById("module-demo-3");
+                    checkBoxModule_Demo_4 = document.getElementById("module-demo-4");
+                    checkBoxModule_Demo_5 = document.getElementById("module-demo-5");
 
-                        _moduleOthers_1 = document.getElementById("module-demo-1").value;
-                        _moduleOthers_2 = document.getElementById("module-demo-2").value;
-                        _moduleOthers_3 = document.getElementById("module-demo-3").value;
-                        _moduleOthers_4 = document.getElementById("module-demo-4").value;
-                        _moduleOthers_5 = document.getElementById("module-demo-5").value;
-                        _moduleOthers_6 = document.getElementById("module-demo-6").value;
-                        _moduleOthers_7 = document.getElementById("module-demo-7").value;
-                        _moduleOthers_8 = document.getElementById("module-demo-8").value;
-                        _moduleOthers_9 = document.getElementById("module-demo-9").value;
-                        _moduleOthers_10 = document.getElementById("module-demo-10").value;
-                        _moduleOthers_11 = document.getElementById("module-demo-11").value;
-                        _moduleOthers_12 = document.getElementById("module-demo-12").value;
-                        _moduleOthers_13 = document.getElementById("module-demo-13").value;
-                        _moduleOthers_14 = document.getElementById("module-demo-14").value;
-                        _moduleOthers_15 = document.getElementById("module-demo-15").value;
-                        _moduleOthers_16 = document.getElementById("module-demo-16").value;
+                    checkModule_others_1 = document.getElementById("module-others-1");
+                    checkModule_others_2 = document.getElementById("module-others-2");
+                    checkModule_others_3 = document.getElementById("module-others-3");
+                    checkModule_others_4 = document.getElementById("module-others-4");
+                    checkModule_others_5 = document.getElementById("module-others-5");
+                    checkModule_others_6 = document.getElementById("module-others-6");
+                    checkModule_others_7 = document.getElementById("module-others-7");
+                    checkModule_others_8 = document.getElementById("module-others-8");
+                    checkModule_others_9 = document.getElementById("module-others-9");
+                    checkModule_others_10 = document.getElementById("module-others-10");
+                    checkModule_others_11 = document.getElementById("module-others-11");
+                    checkModule_others_12 = document.getElementById("module-others-12");
+                    checkModule_others_13 = document.getElementById("module-others-13");
+                    checkModule_others_14 = document.getElementById("module-others-14");
+                    checkModule_others_15 = document.getElementById("module-others-15");
+                    checkModule_others_16 = document.getElementById("module-others-16");
 
-                        console.log(_moduleDemo_1);
-
-                        /*if(_moduleDemo_1 == false ||
-                        _moduleDemo_2 == false ||
-                        _moduleDemo_3 == false ||
-                        _moduleDemo_4 == false ||
-                        _moduleDemo_5 == false ||
-                        _moduleOthers_1 == false ||
-                        _moduleOthers_2 == false ||
-                        _moduleOthers_3 == false ||
-                        _moduleOthers_4 == false ||
-                        _moduleOthers_5 == false ||
-                        _moduleOthers_6 == false ||
-                        _moduleOthers_7 == false ||
-                        _moduleOthers_8 == false ||
-                        _moduleOthers_9 == false ||
-                        _moduleOthers_10 == false ||
-                        _moduleOthers_11 == false ||
-                        _moduleOthers_12 == false ||
-                        _moduleOthers_13 == false ||
-                        _moduleOthers_14 == false ||
-                        _moduleOthers_15 == false ||
-                        _moduleOthers_16 == false){
-                        document.getElementById("mailModalThree").disabled = true;
-                        document.getElementById("backThree").disabled = false;
-                        document.getElementById("restablecerThree").disabled = false;
-                        document.getElementById("finished").disabled = true;
-                        }
-                        else{
+                    if (checkBoxModule_Demo_1.checked == true ||
+                    checkBoxModule_Demo_2.checked == true ||
+                    checkBoxModule_Demo_3.checked == true ||
+                    checkBoxModule_Demo_4.checked == true ||
+                    checkBoxModule_Demo_5.checked == true ||
+                    checkModule_others_1.checked == true ||
+                    checkModule_others_2.checked == true ||
+                    checkModule_others_3.checked == true ||
+                    checkModule_others_4.checked == true ||
+                    checkModule_others_5.checked == true ||
+                    checkModule_others_6.checked == true ||
+                    checkModule_others_7.checked == true ||
+                    checkModule_others_8.checked == true ||
+                    checkModule_others_9.checked == true ||
+                    checkModule_others_10.checked == true ||
+                    checkModule_others_11.checked == true ||
+                    checkModule_others_12.checked == true ||
+                    checkModule_others_13.checked == true ||
+                    checkModule_others_14.checked == true ||
+                    checkModule_others_15.checked == true ||
+                    checkModule_others_16.checked == true){
                         document.getElementById("mailModalThree").disabled = false;
                         document.getElementById("backThree").disabled = false;
                         document.getElementById("restablecerThree").disabled = false;
                         document.getElementById("finished").disabled = false;
-                        }*/
+                    }else{
+                        document.getElementById("mailModalThree").disabled = true;
+                        document.getElementById("backThree").disabled = false;
+                        document.getElementById("restablecerThree").disabled = false;
+                        document.getElementById("finished").disabled = true;
                     }
+                }
 
                     reloadInformation();
                     reloadInformationModalTwo();
@@ -649,7 +646,7 @@
 </div>
 
 <!-- ////////////MODAL PASO 2///////////// -->
-<div onkeyup="valuesModalTwo()" onkeypress="valuesModalTwo()" onkeyup="valuesModalTwo()" class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-content">
@@ -698,8 +695,8 @@
                 <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
                 <div class="modal-footer">
                     <button id="mail" type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
-                    <button id="backOne" type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="block()"><i class="fas fa-arrow-circle-left"></i></button>
-                    <button id="nextTwo" onclick="nextModalThree" type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg3"><i class="fas fa-arrow-circle-right"></i></button>
+                    <button id="backOne" type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="block()"><i class="fas fa-arrow-circle-left"></i></button>
+                    <button id="nextTwo" type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".bd-example-modal-lg3"><i class="fas fa-arrow-circle-right"></i></button>
                 </div>
             </div>
         </div>
@@ -707,7 +704,7 @@
 </div>
 
 <!-- ////////////MODAL PASO 3///////////// -->
-<div onkeyup="valuesModalThree()" onkeypress="valuesModalThree()" onkeyup="valuesModalThree()" class="modal fade bd-example-modal-lg3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-content">
@@ -723,42 +720,40 @@
                     <h5 class="title-demo">Demo:</h5>
                     <div class="privilegios">
                         <div class="form-check">
-                            <h6 id="module-demo-1" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 1</h6>
-                            <h6 id="module-demo-2" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 2</h6>
-                            <h6 id="module-demo-3" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 3</h6>
-                            <h6 id="module-demo-4" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 4</h6>
-                            <h6 id="module-demo-5" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 5</h6>
+                            <h6 class="form-check-label"><br><input id="module-demo-1" type="checkbox" class="form-check-input" value="">Option 1</h6>
+                            <h6 class="form-check-label"><br><input id="module-demo-2" type="checkbox" class="form-check-input" value="">Option 2</h6>
+                            <h6 class="form-check-label"><br><input id="module-demo-3" type="checkbox" class="form-check-input" value="">Option 3</h6>
+                            <h6 class="form-check-label"><br><input id="module-demo-4" type="checkbox" class="form-check-input" value="">Option 4</h6>
+                            <h6 class="form-check-label"><br><input id="module-demo-5" type="checkbox" class="form-check-input" value="">Option 5</h6>
                         </div>
                     </div>
-
                     <h5 class="title-otros">Otros:</h5>
                     <div class="privilegios2">
-                        <h6 id="module-others-1" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 1</h6>
-                        <h6 id="module-others-2" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 2</h6>
-                        <h6 id="module-others-3" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 3</h6>
-                        <h6 id="module-others-4" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 4</h6>
-                        <h6 id="module-others-5" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 5</h6>
-                        <h6 id="module-others-6" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 6</h6>
-                        <h6 id="module-others-7" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 7</h6>
-                        <h6 id="module-others-8" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 8</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-1" type="checkbox" class="form-check-input" value="">Option 1</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-2" type="checkbox" class="form-check-input" value="">Option 2</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-3" type="checkbox" class="form-check-input" value="">Option 3</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-4" type="checkbox" class="form-check-input" value="">Option 4</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-5" type="checkbox" class="form-check-input" value="">Option 5</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-6" type="checkbox" class="form-check-input" value="">Option 6</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-7" type="checkbox" class="form-check-input" value="">Option 7</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-8" type="checkbox" class="form-check-input" value="">Option 8</h6>
                     </div>
-
                     <div class="privilegios3">
-                        <h6 id="module-others-9" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 9</h6>
-                        <h6 id="module-others-10" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 10</h6>
-                        <h6 id="module-others-11" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 11</h6>
-                        <h6 id="module-others-12" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 12</h6>
-                        <h6 id="module-others-13" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 13</h6>
-                        <h6 id="module-others-14" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 14</h6>
-                        <h6 id="module-others-15" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 15</h6>
-                        <h6 id="module-others-16" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 16</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-9" type="checkbox" class="form-check-input" value="">Option 9</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-10" type="checkbox" class="form-check-input" value="">Option 10</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-11" type="checkbox" class="form-check-input" value="">Option 11</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-12" type="checkbox" class="form-check-input" value="">Option 12</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-13" type="checkbox" class="form-check-input" value="">Option 13</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-14" type="checkbox" class="form-check-input" value="">Option 14</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-15" type="checkbox" class="form-check-input" value="">Option 15</h6>
+                        <h6 class="form-check-label"><br><input id="module-others-16" type="checkbox" class="form-check-input" value="">Option 16</h6>
                     </div>
                 </div>
                 <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
                 <div class="modal-footer">
                     <button id="mailModalThree" type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
-                    <button id="backThree" type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg2"><i class="fas fa-arrow-circle-left"></i></button>
-                    <button id="restablecerThree" type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
+                    <button id="backThree" type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".bd-example-modal-lg2"><i class="fas fa-arrow-circle-left"></i></button>
+                    <button id="restablecerThree" onclick="pruebas()" type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
                     <button id="finished" type="button" class="btn btn-info" data-dismiss="modal">Finalizar<i class="far fa-save fa-md"></i></button>
                 </div>
             </div>
