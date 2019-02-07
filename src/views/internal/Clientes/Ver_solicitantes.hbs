@@ -32,7 +32,7 @@
                                 data-representanteappaterno="{{representanteApPaterno}}" 
                                 data-representanteapmaterno="{{representanteApMaterno}}" 
                                 data-contactonumberfijo="{{contactoNumberFijo}}"
-                                data-contactocelular="{{contactoCelular}}" 
+                                data-contactocelular="{{contactoCelular}}"
                                 data-contactocorreo="{{contactoCorreo}}"
                                 data-fechasolicitud="{{FechaSolicitud}}"
                                 data-autoincrement="{{id_autoIncrement}}">
@@ -60,6 +60,7 @@
                     var _cuestion;
                     var _cuestionrequest;
 
+                    //MEX
                     var _mexFolioF;
                     var _mexFolioCP;
                     var _mexEmpresa;
@@ -71,9 +72,42 @@
                     var _mexDireccionFiscal;
                     var _mexRazonSocial;
                     var _mexEstadoMexicano;
-                    var _ciudadMexicana;
+                    var _mexCiudadMexicana;
                     var _mexRFC;
                     var _mexTelefono;
+                    //EUA
+                    var _euaFolioF;
+                    var _euaEmpresa;
+                    var _euaColonia;
+                    var _euaCalle;
+                    var _euaNoExterior;
+                    var _euaNoInterior;
+                    var _euaEntreCalles;
+                    var _euaCP;
+                    var _euaTaxID;
+                    var _euatelefono;
+
+                    var _moduleDemo_1;
+                    var _moduleDemo_2;
+                    var _moduleDemo_2;
+                    var _moduleDemo_4;
+                    var _moduleDemo_5;
+                    var _moduleOthers_1;
+                    var _moduleOthers_2;
+                    var _moduleOthers_3;
+                    var _moduleOthers_4;
+                    var _moduleOthers_5;
+                    var _moduleOthers_6;
+                    var _moduleOthers_7;
+                    var _moduleOthers_8;
+                    var _moduleOthers_9;
+                    var _moduleOthers_10;
+                    var _moduleOthers_11;
+                    var _moduleOthers_12;
+                    var _moduleOthers_13;
+                    var _moduleOthers_14;
+                    var _moduleOthers_15;
+                    var _moduleOthers_16;
 
                     /*console.log(
                         _empresaname + ' ' +
@@ -234,8 +268,16 @@
                     }
 
                     function reloadInformation(){
-                        var t = setInterval("valuesGet();", 1);
+                        var a = setInterval("valuesGet();", 1);
                     }
+
+                    function reloadInformationModalTwo(){
+                        var b = setInterval("valuesModalTwo();",1);
+                    }
+
+                    /*function reloadInformationModalThree(){
+                        var c = setInterval("valuesModalThree();",1);
+                    }*/
 
                     function valuesGet(){
                         _empresaname = document.getElementById("empresaName").value;
@@ -280,8 +322,6 @@
                             document.getElementById("next").disabled = false;
                         }
                     }
-                    
-                    reloadInformation();
 
                     $(document).on("click", "#next", function () {
                         document.getElementById("mex-FolioF").disabled = false;
@@ -347,6 +387,197 @@
                         document.getElementById("backOne").disabled = true;
                         document.getElementById("nextTwo").disabled = true;
                     }
+
+                    function valuesModalTwo(){
+
+                        _mexFolioF = document.getElementById("mex-FolioCP").value;
+                        _mexFolioCP = document.getElementById("mex-FolioCP").value;
+                        _mexEmpresa = document.getElementById("mex-Empresa").value;
+                        _mexColonia = document.getElementById("mex-Colonia").value;
+                        _mexCalle = document.getElementById("mex-Calle").value;
+                        _mexNoExterior = document.getElementById("mex-NoExterior").value;
+                        _mexNoInterior = document.getElementById("mex-NoInterior").value;
+                        _mexEntreCalles = document.getElementById("mex-EntreCalles").value;
+                        _mexDireccionFiscal = document.getElementById("mex-DireccionFiscal").value;
+                        _mexRazonSocial = document.getElementById("mex-RazonSocial").value;
+                        _mexEstadoMexicano = document.getElementById("mex-EstadoMexicano").value;
+                        _mexCiudadMexicana = document.getElementById("mex-ciudadMexicana").value;
+                        _mexRFC = document.getElementById("mex-RFC").value;
+                        _mexTelefono = document.getElementById("mex-Telefono").value;
+
+                        _euaFolioF = document.getElementById("eua-FolioF").value;
+                        _euaEmpresa = document.getElementById("eua-Empresa").value;
+                        _euaColonia = document.getElementById("eua-Colonia").value;
+                        _euaCalle = document.getElementById("eua-Calle").value;
+                        _euaNoExterior = document.getElementById("eua-NoExterior").value;
+                        _euaNoInterior = document.getElementById("eua-NoInterior").value;
+                        _euaEntreCalles = document.getElementById("eua-EntreCalles").value;
+                        _euaCP = document.getElementById("eua-CP").value;
+                        _euaTaxID = document.getElementById("eua-TaxID").value;
+                        _euatelefono = document.getElementById("eua-telefono").value;
+
+                        if(_mexFolioF == "" ||
+                        _mexFolioCP == "" ||
+                        _mexEmpresa == "" ||
+                        _mexColonia == "" ||
+                        _mexCalle == "" ||
+                        _mexNoExterior == "" ||
+                        _mexNoInterior == "" ||
+                        _mexEntreCalles == "" ||
+                        _mexDireccionFiscal == "" ||
+                        _mexRazonSocial == "" ||
+                        _mexEstadoMexicano == "" ||
+                        _mexCiudadMexicana == "" ||
+                        _mexRFC == "" ||
+                        _mexTelefono == "" ||
+                        _euaFolioF == "" ||
+                        _euaEmpresa == "" ||
+                        _euaColonia == "" ||
+                        _euaCalle == "" ||
+                        _euaNoExterior == "" ||
+                        _euaNoInterior == "" ||
+                        _euaEntreCalles == "" ||
+                        _euaCP == "" ||
+                        _euaTaxID == "" ||
+                        _euatelefono == ""){
+                            document.getElementById("mail").disabled = true;
+                            document.getElementById("nextTwo").disabled = true;
+                            document.getElementById("backOne").disabled = false;
+                        }
+                        else{
+                            document.getElementById("mail").disabled = false;
+                            document.getElementById("nextTwo").disabled = false;
+                            document.getElementById("backOne").disabled = false;
+                        }
+                    }
+
+                    function valuesModalTwo(){
+
+                        _mexFolioF = document.getElementById("mex-FolioCP").value;
+                        _mexFolioCP = document.getElementById("mex-FolioCP").value;
+                        _mexEmpresa = document.getElementById("mex-Empresa").value;
+                        _mexColonia = document.getElementById("mex-Colonia").value;
+                        _mexCalle = document.getElementById("mex-Calle").value;
+                        _mexNoExterior = document.getElementById("mex-NoExterior").value;
+                        _mexNoInterior = document.getElementById("mex-NoInterior").value;
+                        _mexEntreCalles = document.getElementById("mex-EntreCalles").value;
+                        _mexDireccionFiscal = document.getElementById("mex-DireccionFiscal").value;
+                        _mexRazonSocial = document.getElementById("mex-RazonSocial").value;
+                        _mexEstadoMexicano = document.getElementById("mex-EstadoMexicano").value;
+                        _mexCiudadMexicana = document.getElementById("mex-ciudadMexicana").value;
+                        _mexRFC = document.getElementById("mex-RFC").value;
+                        _mexTelefono = document.getElementById("mex-Telefono").value;
+
+                        _euaFolioF = document.getElementById("eua-FolioF").value;
+                        _euaEmpresa = document.getElementById("eua-Empresa").value;
+                        _euaColonia = document.getElementById("eua-Colonia").value;
+                        _euaCalle = document.getElementById("eua-Calle").value;
+                        _euaNoExterior = document.getElementById("eua-NoExterior").value;
+                        _euaNoInterior = document.getElementById("eua-NoInterior").value;
+                        _euaEntreCalles = document.getElementById("eua-EntreCalles").value;
+                        _euaCP = document.getElementById("eua-CP").value;
+                        _euaTaxID = document.getElementById("eua-TaxID").value;
+                        _euatelefono = document.getElementById("eua-telefono").value;
+
+                        if(_mexFolioF == "" ||
+                        _mexFolioCP == "" ||
+                        _mexEmpresa == "" ||
+                        _mexColonia == "" ||
+                        _mexCalle == "" ||
+                        _mexNoExterior == "" ||
+                        _mexNoInterior == "" ||
+                        _mexEntreCalles == "" ||
+                        _mexDireccionFiscal == "" ||
+                        _mexRazonSocial == "" ||
+                        _mexEstadoMexicano == "" ||
+                        _mexCiudadMexicana == "" ||
+                        _mexRFC == "" ||
+                        _mexTelefono == "" ||
+                        _euaFolioF == "" ||
+                        _euaEmpresa == "" ||
+                        _euaColonia == "" ||
+                        _euaCalle == "" ||
+                        _euaNoExterior == "" ||
+                        _euaNoInterior == "" ||
+                        _euaEntreCalles == "" ||
+                        _euaCP == "" ||
+                        _euaTaxID == "" ||
+                        _euatelefono == ""){
+                            document.getElementById("mail").disabled = true;
+                            document.getElementById("nextTwo").disabled = true;
+                            document.getElementById("backOne").disabled = false;
+                        }
+                        else{
+                            document.getElementById("mail").disabled = false;
+                            document.getElementById("nextTwo").disabled = false;
+                            document.getElementById("backOne").disabled = false;
+                        }
+                    }
+
+                    function valuesModalThree(){
+
+                        _moduleDemo_1 = document.getElementById("module-demo-1").value;
+                        _moduleDemo_2 = document.getElementById("module-demo-2").value;
+                        _moduleDemo_2 = document.getElementById("module-demo-3").value;
+                        _moduleDemo_4 = document.getElementById("module-demo-4").value;
+                        _moduleDemo_5 = document.getElementById("module-demo-5").value;
+
+                        _moduleOthers_1 = document.getElementById("module-demo-1").value;
+                        _moduleOthers_2 = document.getElementById("module-demo-2").value;
+                        _moduleOthers_3 = document.getElementById("module-demo-3").value;
+                        _moduleOthers_4 = document.getElementById("module-demo-4").value;
+                        _moduleOthers_5 = document.getElementById("module-demo-5").value;
+                        _moduleOthers_6 = document.getElementById("module-demo-6").value;
+                        _moduleOthers_7 = document.getElementById("module-demo-7").value;
+                        _moduleOthers_8 = document.getElementById("module-demo-8").value;
+                        _moduleOthers_9 = document.getElementById("module-demo-9").value;
+                        _moduleOthers_10 = document.getElementById("module-demo-10").value;
+                        _moduleOthers_11 = document.getElementById("module-demo-11").value;
+                        _moduleOthers_12 = document.getElementById("module-demo-12").value;
+                        _moduleOthers_13 = document.getElementById("module-demo-13").value;
+                        _moduleOthers_14 = document.getElementById("module-demo-14").value;
+                        _moduleOthers_15 = document.getElementById("module-demo-15").value;
+                        _moduleOthers_16 = document.getElementById("module-demo-16").value;
+
+                        console.log(_moduleDemo_1);
+
+                        /*if(_moduleDemo_1 == false ||
+                        _moduleDemo_2 == false ||
+                        _moduleDemo_3 == false ||
+                        _moduleDemo_4 == false ||
+                        _moduleDemo_5 == false ||
+                        _moduleOthers_1 == false ||
+                        _moduleOthers_2 == false ||
+                        _moduleOthers_3 == false ||
+                        _moduleOthers_4 == false ||
+                        _moduleOthers_5 == false ||
+                        _moduleOthers_6 == false ||
+                        _moduleOthers_7 == false ||
+                        _moduleOthers_8 == false ||
+                        _moduleOthers_9 == false ||
+                        _moduleOthers_10 == false ||
+                        _moduleOthers_11 == false ||
+                        _moduleOthers_12 == false ||
+                        _moduleOthers_13 == false ||
+                        _moduleOthers_14 == false ||
+                        _moduleOthers_15 == false ||
+                        _moduleOthers_16 == false){
+                        document.getElementById("mailModalThree").disabled = true;
+                        document.getElementById("backThree").disabled = false;
+                        document.getElementById("restablecerThree").disabled = false;
+                        document.getElementById("finished").disabled = true;
+                        }
+                        else{
+                        document.getElementById("mailModalThree").disabled = false;
+                        document.getElementById("backThree").disabled = false;
+                        document.getElementById("restablecerThree").disabled = false;
+                        document.getElementById("finished").disabled = false;
+                        }*/
+                    }
+
+                    reloadInformation();
+                    reloadInformationModalTwo();
+                    reloadInformationModalThree();
                 </script>
         </table>
     </div>
@@ -418,7 +649,7 @@
 </div>
 
 <!-- ////////////MODAL PASO 2///////////// -->
-<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div onkeyup="valuesModalTwo()" onkeypress="valuesModalTwo()" onkeyup="valuesModalTwo()" class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-content">
@@ -468,7 +699,7 @@
                 <div class="modal-footer">
                     <button id="mail" type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
                     <button id="backOne" type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="block()"><i class="fas fa-arrow-circle-left"></i></button>
-                    <button id="nextTwo" type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg3"><i class="fas fa-arrow-circle-right"></i></button>
+                    <button id="nextTwo" onclick="nextModalThree" type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg3"><i class="fas fa-arrow-circle-right"></i></button>
                 </div>
             </div>
         </div>
@@ -476,7 +707,7 @@
 </div>
 
 <!-- ////////////MODAL PASO 3///////////// -->
-<div class="modal fade bd-example-modal-lg3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div onkeyup="valuesModalThree()" onkeypress="valuesModalThree()" onkeyup="valuesModalThree()" class="modal fade bd-example-modal-lg3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-content">
@@ -490,46 +721,45 @@
                 <!-- ////////////////////////BODY MODAL////////////////////////// -->
                 <div class="modal-body3">
                     <h5 class="title-demo">Demo:</h5>
-                    <h5 class="title-otros">Otros:</h5>
                     <div class="privilegios">
                         <div class="form-check">
-                            <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 1</h6>
-                            <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 2</h6>
-                            <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 3</h6>
-                            <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 4</h6>
-                            <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 5</h6>
+                            <h6 id="module-demo-1" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 1</h6>
+                            <h6 id="module-demo-2" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 2</h6>
+                            <h6 id="module-demo-3" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 3</h6>
+                            <h6 id="module-demo-4" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 4</h6>
+                            <h6 id="module-demo-5" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 5</h6>
                         </div>
                     </div>
 
+                    <h5 class="title-otros">Otros:</h5>
                     <div class="privilegios2">
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 1</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 2</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 3</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 4</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 5</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 6</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 7</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 8</h6>
+                        <h6 id="module-others-1" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 1</h6>
+                        <h6 id="module-others-2" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 2</h6>
+                        <h6 id="module-others-3" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 3</h6>
+                        <h6 id="module-others-4" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 4</h6>
+                        <h6 id="module-others-5" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 5</h6>
+                        <h6 id="module-others-6" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 6</h6>
+                        <h6 id="module-others-7" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 7</h6>
+                        <h6 id="module-others-8" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 8</h6>
                     </div>
 
                     <div class="privilegios3">
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 9</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 10</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 11</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 12</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 13</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 14</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 15</h6>
-                        <h6 class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 16</h6>
+                        <h6 id="module-others-9" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 9</h6>
+                        <h6 id="module-others-10" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 10</h6>
+                        <h6 id="module-others-11" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 11</h6>
+                        <h6 id="module-others-12" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 12</h6>
+                        <h6 id="module-others-13" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 13</h6>
+                        <h6 id="module-others-14" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 14</h6>
+                        <h6 id="module-others-15" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 15</h6>
+                        <h6 id="module-others-16" class="form-check-label"><br><input type="checkbox" class="form-check-input" value="">Option 16</h6>
                     </div>
                 </div>
                 <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg2"><i class="fas fa-arrow-circle-left"></i></button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
-                    <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg4"><i class="fas fa-arrow-circle-right"></i></i></button> -->
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Finalizar<i class="far fa-save fa-md"></i></button>
+                    <button id="mailModalThree" type="button" class="btn btn-danger" data-dismiss="modal" data-toggle="tooltip" data-placement="left" title="Mail"><i class="fas fa-envelope"></i></button>
+                    <button id="backThree" type="button" class="btn btn-primary" data-dismiss="modal" onclick="input" data-toggle="modal" data-target=".bd-example-modal-lg2"><i class="fas fa-arrow-circle-left"></i></button>
+                    <button id="restablecerThree" type="button" class="btn btn-success" data-dismiss="modal">Restablecer<i class="fas fa-window-restore"></i></button>
+                    <button id="finished" type="button" class="btn btn-info" data-dismiss="modal">Finalizar<i class="far fa-save fa-md"></i></button>
                 </div>
             </div>
         </div>
