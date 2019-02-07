@@ -23,6 +23,7 @@
     grid-template: repeat(40, 1fr)/repeat(60, 1fr);
     /* background-color: rgba(95, 95, 95, 0.603);
     box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.75); */
+    z-index: 1;
 }
 
 .contenedor-conductor {
@@ -166,9 +167,9 @@ label {
 .separador-principal {
     background-color: rgb(131, 131, 131);
     grid-row: 22/22;
-    grid-column: 1/61;
+    grid-column: 9/32;
     height: 50%;
-    z-index: 1;
+    z-index: 10000000;
 }
 
 .separador-uno {
