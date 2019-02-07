@@ -1,0 +1,297 @@
+.grid-total {
+    height: 168vh;
+    background-image: url("../../APLICACION_GENERAL/images/wallpaper.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.grid-total-header {
+    grid-row: 1 / 6;
+    grid-column: 1 / -1;
+}
+
+.grid-total-footer {
+    grid-row: 40/ -1;
+    grid-column: 1 / -1;
+}
+
+h2 {
+    font-size: 1.5vw;
+    color: white;
+}
+
+.form-control {
+    height: 45%;
+    font-size: .8vw;
+}
+
+label {
+    color: white;
+    font-size: 1vw;
+}
+
+.separador-uno {
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    background-color: rgba(143, 143, 143, 0.644);
+    grid-row: 15/16;
+    grid-column: 1/41;
+    height: 15%;
+}
+
+.separador-dos {
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    background-color: rgba(143, 143, 143, 0.644);
+    grid-row: 25/26;
+    grid-column: 1/41;
+    height: 15%;
+}
+
+
+/* Informacion Personal */
+
+.contenedor-total {
+    display: grid;
+    grid-template: repeat(40, 1fr)/repeat(40, 1fr);
+    grid-row: 6/35;
+    grid-column: 2/39;
+    background-color: rgba(95, 95, 95, 0.603);
+    box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.75);
+}
+
+.contenedor-personal {
+    display: grid;
+    grid-template: repeat(4, 1fr)/repeat(10, 1fr);
+    grid-row: 2/15;
+    grid-column: 2/20;
+    background-color: transparent;
+}
+
+.title-personal {
+    grid-row: 1/2;
+    grid-column: 1/5;
+}
+
+.nom-empleado {
+    grid-row: 2/3;
+    grid-column: 1/5;
+}
+
+.f-nacimiento {
+    grid-row: 3/4;
+    grid-column: 1/5;
+}
+
+.domicilio {
+    grid-row: 4/5;
+    grid-column: 1/5;
+}
+
+.telefono {
+    grid-row: 2/3;
+    grid-column: 6/10;
+}
+
+.celular {
+    grid-row: 3/4;
+    grid-column: 6/10;
+}
+
+.form-group-puesto {
+    grid-row: 4/5;
+    grid-column: 6/10;
+}
+
+
+/* Informacion Licencia  */
+
+.contenedor-licencia {
+    display: grid;
+    grid-template: repeat(3, 1fr)/repeat(10, 1fr);
+    grid-row: 3/9;
+    grid-column: 21/38;
+    background-color: transparent;
+}
+
+.title-licencia {
+    grid-row: 1/2;
+    grid-column: 1/7;
+}
+
+.form-group-licencia {
+    grid-row: 2/3;
+    grid-column: 1/5;
+}
+
+.f-expiracion-licencia {
+    grid-row: 2/3;
+    grid-column: 6/10;
+}
+
+
+/* Informacion Visa */
+
+.contenedor-visa {
+    display: grid;
+    grid-template: repeat(3, 1fr)/repeat(10, 1fr);
+    grid-row: 9/15;
+    grid-column: 21/38;
+    background-color: transparent;
+}
+
+.title-visa {
+    grid-row: 1/2;
+    grid-column: 1/5;
+}
+
+.no-visa {
+    grid-row: 3/4;
+    grid-column: 1/5;
+}
+
+.f-expiracion-visa {
+    grid-row: 3/4;
+    grid-column: 6/10;
+}
+
+.modulos {
+    grid-row: 2/3;
+    grid-column: 1/3;
+}
+
+.form-check-label {
+    color: white;
+    font-size: 1vw;
+}
+
+
+/* Informacion Pasaporte */
+
+.contenedor-pasaporte {
+    display: grid;
+    grid-template: repeat(4, 1fr)/repeat(10, 1fr);
+    grid-row: 16/26;
+    grid-column: 2/20;
+    background-color: transparent;
+}
+
+.title-pasaporte {
+    grid-row: 1/2;
+    grid-column: 1/8;
+}
+
+.modulos-pasaporte {
+    grid-row: 2/3;
+    grid-column: 1/4;
+}
+
+.no-pasaporte {
+    grid-row: 3/4;
+    grid-column: 1/5;
+}
+
+.f-expedicion-pasaporte {
+    grid-row: 2/3;
+    grid-column: 6/10;
+}
+
+.f-expiracion-pasaporte {
+    grid-row: 3/4;
+    grid-column: 6/10;
+}
+
+
+/* Informacion transporte  */
+
+.contenedor-transporte {
+    display: grid;
+    grid-template: repeat(4, 1fr)/repeat(10, 1fr);
+    grid-row: 16/26;
+    grid-column: 21/38;
+    background-color: transparent;
+}
+
+.title-transporte {
+    grid-row: 1/2;
+    grid-column: 1/7;
+}
+
+.modulos-transporte {
+    grid-row: 2/3;
+    grid-column: 1/4;
+}
+
+.no-fast {
+    grid-row: 3/4;
+    grid-column: 1/5;
+}
+
+.f-inicio-fast {
+    grid-row: 2/3;
+    grid-column: 6/10;
+}
+
+.f-expiracion-fast {
+    grid-row: 3/4;
+    grid-column: 6/10;
+}
+
+
+/* Informacion Medica */
+
+.contenedor-medica {
+    display: grid;
+    grid-template: repeat(5, 1fr)/repeat(25, 1fr);
+    grid-row: 27/41;
+    grid-column: 2/38;
+    background-color: transparent;
+}
+
+.title-medica {
+    grid-row: 1/2;
+    grid-column: 1/6;
+}
+
+.no-seguro {
+    grid-row: 3/4;
+    grid-column: 1/6;
+}
+
+.modulos-medica {
+    grid-row: 2/3;
+    grid-column: 1/5;
+}
+
+.asunto {
+    grid-row: 4/5;
+    grid-column: 1/12;
+}
+
+.f-revision {
+    grid-row: 3/4;
+    grid-column: 20/25;
+}
+
+.f-expiracion-revision {
+    grid-row: 4/5;
+    grid-column: 20/25;
+}
+
+.modulos-antidoping {
+    grid-row: 2/3;
+    grid-column: 14/17;
+}
+
+.f-antidoping {
+    grid-row: 3/4;
+    grid-column: 14/19;
+}
+
+.f-expiracion-antidoping {
+    grid-row: 4/5;
+    grid-column: 14/19;
+}
