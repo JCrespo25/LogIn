@@ -1,3 +1,71 @@
 <link rel="stylesheet" href="/external/clientes/Catalogo/unidades/unidades.css">
+{{!-- Separador principal --}}
+<div class="separador-principal"></div>
 {{!-- contenedor-formulario --}}
-<div class="contenedor-formulario"></div>
+<div class="contenedor-formulario">
+
+{{!-- contenedor-conductor --}}
+    <div class="contenedor-unidad">
+     <div class="nomunidad-box"><label>Nombre económico: </label><input type="text" class="form-control" placeholder=""></div>
+      <div class="fcompra-box"><label>Fecha de compra: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+     <select class="form-control form-control-lg">
+            <option>Tipo de unidad</option>
+            <option>Ravon</option>
+            <option>Torton</option>
+            <option>Thriter</option>
+            <option>Ban</option>
+            <option>Torva</option>
+            <option>Bardina</option>
+    </select>
+     <div class="otro-box"><input type="text" class="form-control" placeholder=""></div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">Otro:</label>
+    </div>
+    <div class="ano-box"><label>Año: </label><input type="text" class="form-control" placeholder=""></div>
+    <div class="marca-box"><label>Marca: </label><input type="text" class="form-control" placeholder=""></div>
+    <div class="modelo-box"><label>Modelo: </label><input type="text" class="form-control" placeholder=""></div>
+    <div class="permiso-box"><label>Permiso SCT: </label><input type="text" class="form-control" placeholder=""></div>
+    <div class="poliza-box"><label>Poliza: </label><input type="text" class="form-control" placeholder=""></div>
+    <div class="fcontrato-box"><label>Fecha de contrato: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+    <div class="fvencimiento-box"><label>Fecha de vencimiento: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+    <div class="fsmog-box"><label>Fecha SMOG: </label><input type="text" class="form-control" placeholder="dd/mm/aaaa"></div>
+    <select class="form-control2 form-control-lg">
+            <option>Tipo de combustible</option>
+            <option>Ravon</option>
+            <option>Torton</option>
+            <option>Thriter</option>
+            <option>Ban</option>
+            <option>Torva</option>
+            <option>Bardina</option>
+    </select>
+    <div class="photo"></div>
+    <div class="subir-archivo"><button type="button" class="btn btn-primary"><i class="fas fa-cloud-upload-alt"></i>Subir Archivo</button></div>
+    </div>
+         {{!-- contenedor-identificacion --}}
+    <div class="contenedor-identificacion">
+      <div class="contenedor-id">
+          <div class="nserie-box"><label>Número de serie: </label><input type="text" class="form-control" placeholder=""></div>
+          <div class="pamericanas-box"><label>Placas americanas: </label><input type="text" class="form-control" placeholder=""></div>
+          <div class="pmexicanas-box"><label>Placas mexicanas: </label><input type="text" class="form-control" placeholder=""></div>
+          <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">Hazmat</label>
+    </div>
+        </div>
+       
+        <div class="contenedor-id2">
+        <h2 class="smx">Seguro Mexicano</h2> 
+        <div class="fcontratomx-box"><label>Fecha de contrato: </label><input type="text" class="form-control" placeholder=""></div>
+        <div class="fexpiracionmx-box"><label>Fecha de expiración: </label><input type="text" class="form-control" placeholder=""></div>
+        <h2 class="sus">Seguro Americano</h2> 
+        <div class="fcontratous-box"><label>Fecha de contrato: </label><input type="text" class="form-control" placeholder=""></div>
+        <div class="fexpiracionus-box"><label>Fecha de expiración: </label><input type="text" class="form-control" placeholder=""></div>
+
+        </div>
+ 
+      
+    </div>
+
+</div>
+<div class="save"><button type="button" class="btn btn-primary"><i class="far fa-save"></i>Subir Archivo</button></div>
