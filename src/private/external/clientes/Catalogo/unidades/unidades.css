@@ -87,7 +87,7 @@ label {
     height: 70%;
 }
 
-.form-check {
+.contenedor-unidad .form-check {
     position: relative;
     top: 5px;
     align-content: center;
@@ -97,7 +97,7 @@ label {
     grid-row: 11/12;
 }
 
-.form-check input {
+.contenedor-unidad .form-check input {
     top: 2px;
 }
 
@@ -176,7 +176,7 @@ label {
 .contenedor-identificacion {
     display: grid;
     grid-template: repeat(20, 1fr)/repeat(39, 1fr);
-    grid-row: 22/61;
+    grid-row: 22/38;
     grid-column: 1/61;
     background-color: rgba(95, 95, 95, 0.603);
     box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.75);
@@ -185,25 +185,95 @@ label {
 .contenedor-id {
     display: grid;
     grid-template: repeat(20, 1fr)/repeat(20, 1fr);
-    grid-row: 1/21;
-    grid-column: 1/20;
-    background-color: red;
+    grid-row: 4/21;
+    grid-column: 2/20;
+    background-color: transparent;
 }
 
 .nserie-box {
     grid-row: 2/3;
-    grid-column: 4/15;
+    grid-column: 4/16;
 }
 
 .pamericanas-box {
-    grid-row: 6/8;
-    grid-column: 4/15;
+    grid-row: 3/4;
+    grid-column: 4/16;
+}
+
+.pmexicanas-box {
+    grid-row: 4/5;
+    grid-column: 4/16;
+}
+
+.contenedor-identificacion .form-check {
+    position: relative;
+    top: 5px;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    grid-column: 4/8;
+    grid-row: 7/8;
 }
 
 .contenedor-id2 {
     display: grid;
     grid-template: repeat(20, 1fr)/repeat(20, 1fr);
-    grid-row: 1/21;
-    grid-column: 20/40;
-    background-color: blue;
+    grid-row: 2/21;
+    grid-column: 20/37;
+    background-color: transparent;
+}
+
+.smx {
+    padding-top: 10px;
+    grid-row: 4/5;
+    grid-column: 1/9;
+    color: white;
+    font-size: 1vw;
+}
+
+.fcontratomx-box {
+    grid-row: 5/6;
+    grid-column: 1/10;
+    color: white;
+    font-size: 1vw;
+}
+
+.fexpiracionmx-box {
+    grid-row: 6/7;
+    grid-column: 1/10;
+    color: white;
+    font-size: 1vw;
+}
+
+.fcontratous-box {
+    grid-row: 5/6;
+    grid-column: 11/20;
+    color: white;
+    font-size: 1vw;
+}
+
+.fexpiracionus-box {
+    grid-row: 6/7;
+    grid-column: 11/20;
+    color: white;
+    font-size: 1vw;
+}
+
+.sus {
+    padding-top: 10px;
+    grid-row: 4/5;
+    grid-column: 11/18;
+    color: white;
+    font-size: 1vw;
+}
+
+.save {
+    grid-row: 37/39;
+    grid-column: 17/24;
+}
+
+.save .btn-primary {
+    height: 100%;
+    width: 100%;
+    font-size: 1.1vw;
 }
