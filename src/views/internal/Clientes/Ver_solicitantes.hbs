@@ -41,546 +41,11 @@
                             </td>
                         </tr>
                     {{/each}}
-
-                    <script>
-                        /*VARIABLES GLOBALES*/
-                        var _empresaname;
-                        var _empresatradename;
-                        var _representantename;
-                        var _representanteappaterno;
-                        var _representanteapmaterno;
-                        var _contactonumberfijo;
-                        var _contactocelular;
-                        var _contactocorreo;
-                        var _fechasolicitud;
-                        var _IDe;
-                        var _IDa;
-                        var _user;
-                        var _password;
-                        var _confirmpassword;
-                        var _cuestion;
-                        var _cuestionrequest;
-
-                        //MEX
-                        var _mexFolioF;
-                        var _mexFolioCP;
-                        var _mexEmpresa;
-                        var _mexColonia;
-                        var _mexCalle;
-                        var _mexNoExterior;
-                        var _mexNoInterior;
-                        var _mexEntreCalles;
-                        var _mexDireccionFiscal;
-                        var _mexRazonSocial;
-                        var _mexEstadoMexicano;
-                        var _mexCiudadMexicana;
-                        var _mexRFC;
-                        var _mexTelefono;
-                        //EUA
-                        var _euaFolioF;
-                        var _euaEmpresa;
-                        var _euaColonia;
-                        var _euaCalle;
-                        var _euaNoExterior;
-                        var _euaNoInterior;
-                        var _euaEntreCalles;
-                        var _euaCP;
-                        var _euaTaxID;
-                        var _euatelefono;
-
-                        var checkBoxModule_Demo_1;
-                        var checkBoxModule_Demo_2;
-                        var checkBoxModule_Demo_3;
-                        var checkBoxModule_Demo_4;
-                        var checkBoxModule_Demo_5;
-                        var checkModule_others_1;
-                        var checkModule_others_2;
-                        var checkModule_others_3;
-                        var checkModule_others_4;
-                        var checkModule_others_5;
-                        var checkModule_others_6;
-                        var checkModule_others_7;
-                        var checkModule_others_8;
-                        var checkModule_others_9;
-                        var checkModule_others_10;
-                        var checkModule_others_11;
-                        var checkModule_others_12;
-                        var checkModule_others_13;
-                        var checkModule_others_14;
-                        var checkModule_others_15;
-                        var checkModule_others_16;
-
-                        /*console.log(
-                            _empresaname + ' ' +
-                            _empresatradename + ' ' +
-                            _representantename + ' ' +
-                            _representanteappaterno + ' ' +
-                            _representanteapmaterno + ' ' +
-                            _contactonumberfijo + ' ' +
-                            _contactocelular + ' ' +
-                            _contactocorreo + ' ' +
-                            _fechasolicitud + ' ' +
-                            _IDe + ' ' +
-                            _IDa + ' ' +
-                            _user + ' ' +
-                            _password + ' ' +
-                            _confirmpassword + ' ' +
-                            _cuestion  + ' ' +
-                            _cuestionrequest)*/
-
-                        $(document).on("click", "#id_Modal", function () {
-                            _empresaname = $(this).data('empresaname');
-                            _empresatradename = $(this).data('empresatradename');
-                            _representantename = $(this).data('representantename');
-                            _representanteappaterno = $(this).data('representanteappaterno');
-                            _representanteapmaterno = $(this).data('representanteapmaterno');
-                            _contactonumberfijo = $(this).data('contactonumberfijo');
-                            _contactocelular = $(this).data('contactocelular');
-                            _contactocorreo = $(this).data('contactocorreo');
-                            _fechasolicitud = $(this).data('fechasolicitud');
-                            _IDe = $(this).data('id');
-                            _IDa = $(this).data('autoincrement');
-                            
-                            $('#empresaName').val(_empresaname);
-                            $('#empresaTradeName').val(_empresatradename);
-                            $('#representanteName').val(_representantename);
-                            $('#representanteApPaterno').val(_representanteappaterno);
-                            $('#representanteApMaterno').val(_representanteapmaterno);
-                            $('#contactoNumberFijo').val(_contactonumberfijo);
-                            $('#contactoCelular').val(_contactocelular);
-                            $('#contactoCorreo').val(_contactocorreo);
-                            $('#dateRequest').val(_fechasolicitud);
-                            $('#IDe').val(_IDe);
-                            $('#IDa').val(_IDa);
-
-                            //INPUTS MEX
-                            document.getElementById("mex-FolioF").disabled = true;
-                            document.getElementById("mex-FolioCP").disabled = true;
-                            document.getElementById("mex-Empresa").disabled = true;
-                            document.getElementById("mex-Colonia").disabled = true;
-                            document.getElementById("mex-Calle").disabled = true;
-                            document.getElementById("mex-NoExterior").disabled = true;
-                            document.getElementById("mex-NoInterior").disabled = true;
-                            document.getElementById("mex-EntreCalles").disabled = true;
-                            document.getElementById("mex-DireccionFiscal").disabled = true;
-                            document.getElementById("mex-RazonSocial").disabled = true;
-                            document.getElementById("mex-EstadoMexicano").disabled = true;
-                            document.getElementById("mex-ciudadMexicana").disabled = true;
-                            document.getElementById("mex-RFC").disabled = true;
-                            document.getElementById("mex-Telefono").disabled = true;
-                            //INPUTS EUA
-                            document.getElementById("eua-FolioF").disabled = true;
-                            document.getElementById("eua-Empresa").disabled = true;
-                            document.getElementById("eua-Colonia").disabled = true;
-                            document.getElementById("eua-Calle").disabled = true;
-                            document.getElementById("eua-NoExterior").disabled = true;
-                            document.getElementById("eua-NoInterior").disabled = true;
-                            document.getElementById("eua-EntreCalles").disabled = true;
-                            document.getElementById("eua-CP").disabled = true;
-                            document.getElementById("eua-TaxID").disabled = true;
-                            document.getElementById("eua-telefono").disabled = true;
-                            //BUTTONS FOOTER
-                            document.getElementById("mail").disabled = true;
-                            document.getElementById("backOne").disabled = true;
-                            document.getElementById("nextTwo").disabled = true;
-                        });
-
-                        $(document).on("click", "#restore", function () {
-                            $('#empresaName').val(_empresaname);
-                            $('#empresaTradeName').val(_empresatradename);
-                            $('#representanteName').val(_representantename);
-                            $('#representanteApPaterno').val(_representanteappaterno);
-                            $('#representanteApMaterno').val(_representanteapmaterno);
-                            $('#contactoNumberFijo').val(_contactonumberfijo);
-                            $('#contactoCelular').val(_contactocelular);
-                            $('#contactoCorreo').val(_contactocorreo);
-                        });
-
-                        $(document).on("click", "#validate-all", function () {
-
-                            _empresaname = document.getElementById("empresaName").value;
-                            _empresatradename = document.getElementById("empresaTradeName").value;
-                            _representantename = document.getElementById("representanteName").value;
-                            _representanteappaterno = document.getElementById("representanteApPaterno").value;
-                            _representanteapmaterno = document.getElementById("representanteApMaterno").value;
-                            _contactonumberfijo = document.getElementById("contactoNumberFijo").value;
-                            _contactocelular = document.getElementById("contactoCelular").value;
-                            _contactocorreo = document.getElementById("contactoCorreo").value;
-                            _fechasolicitud = document.getElementById("dateRequest").value;
-                            _IDe = document.getElementById("IDe").value;
-                            _IDa = document.getElementById("IDa").value;
-                            _user = document.getElementById("user").value;
-                            _password = document.getElementById("password").value;
-                            _confirmpassword = document.getElementById("confirmPassword").value;
-                            _cuestion = document.getElementById("option-question").value;
-                            _cuestionrequest = document.getElementById("answerOfquestion").value;
-
-                            if(_empresaname == '' ||
-                            _empresatradename == '' ||
-                            _representantename == '' ||
-                            _representanteappaterno == '' ||
-                            _representanteapmaterno == '' ||
-                            _contactonumberfijo == '' ||
-                            _contactocelular == '' ||
-                            _contactocorreo == '' ||
-                            _fechasolicitud == '' ||
-                            _IDe == '' ||
-                            _IDa == '' ||
-                            _user == '' ||
-                            _password == '' ||
-                            _confirmpassword == '' ||
-                            _cuestion == '' ||
-                            _cuestionrequest == ''){
-                                alert("Aun existen campos vacios");
-                                document.getElementById("next").disabled = true;
-                            }
-                            else if(_cuestion == 'Selecciona una pregunta de seguridad'){
-                                alert("La pregunta de seguridad esta por defecto");
-                                document.getElementById("next").disabled = true;
-                            }
-                            else{
-                                document.getElementById("next").disabled = false;
-                            }
-                        });
-
-                        function disabledFalse(){
-                            document.getElementById("empresaName").disabled = false;
-                            document.getElementById("empresaTradeName").disabled = false;
-                            document.getElementById("representanteName").disabled = false;
-                            document.getElementById("representanteApPaterno").disabled = false;
-                            document.getElementById("representanteApMaterno").disabled = false;
-                            document.getElementById("contactoNumberFijo").disabled = false;
-                            document.getElementById("contactoCelular").disabled = false;
-                            document.getElementById("contactoCorreo").disabled = false;
-                            document.getElementById("restore").disabled = false;
-                        }
-
-                        function disabledTrue(){
-                            document.getElementById("empresaName").disabled = true;
-                            document.getElementById("empresaTradeName").disabled = true;
-                            document.getElementById("representanteName").disabled = true;
-                            document.getElementById("representanteApPaterno").disabled = true;
-                            document.getElementById("representanteApMaterno").disabled = true;
-                            document.getElementById("contactoNumberFijo").disabled = true;
-                            document.getElementById("contactoCelular").disabled = true;
-                            document.getElementById("contactoCorreo").disabled = true;
-                            document.getElementById("restore").disabled = true;
-                            document.getElementById("next").disabled = true;
-                        }
-
-                        function reloadInformation(){
-                            var a = setInterval("valuesGet();", 1);
-                        }
-
-                        function reloadInformationModalTwo(){
-                            var b = setInterval("valuesModalTwo();",1);
-                        }
-
-                        function reloadInformationModalThree(){
-                            var c = setInterval("valuesModalThree();",1);
-                        }
-
-                        function valuesGet(){
-                            _empresaname = document.getElementById("empresaName").value;
-                            _empresatradename = document.getElementById("empresaTradeName").value;
-                            _representantename = document.getElementById("representanteName").value;
-                            _representanteappaterno = document.getElementById("representanteApPaterno").value;
-                            _representanteapmaterno = document.getElementById("representanteApMaterno").value;
-                            _contactonumberfijo = document.getElementById("contactoNumberFijo").value;
-                            _contactocelular = document.getElementById("contactoCelular").value;
-                            _contactocorreo = document.getElementById("contactoCorreo").value;
-                            _fechasolicitud = document.getElementById("dateRequest").value;
-                            _IDe = document.getElementById("IDe").value;
-                            _IDa = document.getElementById("IDa").value;
-                            _user = document.getElementById("user").value;
-                            _password = document.getElementById("password").value;
-                            _confirmpassword = document.getElementById("confirmPassword").value;
-                            _cuestion = document.getElementById("option-question").value;
-                            _cuestionrequest = document.getElementById("answerOfquestion").value;
-
-                            if(_empresaname == '' ||
-                            _empresatradename == '' ||
-                            _representantename == '' ||
-                            _representanteappaterno == '' ||
-                            _representanteapmaterno == '' ||
-                            _contactonumberfijo == '' ||
-                            _contactocelular == '' ||
-                            _contactocorreo == '' ||
-                            _fechasolicitud == '' ||
-                            _IDe == '' ||
-                            _IDa == '' ||
-                            _user == '' ||
-                            _password == '' ||
-                            _confirmpassword == '' ||
-                            _cuestion == '' ||
-                            _cuestionrequest == ''){
-                                document.getElementById("next").disabled = true;
-                            }
-                            else if(_cuestion == 'Selecciona una pregunta de seguridad'){
-                                document.getElementById("next").disabled = true;
-                            }
-                            else{
-                                document.getElementById("next").disabled = false;
-                            }
-                        }
-
-                        $(document).on("click", "#next", function () {
-                            document.getElementById("mex-FolioF").disabled = false;
-                            document.getElementById("mex-FolioCP").disabled = false;
-                            document.getElementById("mex-Empresa").disabled = false;
-                            document.getElementById("mex-Colonia").disabled = false;
-                            document.getElementById("mex-Calle").disabled = false;
-                            document.getElementById("mex-NoExterior").disabled = false;
-                            document.getElementById("mex-NoInterior").disabled = false;
-                            document.getElementById("mex-EntreCalles").disabled = false;
-                            document.getElementById("mex-DireccionFiscal").disabled = false;
-                            document.getElementById("mex-RazonSocial").disabled = false;
-                            document.getElementById("mex-EstadoMexicano").disabled = false;
-                            document.getElementById("mex-ciudadMexicana").disabled = false;
-                            document.getElementById("mex-RFC").disabled = false;
-                            document.getElementById("mex-Telefono").disabled = false;
-
-                            document.getElementById("eua-FolioF").disabled = false;
-                            document.getElementById("eua-Empresa").disabled = false;
-                            document.getElementById("eua-Colonia").disabled = false;
-                            document.getElementById("eua-Calle").disabled = false;
-                            document.getElementById("eua-NoExterior").disabled = false;
-                            document.getElementById("eua-NoInterior").disabled = false;
-                            document.getElementById("eua-EntreCalles").disabled = false;
-                            document.getElementById("eua-CP").disabled = false;
-                            document.getElementById("eua-TaxID").disabled = false;
-                            document.getElementById("eua-telefono").disabled = false;
-
-                            document.getElementById("mail").disabled = false;
-                            document.getElementById("backOne").disabled = false;
-                            document.getElementById("nextTwo").disabled = false;
-                        });
-
-                        function block(){
-                            //INPUTS MEX
-                            document.getElementById("mex-FolioF").disabled = true;
-                            document.getElementById("mex-FolioCP").disabled = true;
-                            document.getElementById("mex-Empresa").disabled = true;
-                            document.getElementById("mex-Colonia").disabled = true;
-                            document.getElementById("mex-Calle").disabled = true;
-                            document.getElementById("mex-NoExterior").disabled = true;
-                            document.getElementById("mex-NoInterior").disabled = true;
-                            document.getElementById("mex-EntreCalles").disabled = true;
-                            document.getElementById("mex-DireccionFiscal").disabled = true;
-                            document.getElementById("mex-RazonSocial").disabled = true;
-                            document.getElementById("mex-EstadoMexicano").disabled = true;
-                            document.getElementById("mex-ciudadMexicana").disabled = true;
-                            document.getElementById("mex-RFC").disabled = true;
-                            document.getElementById("mex-Telefono").disabled = true;
-                            //INPUTS EUA
-                            document.getElementById("eua-FolioF").disabled = true;
-                            document.getElementById("eua-Empresa").disabled = true;
-                            document.getElementById("eua-Colonia").disabled = true;
-                            document.getElementById("eua-Calle").disabled = true;
-                            document.getElementById("eua-NoExterior").disabled = true;
-                            document.getElementById("eua-NoInterior").disabled = true;
-                            document.getElementById("eua-EntreCalles").disabled = true;
-                            document.getElementById("eua-CP").disabled = true;
-                            document.getElementById("eua-TaxID").disabled = true;
-                            document.getElementById("eua-telefono").disabled = true;
-                            //BUTTONS FOOTER
-                            document.getElementById("mail").disabled = true;
-                            document.getElementById("backOne").disabled = true;
-                            document.getElementById("nextTwo").disabled = true;
-                        }
-
-                        function valuesModalTwo(){
-
-                            _mexFolioF = document.getElementById("mex-FolioCP").value;
-                            _mexFolioCP = document.getElementById("mex-FolioCP").value;
-                            _mexEmpresa = document.getElementById("mex-Empresa").value;
-                            _mexColonia = document.getElementById("mex-Colonia").value;
-                            _mexCalle = document.getElementById("mex-Calle").value;
-                            _mexNoExterior = document.getElementById("mex-NoExterior").value;
-                            _mexNoInterior = document.getElementById("mex-NoInterior").value;
-                            _mexEntreCalles = document.getElementById("mex-EntreCalles").value;
-                            _mexDireccionFiscal = document.getElementById("mex-DireccionFiscal").value;
-                            _mexRazonSocial = document.getElementById("mex-RazonSocial").value;
-                            _mexEstadoMexicano = document.getElementById("mex-EstadoMexicano").value;
-                            _mexCiudadMexicana = document.getElementById("mex-ciudadMexicana").value;
-                            _mexRFC = document.getElementById("mex-RFC").value;
-                            _mexTelefono = document.getElementById("mex-Telefono").value;
-
-                            _euaFolioF = document.getElementById("eua-FolioF").value;
-                            _euaEmpresa = document.getElementById("eua-Empresa").value;
-                            _euaColonia = document.getElementById("eua-Colonia").value;
-                            _euaCalle = document.getElementById("eua-Calle").value;
-                            _euaNoExterior = document.getElementById("eua-NoExterior").value;
-                            _euaNoInterior = document.getElementById("eua-NoInterior").value;
-                            _euaEntreCalles = document.getElementById("eua-EntreCalles").value;
-                            _euaCP = document.getElementById("eua-CP").value;
-                            _euaTaxID = document.getElementById("eua-TaxID").value;
-                            _euatelefono = document.getElementById("eua-telefono").value;
-
-                            if(_mexFolioF == "" ||
-                            _mexFolioCP == "" ||
-                            _mexEmpresa == "" ||
-                            _mexColonia == "" ||
-                            _mexCalle == "" ||
-                            _mexNoExterior == "" ||
-                            _mexNoInterior == "" ||
-                            _mexEntreCalles == "" ||
-                            _mexDireccionFiscal == "" ||
-                            _mexRazonSocial == "" ||
-                            _mexEstadoMexicano == "" ||
-                            _mexCiudadMexicana == "" ||
-                            _mexRFC == "" ||
-                            _mexTelefono == "" ||
-                            _euaFolioF == "" ||
-                            _euaEmpresa == "" ||
-                            _euaColonia == "" ||
-                            _euaCalle == "" ||
-                            _euaNoExterior == "" ||
-                            _euaNoInterior == "" ||
-                            _euaEntreCalles == "" ||
-                            _euaCP == "" ||
-                            _euaTaxID == "" ||
-                            _euatelefono == ""){
-                                document.getElementById("mail").disabled = true;
-                                document.getElementById("nextTwo").disabled = true;
-                                document.getElementById("backOne").disabled = false;
-                            }
-                            else{
-                                document.getElementById("mail").disabled = false;
-                                document.getElementById("nextTwo").disabled = false;
-                                document.getElementById("backOne").disabled = false;
-                            }
-                        }
-
-                        function valuesModalTwo(){
-
-                            _mexFolioF = document.getElementById("mex-FolioCP").value;
-                            _mexFolioCP = document.getElementById("mex-FolioCP").value;
-                            _mexEmpresa = document.getElementById("mex-Empresa").value;
-                            _mexColonia = document.getElementById("mex-Colonia").value;
-                            _mexCalle = document.getElementById("mex-Calle").value;
-                            _mexNoExterior = document.getElementById("mex-NoExterior").value;
-                            _mexNoInterior = document.getElementById("mex-NoInterior").value;
-                            _mexEntreCalles = document.getElementById("mex-EntreCalles").value;
-                            _mexDireccionFiscal = document.getElementById("mex-DireccionFiscal").value;
-                            _mexRazonSocial = document.getElementById("mex-RazonSocial").value;
-                            _mexEstadoMexicano = document.getElementById("mex-EstadoMexicano").value;
-                            _mexCiudadMexicana = document.getElementById("mex-ciudadMexicana").value;
-                            _mexRFC = document.getElementById("mex-RFC").value;
-                            _mexTelefono = document.getElementById("mex-Telefono").value;
-
-                            _euaFolioF = document.getElementById("eua-FolioF").value;
-                            _euaEmpresa = document.getElementById("eua-Empresa").value;
-                            _euaColonia = document.getElementById("eua-Colonia").value;
-                            _euaCalle = document.getElementById("eua-Calle").value;
-                            _euaNoExterior = document.getElementById("eua-NoExterior").value;
-                            _euaNoInterior = document.getElementById("eua-NoInterior").value;
-                            _euaEntreCalles = document.getElementById("eua-EntreCalles").value;
-                            _euaCP = document.getElementById("eua-CP").value;
-                            _euaTaxID = document.getElementById("eua-TaxID").value;
-                            _euatelefono = document.getElementById("eua-telefono").value;
-
-                            if(_mexFolioF == "" ||
-                            _mexFolioCP == "" ||
-                            _mexEmpresa == "" ||
-                            _mexColonia == "" ||
-                            _mexCalle == "" ||
-                            _mexNoExterior == "" ||
-                            _mexNoInterior == "" ||
-                            _mexEntreCalles == "" ||
-                            _mexDireccionFiscal == "" ||
-                            _mexRazonSocial == "" ||
-                            _mexEstadoMexicano == "" ||
-                            _mexCiudadMexicana == "" ||
-                            _mexRFC == "" ||
-                            _mexTelefono == "" ||
-                            _euaFolioF == "" ||
-                            _euaEmpresa == "" ||
-                            _euaColonia == "" ||
-                            _euaCalle == "" ||
-                            _euaNoExterior == "" ||
-                            _euaNoInterior == "" ||
-                            _euaEntreCalles == "" ||
-                            _euaCP == "" ||
-                            _euaTaxID == "" ||
-                            _euatelefono == ""){
-                                document.getElementById("mail").disabled = true;
-                                document.getElementById("nextTwo").disabled = true;
-                                document.getElementById("backOne").disabled = false;
-                            }
-                            else{
-                                document.getElementById("mail").disabled = false;
-                                document.getElementById("nextTwo").disabled = false;
-                                document.getElementById("backOne").disabled = false;
-                            }
-                        }
-
-                        function valuesModalThree(){
-
-                        checkBoxModule_Demo_1 = document.getElementById("module-demo-1");
-                        checkBoxModule_Demo_2 = document.getElementById("module-demo-2");
-                        checkBoxModule_Demo_3 = document.getElementById("module-demo-3");
-                        checkBoxModule_Demo_4 = document.getElementById("module-demo-4");
-                        checkBoxModule_Demo_5 = document.getElementById("module-demo-5");
-
-                        checkModule_others_1 = document.getElementById("module-others-1");
-                        checkModule_others_2 = document.getElementById("module-others-2");
-                        checkModule_others_3 = document.getElementById("module-others-3");
-                        checkModule_others_4 = document.getElementById("module-others-4");
-                        checkModule_others_5 = document.getElementById("module-others-5");
-                        checkModule_others_6 = document.getElementById("module-others-6");
-                        checkModule_others_7 = document.getElementById("module-others-7");
-                        checkModule_others_8 = document.getElementById("module-others-8");
-                        checkModule_others_9 = document.getElementById("module-others-9");
-                        checkModule_others_10 = document.getElementById("module-others-10");
-                        checkModule_others_11 = document.getElementById("module-others-11");
-                        checkModule_others_12 = document.getElementById("module-others-12");
-                        checkModule_others_13 = document.getElementById("module-others-13");
-                        checkModule_others_14 = document.getElementById("module-others-14");
-                        checkModule_others_15 = document.getElementById("module-others-15");
-                        checkModule_others_16 = document.getElementById("module-others-16");
-
-                        if (checkBoxModule_Demo_1.checked == true ||
-                        checkBoxModule_Demo_2.checked == true ||
-                        checkBoxModule_Demo_3.checked == true ||
-                        checkBoxModule_Demo_4.checked == true ||
-                        checkBoxModule_Demo_5.checked == true ||
-                        checkModule_others_1.checked == true ||
-                        checkModule_others_2.checked == true ||
-                        checkModule_others_3.checked == true ||
-                        checkModule_others_4.checked == true ||
-                        checkModule_others_5.checked == true ||
-                        checkModule_others_6.checked == true ||
-                        checkModule_others_7.checked == true ||
-                        checkModule_others_8.checked == true ||
-                        checkModule_others_9.checked == true ||
-                        checkModule_others_10.checked == true ||
-                        checkModule_others_11.checked == true ||
-                        checkModule_others_12.checked == true ||
-                        checkModule_others_13.checked == true ||
-                        checkModule_others_14.checked == true ||
-                        checkModule_others_15.checked == true ||
-                        checkModule_others_16.checked == true){
-                            document.getElementById("mailModalThree").disabled = false;
-                            document.getElementById("backThree").disabled = false;
-                            document.getElementById("restablecerThree").disabled = false;
-                            document.getElementById("finished").disabled = false;
-                        }else{
-                            document.getElementById("mailModalThree").disabled = true;
-                            document.getElementById("backThree").disabled = false;
-                            document.getElementById("restablecerThree").disabled = false;
-                            document.getElementById("finished").disabled = true;
-                        }
-                    }
-
-                        reloadInformation();
-                        reloadInformationModalTwo();
-                        reloadInformationModalThree();
-                    </script>
             </table>
         </div>
     </div>
-    <form action="/SYS/clientes/create/cliente" method="POST">
+
+    <form action="/SYS/clientes/create/cliente" method="POST">    
         <!-- ////////////////////////////////////////////////////MODAL PASO 1/////////////////////////////////////////////////////////////// -->
         <div onkeyup="valuesGet()" onkeypress="valuesGet()" onkeyup="valuesGet()" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -638,7 +103,7 @@
                                     Restablecer
                                     <i class="fas fa-window-restore"></i>
                                 </button>
-                            <button id="next" type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".bd-example-modal-lg2">
+                            <button id="next" type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".bd-example-modal-lg2">
                                 <i class="fas fa-arrow-circle-right"></i>
                             </button>
                         </div>
@@ -646,7 +111,7 @@
                 </div>
             </div>
         </div>
-
+   </form>
         <!-- ////////////MODAL PASO 2///////////// -->
         <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -760,4 +225,536 @@
                 </div>
             </div>
         </div>
-    </f orm>
+ 
+
+    <script>
+    /*VARIABLES GLOBALES*/
+    var _empresaname;
+    var _empresatradename;
+    var _representantename;
+    var _representanteappaterno;
+    var _representanteapmaterno;
+    var _contactonumberfijo;
+    var _contactocelular;
+    var _contactocorreo;
+    var _fechasolicitud;
+    var _IDe;
+    var _IDa;
+    var _user;
+    var _password;
+    var _confirmpassword;
+    var _cuestion;
+    var _cuestionrequest;
+
+    //MEX
+    var _mexFolioF;
+    var _mexFolioCP;
+    var _mexEmpresa;
+    var _mexColonia;
+    var _mexCalle;
+    var _mexNoExterior;
+    var _mexNoInterior;
+    var _mexEntreCalles;
+    var _mexDireccionFiscal;
+    var _mexRazonSocial;
+    var _mexEstadoMexicano;
+    var _mexCiudadMexicana;
+    var _mexRFC;
+    var _mexTelefono;
+    //EUA
+    var _euaFolioF;
+    var _euaEmpresa;
+    var _euaColonia;
+    var _euaCalle;
+    var _euaNoExterior;
+    var _euaNoInterior;
+    var _euaEntreCalles;
+    var _euaCP;
+    var _euaTaxID;
+    var _euatelefono;
+
+    var checkBoxModule_Demo_1;
+    var checkBoxModule_Demo_2;
+    var checkBoxModule_Demo_3;
+    var checkBoxModule_Demo_4;
+    var checkBoxModule_Demo_5;
+    var checkModule_others_1;
+    var checkModule_others_2;
+    var checkModule_others_3;
+    var checkModule_others_4;
+    var checkModule_others_5;
+    var checkModule_others_6;
+    var checkModule_others_7;
+    var checkModule_others_8;
+    var checkModule_others_9;
+    var checkModule_others_10;
+    var checkModule_others_11;
+    var checkModule_others_12;
+    var checkModule_others_13;
+    var checkModule_others_14;
+    var checkModule_others_15;
+    var checkModule_others_16;
+
+    /*console.log(
+    _empresaname + ' ' +
+    _empresatradename + ' ' +
+    _representantename + ' ' +
+    _representanteappaterno + ' ' +
+    _representanteapmaterno + ' ' +
+    _contactonumberfijo + ' ' +
+    _contactocelular + ' ' +
+    _contactocorreo + ' ' +
+    _fechasolicitud + ' ' +
+    _IDe + ' ' +
+    _IDa + ' ' +
+    _user + ' ' +
+    _password + ' ' +
+    _confirmpassword + ' ' +
+    _cuestion  + ' ' +
+    _cuestionrequest)*/
+
+    $(document).on("click", "#id_Modal", function () {
+        _empresaname = $(this).data('empresaname');
+        _empresatradename = $(this).data('empresatradename');
+        _representantename = $(this).data('representantename');
+        _representanteappaterno = $(this).data('representanteappaterno');
+        _representanteapmaterno = $(this).data('representanteapmaterno');
+        _contactonumberfijo = $(this).data('contactonumberfijo');
+        _contactocelular = $(this).data('contactocelular');
+        _contactocorreo = $(this).data('contactocorreo');
+        _fechasolicitud = $(this).data('fechasolicitud');
+        _IDe = $(this).data('id');
+        _IDa = $(this).data('autoincrement');
+
+        $('#empresaName').val(_empresaname);
+        $('#empresaTradeName').val(_empresatradename);
+        $('#representanteName').val(_representantename);
+        $('#representanteApPaterno').val(_representanteappaterno);
+        $('#representanteApMaterno').val(_representanteapmaterno);
+        $('#contactoNumberFijo').val(_contactonumberfijo);
+        $('#contactoCelular').val(_contactocelular);
+        $('#contactoCorreo').val(_contactocorreo);
+        $('#dateRequest').val(_fechasolicitud);
+        $('#IDe').val(_IDe);
+        $('#IDa').val(_IDa);
+
+        //INPUTS MEX
+        document.getElementById("mex-FolioF").disabled = true;
+        document.getElementById("mex-FolioCP").disabled = true;
+        document.getElementById("mex-Empresa").disabled = true;
+        document.getElementById("mex-Colonia").disabled = true;
+        document.getElementById("mex-Calle").disabled = true;
+        document.getElementById("mex-NoExterior").disabled = true;
+        document.getElementById("mex-NoInterior").disabled = true;
+        document.getElementById("mex-EntreCalles").disabled = true;
+        document.getElementById("mex-DireccionFiscal").disabled = true;
+        document.getElementById("mex-RazonSocial").disabled = true;
+        document.getElementById("mex-EstadoMexicano").disabled = true;
+        document.getElementById("mex-ciudadMexicana").disabled = true;
+        document.getElementById("mex-RFC").disabled = true;
+        document.getElementById("mex-Telefono").disabled = true;
+        //INPUTS EUA
+        document.getElementById("eua-FolioF").disabled = true;
+        document.getElementById("eua-Empresa").disabled = true;
+        document.getElementById("eua-Colonia").disabled = true;
+        document.getElementById("eua-Calle").disabled = true;
+        document.getElementById("eua-NoExterior").disabled = true;
+        document.getElementById("eua-NoInterior").disabled = true;
+        document.getElementById("eua-EntreCalles").disabled = true;
+        document.getElementById("eua-CP").disabled = true;
+        document.getElementById("eua-TaxID").disabled = true;
+        document.getElementById("eua-telefono").disabled = true;
+        //BUTTONS FOOTER
+        document.getElementById("mail").disabled = true;
+        document.getElementById("backOne").disabled = true;
+        document.getElementById("nextTwo").disabled = true;
+    });
+
+    $(document).on("click", "#restore", function () {
+        $('#empresaName').val(_empresaname);
+        $('#empresaTradeName').val(_empresatradename);
+        $('#representanteName').val(_representantename);
+        $('#representanteApPaterno').val(_representanteappaterno);
+        $('#representanteApMaterno').val(_representanteapmaterno);
+        $('#contactoNumberFijo').val(_contactonumberfijo);
+        $('#contactoCelular').val(_contactocelular);
+        $('#contactoCorreo').val(_contactocorreo);
+    });
+
+    $(document).on("click", "#validate-all", function () {
+        _empresaname = document.getElementById("empresaName").value;
+        _empresatradename = document.getElementById("empresaTradeName").value;
+        _representantename = document.getElementById("representanteName").value;
+        _representanteappaterno = document.getElementById("representanteApPaterno").value;
+        _representanteapmaterno = document.getElementById("representanteApMaterno").value;
+        _contactonumberfijo = document.getElementById("contactoNumberFijo").value;
+        _contactocelular = document.getElementById("contactoCelular").value;
+        _contactocorreo = document.getElementById("contactoCorreo").value;
+        _fechasolicitud = document.getElementById("dateRequest").value;
+        _IDe = document.getElementById("IDe").value;
+        _IDa = document.getElementById("IDa").value;
+        _user = document.getElementById("user").value;
+        _password = document.getElementById("password").value;
+        _confirmpassword = document.getElementById("confirmPassword").value;
+        _cuestion = document.getElementById("option-question").value;
+        _cuestionrequest = document.getElementById("answerOfquestion").value;
+
+        if(_empresaname == '' ||
+        _empresatradename == '' ||
+        _representantename == '' ||
+        _representanteappaterno == '' ||
+        _representanteapmaterno == '' ||
+        _contactonumberfijo == '' ||
+        _contactocelular == '' ||
+        _contactocorreo == '' ||
+        _fechasolicitud == '' ||
+        _IDe == '' ||
+        _IDa == '' ||
+        _user == '' ||
+        _password == '' ||
+        _confirmpassword == '' ||
+        _cuestion == '' ||
+        _cuestionrequest == ''){
+        alert("Aun existen campos vacios");
+        document.getElementById("next").disabled = true;
+        }
+        else if(_cuestion == 'Selecciona una pregunta de seguridad'){
+        alert("La pregunta de seguridad esta por defecto");
+        document.getElementById("next").disabled = true;
+        }
+        else{
+        document.getElementById("next").disabled = false;
+        }
+    });
+
+    function disabledFalse(){
+        document.getElementById("empresaName").disabled = false;
+        document.getElementById("empresaTradeName").disabled = false;
+        document.getElementById("representanteName").disabled = false;
+        document.getElementById("representanteApPaterno").disabled = false;
+        document.getElementById("representanteApMaterno").disabled = false;
+        document.getElementById("contactoNumberFijo").disabled = false;
+        document.getElementById("contactoCelular").disabled = false;
+        document.getElementById("contactoCorreo").disabled = false;
+        document.getElementById("restore").disabled = false;
+    }
+
+    function disabledTrue(){
+        document.getElementById("empresaName").disabled = true;
+        document.getElementById("empresaTradeName").disabled = true;
+        document.getElementById("representanteName").disabled = true;
+        document.getElementById("representanteApPaterno").disabled = true;
+        document.getElementById("representanteApMaterno").disabled = true;
+        document.getElementById("contactoNumberFijo").disabled = true;
+        document.getElementById("contactoCelular").disabled = true;
+        document.getElementById("contactoCorreo").disabled = true;
+        document.getElementById("restore").disabled = true;
+        document.getElementById("next").disabled = true;
+    }
+
+    function reloadInformation(){
+        var a = setInterval("valuesGet();", 1);
+    }
+
+    function reloadInformationModalTwo(){
+        var b = setInterval("valuesModalTwo();",1);
+    }
+
+    function reloadInformationModalThree(){
+        var c = setInterval("valuesModalThree();",1);
+    }
+
+    function valuesGet(){
+        _empresaname = document.getElementById("empresaName").value;
+        _empresatradename = document.getElementById("empresaTradeName").value;
+        _representantename = document.getElementById("representanteName").value;
+        _representanteappaterno = document.getElementById("representanteApPaterno").value;
+        _representanteapmaterno = document.getElementById("representanteApMaterno").value;
+        _contactonumberfijo = document.getElementById("contactoNumberFijo").value;
+        _contactocelular = document.getElementById("contactoCelular").value;
+        _contactocorreo = document.getElementById("contactoCorreo").value;
+        _fechasolicitud = document.getElementById("dateRequest").value;
+        _IDe = document.getElementById("IDe").value;
+        _IDa = document.getElementById("IDa").value;
+        _user = document.getElementById("user").value;
+        _password = document.getElementById("password").value;
+        _confirmpassword = document.getElementById("confirmPassword").value;
+        _cuestion = document.getElementById("option-question").value;
+        _cuestionrequest = document.getElementById("answerOfquestion").value;
+
+        if(_empresaname == '' ||
+        _empresatradename == '' ||
+        _representantename == '' ||
+        _representanteappaterno == '' ||
+        _representanteapmaterno == '' ||
+        _contactonumberfijo == '' ||
+        _contactocelular == '' ||
+        _contactocorreo == '' ||
+        _fechasolicitud == '' ||
+        _IDe == '' ||
+        _IDa == '' ||
+        _user == '' ||
+        _password == '' ||
+        _confirmpassword == '' ||
+        _cuestion == '' ||
+        _cuestionrequest == ''){
+        document.getElementById("next").disabled = true;
+        }
+        else if(_cuestion == 'Selecciona una pregunta de seguridad'){
+        document.getElementById("next").disabled = true;
+        }
+        else{
+        document.getElementById("next").disabled = false;
+        }
+    }
+
+    $(document).on("click", "#next", function () {
+        document.getElementById("mex-FolioF").disabled = false;
+        document.getElementById("mex-FolioCP").disabled = false;
+        document.getElementById("mex-Empresa").disabled = false;
+        document.getElementById("mex-Colonia").disabled = false;
+        document.getElementById("mex-Calle").disabled = false;
+        document.getElementById("mex-NoExterior").disabled = false;
+        document.getElementById("mex-NoInterior").disabled = false;
+        document.getElementById("mex-EntreCalles").disabled = false;
+        document.getElementById("mex-DireccionFiscal").disabled = false;
+        document.getElementById("mex-RazonSocial").disabled = false;
+        document.getElementById("mex-EstadoMexicano").disabled = false;
+        document.getElementById("mex-ciudadMexicana").disabled = false;
+        document.getElementById("mex-RFC").disabled = false;
+        document.getElementById("mex-Telefono").disabled = false;
+
+        document.getElementById("eua-FolioF").disabled = false;
+        document.getElementById("eua-Empresa").disabled = false;
+        document.getElementById("eua-Colonia").disabled = false;
+        document.getElementById("eua-Calle").disabled = false;
+        document.getElementById("eua-NoExterior").disabled = false;
+        document.getElementById("eua-NoInterior").disabled = false;
+        document.getElementById("eua-EntreCalles").disabled = false;
+        document.getElementById("eua-CP").disabled = false;
+        document.getElementById("eua-TaxID").disabled = false;
+        document.getElementById("eua-telefono").disabled = false;
+
+        document.getElementById("mail").disabled = false;
+        document.getElementById("backOne").disabled = false;
+        document.getElementById("nextTwo").disabled = false;
+    });
+
+    function block(){
+        //INPUTS MEX
+        document.getElementById("mex-FolioF").disabled = true;
+        document.getElementById("mex-FolioCP").disabled = true;
+        document.getElementById("mex-Empresa").disabled = true;
+        document.getElementById("mex-Colonia").disabled = true;
+        document.getElementById("mex-Calle").disabled = true;
+        document.getElementById("mex-NoExterior").disabled = true;
+        document.getElementById("mex-NoInterior").disabled = true;
+        document.getElementById("mex-EntreCalles").disabled = true;
+        document.getElementById("mex-DireccionFiscal").disabled = true;
+        document.getElementById("mex-RazonSocial").disabled = true;
+        document.getElementById("mex-EstadoMexicano").disabled = true;
+        document.getElementById("mex-ciudadMexicana").disabled = true;
+        document.getElementById("mex-RFC").disabled = true;
+        document.getElementById("mex-Telefono").disabled = true;
+        //INPUTS EUA
+        document.getElementById("eua-FolioF").disabled = true;
+        document.getElementById("eua-Empresa").disabled = true;
+        document.getElementById("eua-Colonia").disabled = true;
+        document.getElementById("eua-Calle").disabled = true;
+        document.getElementById("eua-NoExterior").disabled = true;
+        document.getElementById("eua-NoInterior").disabled = true;
+        document.getElementById("eua-EntreCalles").disabled = true;
+        document.getElementById("eua-CP").disabled = true;
+        document.getElementById("eua-TaxID").disabled = true;
+        document.getElementById("eua-telefono").disabled = true;
+        //BUTTONS FOOTER
+        document.getElementById("mail").disabled = true;
+        document.getElementById("backOne").disabled = true;
+        document.getElementById("nextTwo").disabled = true;
+    }
+
+    function valuesModalTwo(){
+
+        _mexFolioF = document.getElementById("mex-FolioCP").value;
+        _mexFolioCP = document.getElementById("mex-FolioCP").value;
+        _mexEmpresa = document.getElementById("mex-Empresa").value;
+        _mexColonia = document.getElementById("mex-Colonia").value;
+        _mexCalle = document.getElementById("mex-Calle").value;
+        _mexNoExterior = document.getElementById("mex-NoExterior").value;
+        _mexNoInterior = document.getElementById("mex-NoInterior").value;
+        _mexEntreCalles = document.getElementById("mex-EntreCalles").value;
+        _mexDireccionFiscal = document.getElementById("mex-DireccionFiscal").value;
+        _mexRazonSocial = document.getElementById("mex-RazonSocial").value;
+        _mexEstadoMexicano = document.getElementById("mex-EstadoMexicano").value;
+        _mexCiudadMexicana = document.getElementById("mex-ciudadMexicana").value;
+        _mexRFC = document.getElementById("mex-RFC").value;
+        _mexTelefono = document.getElementById("mex-Telefono").value;
+
+        _euaFolioF = document.getElementById("eua-FolioF").value;
+        _euaEmpresa = document.getElementById("eua-Empresa").value;
+        _euaColonia = document.getElementById("eua-Colonia").value;
+        _euaCalle = document.getElementById("eua-Calle").value;
+        _euaNoExterior = document.getElementById("eua-NoExterior").value;
+        _euaNoInterior = document.getElementById("eua-NoInterior").value;
+        _euaEntreCalles = document.getElementById("eua-EntreCalles").value;
+        _euaCP = document.getElementById("eua-CP").value;
+        _euaTaxID = document.getElementById("eua-TaxID").value;
+        _euatelefono = document.getElementById("eua-telefono").value;
+
+        if(_mexFolioF == "" ||
+        _mexFolioCP == "" ||
+        _mexEmpresa == "" ||
+        _mexColonia == "" ||
+        _mexCalle == "" ||
+        _mexNoExterior == "" ||
+        _mexNoInterior == "" ||
+        _mexEntreCalles == "" ||
+        _mexDireccionFiscal == "" ||
+        _mexRazonSocial == "" ||
+        _mexEstadoMexicano == "" ||
+        _mexCiudadMexicana == "" ||
+        _mexRFC == "" ||
+        _mexTelefono == "" ||
+        _euaFolioF == "" ||
+        _euaEmpresa == "" ||
+        _euaColonia == "" ||
+        _euaCalle == "" ||
+        _euaNoExterior == "" ||
+        _euaNoInterior == "" ||
+        _euaEntreCalles == "" ||
+        _euaCP == "" ||
+        _euaTaxID == "" ||
+        _euatelefono == ""){
+        document.getElementById("mail").disabled = true;
+        document.getElementById("nextTwo").disabled = true;
+        document.getElementById("backOne").disabled = false;
+        }
+        else{
+        document.getElementById("mail").disabled = false;
+        document.getElementById("nextTwo").disabled = false;
+        document.getElementById("backOne").disabled = false;
+        }
+    }
+
+    function valuesModalTwo(){
+
+        _mexFolioF = document.getElementById("mex-FolioCP").value;
+        _mexFolioCP = document.getElementById("mex-FolioCP").value;
+        _mexEmpresa = document.getElementById("mex-Empresa").value;
+        _mexColonia = document.getElementById("mex-Colonia").value;
+        _mexCalle = document.getElementById("mex-Calle").value;
+        _mexNoExterior = document.getElementById("mex-NoExterior").value;
+        _mexNoInterior = document.getElementById("mex-NoInterior").value;
+        _mexEntreCalles = document.getElementById("mex-EntreCalles").value;
+        _mexDireccionFiscal = document.getElementById("mex-DireccionFiscal").value;
+        _mexRazonSocial = document.getElementById("mex-RazonSocial").value;
+        _mexEstadoMexicano = document.getElementById("mex-EstadoMexicano").value;
+        _mexCiudadMexicana = document.getElementById("mex-ciudadMexicana").value;
+        _mexRFC = document.getElementById("mex-RFC").value;
+        _mexTelefono = document.getElementById("mex-Telefono").value;
+
+        _euaFolioF = document.getElementById("eua-FolioF").value;
+        _euaEmpresa = document.getElementById("eua-Empresa").value;
+        _euaColonia = document.getElementById("eua-Colonia").value;
+        _euaCalle = document.getElementById("eua-Calle").value;
+        _euaNoExterior = document.getElementById("eua-NoExterior").value;
+        _euaNoInterior = document.getElementById("eua-NoInterior").value;
+        _euaEntreCalles = document.getElementById("eua-EntreCalles").value;
+        _euaCP = document.getElementById("eua-CP").value;
+        _euaTaxID = document.getElementById("eua-TaxID").value;
+        _euatelefono = document.getElementById("eua-telefono").value;
+
+        if(_mexFolioF == "" ||
+        _mexFolioCP == "" ||
+        _mexEmpresa == "" ||
+        _mexColonia == "" ||
+        _mexCalle == "" ||
+        _mexNoExterior == "" ||
+        _mexNoInterior == "" ||
+        _mexEntreCalles == "" ||
+        _mexDireccionFiscal == "" ||
+        _mexRazonSocial == "" ||
+        _mexEstadoMexicano == "" ||
+        _mexCiudadMexicana == "" ||
+        _mexRFC == "" ||
+        _mexTelefono == "" ||
+        _euaFolioF == "" ||
+        _euaEmpresa == "" ||
+        _euaColonia == "" ||
+        _euaCalle == "" ||
+        _euaNoExterior == "" ||
+        _euaNoInterior == "" ||
+        _euaEntreCalles == "" ||
+        _euaCP == "" ||
+        _euaTaxID == "" ||
+        _euatelefono == ""){
+        document.getElementById("mail").disabled = true;
+        document.getElementById("nextTwo").disabled = true;
+        document.getElementById("backOne").disabled = false;
+        }
+        else{
+        document.getElementById("mail").disabled = false;
+        document.getElementById("nextTwo").disabled = false;
+        document.getElementById("backOne").disabled = false;
+        }
+    }
+
+    function valuesModalThree(){
+        checkBoxModule_Demo_1 = document.getElementById("module-demo-1");
+        checkBoxModule_Demo_2 = document.getElementById("module-demo-2");
+        checkBoxModule_Demo_3 = document.getElementById("module-demo-3");
+        checkBoxModule_Demo_4 = document.getElementById("module-demo-4");
+        checkBoxModule_Demo_5 = document.getElementById("module-demo-5");
+        checkModule_others_1 = document.getElementById("module-others-1");
+        checkModule_others_2 = document.getElementById("module-others-2");
+        checkModule_others_3 = document.getElementById("module-others-3");
+        checkModule_others_4 = document.getElementById("module-others-4");
+        checkModule_others_5 = document.getElementById("module-others-5");
+        checkModule_others_6 = document.getElementById("module-others-6");
+        checkModule_others_7 = document.getElementById("module-others-7");
+        checkModule_others_8 = document.getElementById("module-others-8");
+        checkModule_others_9 = document.getElementById("module-others-9");
+        checkModule_others_10 = document.getElementById("module-others-10");
+        checkModule_others_11 = document.getElementById("module-others-11");
+        checkModule_others_12 = document.getElementById("module-others-12");
+        checkModule_others_13 = document.getElementById("module-others-13");
+        checkModule_others_14 = document.getElementById("module-others-14");
+        checkModule_others_15 = document.getElementById("module-others-15");
+        checkModule_others_16 = document.getElementById("module-others-16");
+        if (checkBoxModule_Demo_1.checked == true ||
+            checkBoxModule_Demo_2.checked == true ||
+            checkBoxModule_Demo_3.checked == true ||
+            checkBoxModule_Demo_4.checked == true ||
+            checkBoxModule_Demo_5.checked == true ||
+            checkModule_others_1.checked == true ||
+            checkModule_others_2.checked == true ||
+            checkModule_others_3.checked == true ||
+            checkModule_others_4.checked == true ||
+            checkModule_others_5.checked == true ||
+            checkModule_others_6.checked == true ||
+            checkModule_others_7.checked == true ||
+            checkModule_others_8.checked == true ||
+            checkModule_others_9.checked == true ||
+            checkModule_others_10.checked == true ||
+            checkModule_others_11.checked == true ||
+            checkModule_others_12.checked == true ||
+            checkModule_others_13.checked == true ||
+            checkModule_others_14.checked == true ||
+            checkModule_others_15.checked == true ||
+            checkModule_others_16.checked == true){
+            document.getElementById("mailModalThree").disabled = false;
+            document.getElementById("backThree").disabled = false;
+            document.getElementById("restablecerThree").disabled = false;
+            document.getElementById("finished").disabled = false;
+        }else{
+            document.getElementById("mailModalThree").disabled = true;
+            document.getElementById("backThree").disabled = false;
+            document.getElementById("restablecerThree").disabled = false;
+            document.getElementById("finished").disabled = true;
+        }
+    }
+
+    reloadInformation();
+    reloadInformationModalTwo();
+    reloadInformationModalThree();
+</script>
