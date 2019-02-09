@@ -192,3 +192,25 @@ label {
     grid-column: 30/31;
     width: 15%;
 }
+
+.save {
+    grid-row: 35/38;
+    grid-column: 33/39;
+}
+
+.save .btn-primary {
+    height: 100%;
+    width: 100%;
+    font-size: 1.1vw;
+}
+
+.list {
+    grid-row: 31/34;
+    grid-column: 33/39;
+}
+
+.list .btn-warning {
+    height: 100%;
+    width: 100%;
+    font-size: 1.1vw;
+}

@@ -1,5 +1,5 @@
 .grid-total {
-    height: 120vh;
+    height: 140vh;
     background-image: url("../../../APLICACION_GENERAL/images/wallpaper.png");
     background-attachment: fixed;
     background-position: center;
@@ -150,7 +150,7 @@ label {
     position: relative;
     top: 30px;
     grid-row: 1/4;
-    grid-column: 30/35;
+    grid-column: 30/36;
     background-color: black;
     background-image: url("/external/clientes/Catalogo/unidades/images/unidad1.jpg");
     background-size: cover;
@@ -170,13 +170,13 @@ label {
     position: relative;
     top: 40px;
     grid-row: 4/5;
-    grid-column: 30/35;
+    grid-column: 30/36;
 }
 
 .contenedor-identificacion {
     display: grid;
     grid-template: repeat(20, 1fr)/repeat(39, 1fr);
-    grid-row: 22/38;
+    grid-row: 22/39;
     grid-column: 1/61;
     background-color: rgba(95, 95, 95, 0.603);
     box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.75);
@@ -268,11 +268,22 @@ label {
 }
 
 .save {
-    grid-row: 37/39;
-    grid-column: 17/24;
+    grid-row: 33/36;
+    grid-column: 33/39;
 }
 
 .save .btn-primary {
+    height: 100%;
+    width: 100%;
+    font-size: 1.1vw;
+}
+
+.list {
+    grid-row: 29/32;
+    grid-column: 33/39;
+}
+
+.list .btn-warning {
     height: 100%;
     width: 100%;
     font-size: 1.1vw;

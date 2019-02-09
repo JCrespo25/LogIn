@@ -54,6 +54,8 @@ app.use(require('./routes/web-main/sign_in')); //LOGIN
 app.use(require('./routes/external/clientes/dashboard')); //CLIENTES
 app.use(require('./routes/external/clientes/catalogo/conductores')); //CONDUCTORES
 app.use(require('./routes/external/clientes/catalogo/unidades')); //UNIDADES
+app.use(require('./routes/external/clientes/catalogo/verconductores')); //VERCONDUCTORES
+app.use(require('./routes/external/clientes/catalogo/verunidades')); //VERUNIDADES
 
 /*RUTAS INTERNAS*/
 app.use(require('./routes/internal/withing')); //DENTRO
