@@ -56,6 +56,28 @@ app.use(require('./routes/external/clientes/catalogo/conductores')); //CONDUCTOR
 app.use(require('./routes/external/clientes/catalogo/unidades')); //UNIDADES
 app.use(require('./routes/external/clientes/catalogo/verconductores')); //VERCONDUCTORES
 app.use(require('./routes/external/clientes/catalogo/verunidades')); //VERUNIDADES
+app.use(require('./routes/external/clientes/catalogo/cajas')); //CAJAS
+app.use(require('./routes/external/clientes/catalogo/mercancias')); //MERCANCIAS
+app.use(require('./routes/external/clientes/catalogo/paises')); //PAISES
+app.use(require('./routes/external/clientes/catalogo/estados')); //ESTADOS
+app.use(require('./routes/external/clientes/catalogo/ciudades')); //CIUDADES
+app.use(require('./routes/external/clientes/catalogo/sedes')); //SEDES
+app.use(require('./routes/external/clientes/catalogo/rutas')); //RUTAS
+app.use(require('./routes/external/clientes/catalogo/servicios')); //SERVICIOS
+app.use(require('./routes/external/clientes/catalogo/unidadmedida')); //UNIDADDEMEDIDA
+app.use(require('./routes/external/clientes/reportes/viajes')); //REPVIAJES
+app.use(require('./routes/external/clientes/reportes/unidades')); //REPUNIDADES
+app.use(require('./routes/external/clientes/reportes/cajas')); //REPCAJAS
+app.use(require('./routes/external/clientes/reportes/choferes')); //REPCHOFERES
+app.use(require('./routes/external/clientes/finanzas/genfactura')); //FINFACTURA
+app.use(require('./routes/external/clientes/finanzas/remision')); //FINREMISION
+app.use(require('./routes/external/clientes/finanzas/cobranza')); //FINCOBRANZA
+app.use(require('./routes/external/clientes/despacho/viajes')); //DESPVIAJES
+app.use(require('./routes/external/clientes/despacho/crearviajes')); //DESPCREARVIAJES
+app.use(require('./routes/external/clientes/almacen')); //ALMACEN
+app.use(require('./routes/external/clientes/mantenimiento')); //MANTENIMIENTO 
+app.use(require('./routes/external/clientes/alertas')); //ALERTAS
+app.use(require('./routes/external/clientes/borradores')); //BORRADORES
 
 /*RUTAS INTERNAS*/
 app.use(require('./routes/internal/withing')); //DENTRO
@@ -64,6 +86,7 @@ app.use(require('./routes/internal/clientes')); //CLIENTES
 app.use(require('./routes/internal/sign_out')); //AFUERA
 app.use(require('./routes/internal/master')); //MASTER
 app.use(require('./routes/internal/empleados')); //EMPLEADOS
+app.use(require('./routes/internal/verempleados')); //VEREMPLEADOS
 
 
 //Static Files

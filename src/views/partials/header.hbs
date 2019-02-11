@@ -21,10 +21,10 @@
                     <div class="dropdown">
                         <a class="nav-link">Reportes</a>
                         <div class="dropdown-content">
-                            <a href="#">Viajes</a>
-                            <a href="#">Unidades</a>
-                            <a href="#">Cajas</a>
-                            <a href="#">Choferes</a>
+                            <a href="/reportes/viajes">Viajes</a>
+                            <a href="/reportes/unidades">Unidades</a>
+                            <a href="/reportes/cajas">Cajas</a>
+                            <a href="/reportes/choferes">Choferes</a>
                         </div>
                     </div>
                 </li>  
@@ -33,9 +33,9 @@
                     <div class="dropdown">
                         <a class="nav-link">Finanzas</a>
                         <div class="dropdown-content">
-                            <a href="#">Generar Factura</a>
-                            <a href="#">Remision</a>
-                            <a href="#">Cobranza</a>
+                            <a href="/finanzas/genfactura">Generar Factura</a>
+                            <a href="/finanzas/remision">Remision</a>
+                            <a href="/finanzas/cobranza">Cobranza</a>
                         </div>
                     </div>
                 </li> 
@@ -44,8 +44,8 @@
                     <div class="dropdown">
                         <a class="nav-link">Despacho</a>
                         <div class="dropdown-content">
-                            <a href="#">Viajes</a>
-                            <a href="#">Crear Viaje</a>
+                            <a href="/despacho/viajes">Viajes</a>
+                            <a href="/despacho/crearviajes">Crear Viaje</a>
                         </div>
                     </div>
                 </li> 
@@ -58,26 +58,24 @@
                                <a href="/catalogo/verconductores">Ver conductores</a>
                             <a href="/catalogo/unidades">Unidades</a>
                             <a href="/catalogo/verunidades">Ver unidades</a>
-                            <a href="#">Cajas</a>
-                            <a href="#">Mercancías</a>
-                            <a href="#">Países</a>
-                            <a href="#">Estados</a>
-                            <a href="#">Ciudades</a>
-                            <a href="#">Sedes</a>
-                            <a href="#">Rutas</a>
-                            <a href="#">Servicios</a>
-                            <a href="#">Unidad de medida</a>
+                            <a href="/catalogo/cajas">Cajas</a>
+                            <a href="/catalogo/mercancias">Mercancías</a>
+                            <a href="/catalogo/paises">Países</a>
+                            <a href="/catalogo/estados">Estados</a>
+                            <a href="/catalogo/ciudades">Ciudades</a>
+                            <a href="/catalogo/sedes">Sedes</a>
+                            <a href="/catalogo/rutas">Rutas</a>
+                            <a href="/catalogo/servicios">Servicios</a>
+                            <a href="/catalogo/unidadmedida">Unidad de medida</a>
                         </div>
                     </li>
                 </li> 
                 {{!-- Inventario --}}
-                <li class="nav-item"><a class="nav-link">Almacen</a></li> 
+                <li class="nav-item"><a class="nav-link" href="/clientes/almacen">Almacen</a></li> 
                 {{!-- Mantenimiento --}}
-                <li class="nav-item"><a class="nav-link">Mantenimiento</a></li>
-                {{!-- Mantenimiento --}}
-                <li class="nav-item"><a class="nav-link">Mantenimiento</a></li>
+                <li class="nav-item"><a class="nav-link" href="/clientes/mantenimiento">Mantenimiento</a></li>
                 {{!-- Alertas --}}
-                <li class="nav-item"><a class="nav-link">Alertas</a></li>
+                <li class="nav-item"><a class="nav-link" href="/clientes/alertas">Alertas</a></li>
                 {{!-- Clientes --}}
                 <li class="nav-item">
                     <div class="dropdown">
@@ -95,11 +93,11 @@
                         <a class="nav-link">Personal</a>
                         <div class="dropdown-content">
                             <a href="/SYS/empleados/altaEmpleados">Alta de personal</a>
-                            <a href="#">Ver personal</a>
+                            <a href="/SYS/empleados/verEmpleados">Ver personal</a>
                         </div>
                     </div>
                 </li>
-                <li class="nav-item"><a class="nav-link">Borradores</a></li>
+                <li class="nav-item"><a class="nav-link" href="/clientes/borradores">Borradores</a></li>
             </ul>
             <div class="dropdown">
                 <button class="dropbtn">...</button>
