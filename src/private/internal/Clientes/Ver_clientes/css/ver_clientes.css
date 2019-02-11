@@ -21,7 +21,7 @@
 }
 
 .grid-total-footer {
-    grid-row: 32 / -1;
+    grid-row: 40 / -1;
     grid-column: 1 / -1;
 }
 
@@ -122,15 +122,15 @@
 }
 
 thead {
-    font-size: 1.5vw;
-}
-
-tbody {
     font-size: 1vw;
 }
 
+tbody {
+    font-size: .8vw;
+}
+
 tbody tr:hover {
-    background: rgb(241, 182, 94);
+    background: rgb(114, 114, 114);
     color: #ffffff;
     cursor: pointer;
 }
