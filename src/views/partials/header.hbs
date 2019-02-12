@@ -1,6 +1,3 @@
-{{!-- {{#if user}}
-
-{{/if}} --}}
 {{#if user}}
 
   <!-- ////////////HEADER DE NAVEGACION CLIENTE ////////////////////-->
@@ -108,23 +105,85 @@
                 </div>
             </div>
         </div>
-    </nav> 
-{{else}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">
-            <img src="/header/logo2.png">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto"></ul>
-        </div> 
-        <select class="header-lenguage">
-            <option value="español">Español</option>
-            <option value="ingles">Ingles</option>
-            <option value="frances">Frances</option>
-            <option value="aleman">Aleman</option>
-        </select>
     </nav>
+
+{{else}}
+    {{#if master}}
+        <!-- ////////////HEADER DE NAVEGACION ////////////////////-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/SYS/index">
+                <img src="/header/logo2.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/SYS/index">Dashboard<span class="sr-only"></span></a>
+                    </li>
+                    {{!-- Alertas --}}
+                    <li class="nav-item"><a class="nav-link">Alertas</a></li>
+                    {{!-- Clientes --}}
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link">Clientes</a>
+                            <div class="dropdown-content">
+                                <a href="/SYS/clientes/altaCliente">Alta cliente</a>
+                                <a href="/SYS/clientes/verClientes">Clientes</a>
+                                <a href="/SYS/clientes/verSolicitudes">Solicitudes</a>
+                            </div>
+                        </div>
+                    </li>
+                    {{!-- Departamentos --}}
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link">Departamentos</a>
+                            <div class="dropdown-content">
+                                <a href="#">Alta Departamentos</a>
+                                <a href="#">Ver Departamentos</a>
+                            </div>
+                        </div>
+                    </li>
+                    {{!-- Empleados --}}
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link">Empleados</a>
+                            <div class="dropdown-content">
+                                <a href="/SYS/empleados/altaEmpleados">Alta de empleados</a>
+                                <a href="#">Ver empleados</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link">Borradores</a></li>
+                </ul>
+                <div class="dropdown">
+                    <button class="dropbtn">...</button>
+                    <div class="dropdown-content">
+                        <a href="#">Configuración</a>
+                        <a href="#">Mi perfil</a>
+                        <a href="/users/logout">Cerrar Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {{else}}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+                <img src="/header/logo2.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto"></ul>
+            </div> 
+            <select class="header-lenguage">
+                <option value="español">Español</option>
+                <option value="ingles">Ingles</option>
+                <option value="frances">Frances</option>
+                <option value="aleman">Aleman</option>
+            </select>
+        </nav>
+    {{/if}}
 {{/if}}

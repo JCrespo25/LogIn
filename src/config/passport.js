@@ -1,54 +1,71 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-const UserClient = require('../models/profiles/externos/solicitudesDEMO');
+const UserClient = require('../models/profiles/externos/clientes');
 const UserInternal = require('../models/profiles/internos/master');
 const errors = [];
+
+var numberChars;
+var firstCharOfEndThree;;
+var ThreeChars;
+var point;
 
 passport.use(new LocalStrategy({
     usernameField: 'userName'
 }, async(userName, password, done) => {
 
-    var numberChars = userName.length;
-    var firstCharOfEndThree = numberChars - 3;
-    var ThreeChars = userName.substring(firstCharOfEndThree, numberChars);
+    numberChars = userName.length;
+    firstCharOfEndThree = numberChars - 3;
+    ThreeChars = userName.substring(firstCharOfEndThree, numberChars);
     ThreeChars = ThreeChars.toLowerCase();
-    var point = userName.charAt(firstCharOfEndThree - 1);
+    point = userName.charAt(firstCharOfEndThree - 1);
+    var master, cliente, user;
 
     if (point + ThreeChars == ".net") {
 
-        var user = await UserInternal.findOne({ userMaster: userName });
-        if (!user) {
+        var master = await UserInternal.findOne({ userMaster: userName });
+        if (!master) {
             return done(null, false, { message: 'No se encontro el usuario' });
         } else {
-            const match = await user.matchPassword(password);
+            const match = await master.matchPassword(password);
             if (!match) {
                 return done(null, false, { message: 'Contraseña incorrecta' });
             } else {
-                return done(null, user);
+                user = master;
+                return done(null, master);
             }
         }
     } else {
-        const user = await UserClient.findOne({ userMaster: userName });
-        if (!user) {
+        const cliente = await UserClient.findOne({ userName: userName });
+        if (!cliente) {
             return done(null, false, { message: 'No se encontro el usuario' });
         } else {
-            const match = await user.matchPassword(password);
-            if (match) {
-                return done(null, user);
-            } else {
+            const match = await cliente.matchPassword(password);
+            if (!match) {
                 return done(null, false, { message: 'Contraseña incorrecta' });
+            } else {
+                user = cliente;
+                return done(null, cliente);
             }
         }
     }
 }));
 
-passport.serializeUser((user, done) => {
-    done(null, user.id);
-});
+passport.serializeUser((master, done) => {
+    done(null, master.id);
 
-passport.deserializeUser((id, done) => {
-    UserInternal.findById(id, (err, user) => {
-        done(err, user);
+    passport.deserializeUser((id, done) => {
+        if (point + ThreeChars == ".net") {
+
+            UserInternal.findById(id, (err, master) => {
+                done(err, master);
+            });
+        }
+
+        /*else {
+            UserClient.findById(id, (err, user) => {
+                done(err, user);
+            });
+        }*/
     });
 });

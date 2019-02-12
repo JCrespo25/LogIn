@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Clientes = require('../../models/profiles/externos/clientes');
 const RequestDEMO = require('../../models/profiles/externos/solicitudesDEMO');
 const { isAuthenticated } = require('../../helpers/auth');
 
@@ -14,140 +15,144 @@ router.get('/SYS/clientes/verClientes', isAuthenticated, (req, res) => {
 });
 
 /*VER SOLICITUDES*/
-router.get('/SYS/clientes/verSolicitudes', isAuthenticated, async(req, res) => {
+router.get('/SYS/clientes/verSolicitudes', isAuthenticated, async(req, res, next) => {
     const solicitantes = await RequestDEMO.find(req._id).sort({ id_autoIncrement: 'desc' });
     res.render('internal/clientes/Ver_solicitantes', { solicitantes });
 });
 
 /*GET ALL INFORMATION REQUEST*/
 router.post('/SYS/clientes/create/cliente', isAuthenticated, async(req, res) => {
-    console.log(req.set._empresaname); //mytext is the name of your input box
+    const {
+        empresaRazonSocial,
+        empresaNombreComercial,
+        representanteName,
+        representanteApellidoPaterno,
+        representanteApellidoMaterno,
+        contactoNumeroFijo,
+        contactoNumeroCelular,
+        contactoCorreo,
+        fechaSolicitud,
+        IDe,
+        IDa,
+        userName,
+        userPassword,
+        userPasswordConfirm,
+        userCuestion,
+        userAnswer,
+        datosFiscalesMEXFolioF,
+        datosFiscalesMEXFolioCP,
+        datosFiscalesMEXNombreEmpresa,
+        datosFiscalesMEXColonia,
+        datosFiscalesMEXCalle,
+        datosFiscalesMEXNoExterior,
+        datosFiscalesMEXNoInterior,
+        datosFiscalesMEXEntreCalles,
+        datosFiscalesMEXDireccionFiscal,
+        datosFiscalesMEXRazonSocial,
+        datosFiscalesMEXEstadoMexicano,
+        datosFiscalesMEXCiudadMexicana,
+        datosFiscalesMEXRFC,
+        datosFiscalesMEXTelefono,
+        datosFiscalesEUAFolioCP,
+        datosFiscalesEUANombreEmpresa,
+        datosFiscalesEUAColonia,
+        datosFiscalesEUACalle,
+        datosFiscalesEUANoExterior,
+        datosFiscalesEUANoInterior,
+        datosFiscalesEUAEntreCalles,
+        datosFiscalesEUACodigoPostal,
+        datosFiscalesEUATAXID,
+        datosFiscalesEUATelefono,
+        checkBoxDEMO1,
+        checkBoxDEMO2,
+        checkBoxDEMO3,
+        checkBoxDEMO4,
+        checkBoxDEMO5,
+        checkBoxOTHERS1,
+        checkBoxOTHERS2,
+        checkBoxOTHERS3,
+        checkBoxOTHERS4,
+        checkBoxOTHERS5,
+        checkBoxOTHERS6,
+        checkBoxOTHERS7,
+        checkBoxOTHERS8,
+        checkBoxOTHERS9,
+        checkBoxOTHERS10,
+        checkBoxOTHERS11,
+        checkBoxOTHERS12,
+        checkBoxOTHERS13,
+        checkBoxOTHERS14,
+        checkBoxOTHERS15,
+        checkBoxOTHERS16
+    } = req.body;
 
-    //_empresaname
-    // _empresatradename,
-    // _representantename,
-    // _representanteappaterno,
-    // _representanteapmaterno,
-    // _contactonumberfijo,
-    // _contactocelular,
-    // _contactocorreo,
-    // _fechasolicitud,
-    // _IDe,
-    // _IDa,
-    // _user,
-    // _password,
-    // _confirmpassword,
-    // _cuestion,
-    // _cuestionrequest,
-    // _mexFolioF,
-    // _mexFolioCP,
-    // _mexEmpresa,
-    // _mexColonia,
-    // _mexCalle,
-    // _mexNoExterior,
-    // _mexNoInterior,
-    // _mexEntreCalles,
-    // _mexDireccionFiscal,
-    // _mexRazonSocial,
-    // _mexEstadoMexicano,
-    // _mexCiudadMexicana,
-    // _mexRFC,
-    // _mexTelefono,
-    // _euaFolioF,
-    // _euaEmpresa,
-    // _euaColonia,
-    // _euaCalle,
-    // _euaNoExterior,
-    // _euaNoInterior,
-    // _euaEntreCalles,
-    // _euaCP,
-    // _euaTaxID,
-    // _euatelefono,
-    // checkBoxModule_Demo_1,
-    // checkBoxModule_Demo_2,
-    // checkBoxModule_Demo_3,
-    // checkBoxModule_Demo_4,
-    // checkBoxModule_Demo_5,
-    // checkModule_others_1,
-    // checkModule_others_2,
-    // checkModule_others_3,
-    // checkModule_others_4,
-    // checkModule_others_5,
-    // checkModule_others_6,
-    // checkModule_others_7,
-    // checkModule_others_8,
-    // checkModule_others_9,
-    // checkModule_others_10,
-    // checkModule_others_11,
-    // checkModule_others_12,
-    // checkModule_others_13,
-    // checkModule_others_14,
-    // checkModule_others_15,
-    // checkModule_others_16,
+    const clientes = new Clientes({
+        empresaRazonSocial,
+        empresaNombreComercial,
+        representanteName,
+        representanteApellidoPaterno,
+        representanteApellidoMaterno,
+        contactoNumeroFijo,
+        contactoNumeroCelular,
+        contactoCorreo,
+        fechaSolicitud,
+        IDe,
+        IDa,
+        userName,
+        userPassword,
+        userCuestion,
+        userAnswer,
+        datosFiscalesMEXFolioF,
+        datosFiscalesMEXFolioCP,
+        datosFiscalesMEXNombreEmpresa,
+        datosFiscalesMEXColonia,
+        datosFiscalesMEXCalle,
+        datosFiscalesMEXNoExterior,
+        datosFiscalesMEXNoInterior,
+        datosFiscalesMEXEntreCalles,
+        datosFiscalesMEXDireccionFiscal,
+        datosFiscalesMEXRazonSocial,
+        datosFiscalesMEXEstadoMexicano,
+        datosFiscalesMEXCiudadMexicana,
+        datosFiscalesMEXRFC,
+        datosFiscalesMEXTelefono,
+        datosFiscalesEUAFolioCP,
+        datosFiscalesEUANombreEmpresa,
+        datosFiscalesEUAColonia,
+        datosFiscalesEUACalle,
+        datosFiscalesEUANoExterior,
+        datosFiscalesEUANoInterior,
+        datosFiscalesEUAEntreCalles,
+        datosFiscalesEUACodigoPostal,
+        datosFiscalesEUATAXID,
+        datosFiscalesEUATelefono,
+        checkBoxDEMO1,
+        checkBoxDEMO2,
+        checkBoxDEMO3,
+        checkBoxDEMO4,
+        checkBoxDEMO5,
+        checkBoxOTHERS1,
+        checkBoxOTHERS2,
+        checkBoxOTHERS3,
+        checkBoxOTHERS4,
+        checkBoxOTHERS5,
+        checkBoxOTHERS6,
+        checkBoxOTHERS7,
+        checkBoxOTHERS8,
+        checkBoxOTHERS9,
+        checkBoxOTHERS10,
+        checkBoxOTHERS11,
+        checkBoxOTHERS12,
+        checkBoxOTHERS13,
+        checkBoxOTHERS14,
+        checkBoxOTHERS15,
+        checkBoxOTHERS16
+    });
 
-    //console.log(
-    //empresaname
-    // _empresatradename + ' ' +
-    // _representantename + ' ' +
-    // _representanteappaterno + ' ' +
-    // _representanteapmaterno + ' ' +
-    // _contactonumberfijo + ' ' +
-    // _contactocelular + ' ' +
-    // _contactocorreo + ' ' +
-    // _fechasolicitud + ' ' +
-    // _IDe + ' ' +
-    // _IDa + ' ' +
-    // _user + ' ' +
-    // _password + ' ' +
-    // _confirmpassword + ' ' +
-    // _cuestion + ' ' +
-    // _cuestionrequest + ' ' +
-    // _mexFolioF + ' ' +
-    // _mexFolioCP + ' ' +
-    // _mexEmpresa + ' ' +
-    // _mexColonia + ' ' +
-    // _mexCalle + ' ' +
-    // _mexNoExterior + ' ' +
-    // _mexNoInterior + ' ' +
-    // _mexEntreCalles + ' ' +
-    // _mexDireccionFiscal + ' ' +
-    // _mexRazonSocial + ' ' +
-    // _mexEstadoMexicano + ' ' +
-    // _mexCiudadMexicana + ' ' +
-    // _mexRFC + ' ' +
-    // _mexTelefono + ' ' +
-    // _euaFolioF + ' ' +
-    // _euaEmpresa + ' ' +
-    // _euaColonia + ' ' +
-    // _euaCalle + ' ' +
-    // _euaNoExterior + ' ' +
-    // _euaNoInterior + ' ' +
-    // _euaEntreCalles + ' ' +
-    // _euaCP + ' ' +
-    // _euaTaxID + ' ' +
-    // _euatelefono + ' ' +
-    // checkBoxModule_Demo_1 + ' ' +
-    // checkBoxModule_Demo_2 + ' ' +
-    // checkBoxModule_Demo_3 + ' ' +
-    // checkBoxModule_Demo_4 + ' ' +
-    // checkBoxModule_Demo_5 + ' ' +
-    // checkModule_others_1 + ' ' +
-    // checkModule_others_2 + ' ' +
-    // checkModule_others_3 + ' ' +
-    // checkModule_others_4 + ' ' +
-    // checkModule_others_5 + ' ' +
-    // checkModule_others_6 + ' ' +
-    // checkModule_others_7 + ' ' +
-    // checkModule_others_8 + ' ' +
-    // checkModule_others_9 + ' ' +
-    // checkModule_others_10 + ' ' +
-    // checkModule_others_11 + ' ' +
-    // checkModule_others_12 + ' ' +
-    // checkModule_others_13 + ' ' +
-    // checkModule_others_14 + ' ' +
-    // checkModule_others_15 + ' ' +
-    // checkModule_others_16
-    //)
+    clientes.userPassword = await clientes.encryptPassword(userPassword);
+    await clientes.save();
+    req.flash('success_msg', 'Su solicitud se ha enviado correctamente favor de esperar una de nuestras llamadas ya que alguno de nuestros agentes se comunicara con usted a la brevedad');
+    res.render('internal/clientes/Ver_clientes');
 });
 
 module.exports = router;

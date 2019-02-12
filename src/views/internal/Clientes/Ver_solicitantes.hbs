@@ -22,14 +22,14 @@
                             <td>{{representanteName}} </td>
                             <td>{{contactoCorreo}}</td>
                             <td>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal"  data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button>
-                                <button type="button" class="btn btn-warning" data-dismiss="modal"  data-placement="left" title="Detalles"
-                                id="id_Modal" onclick="disabledTrue()" data-toggle="modal" data-target=".bd-example-modal-lg" 
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" data-placement="left" title="Eliminar"><i class="fas fa-trash"></i></button>
+                                <button type="button" class="btn btn-warning" data-dismiss="modal" data-placement="left" title="Detalles"
+                                id="id_Modal" onclick="respaldoInformacion()" data-toggle="modal" data-target=".bd-example-modal-lg" 
                                     data-id="{{_id}}"
                                     data-empresaname="{{empresaName}}" 
                                     data-empresatradename="{{empresaTradeName}}"
                                     data-representantename="{{representanteName}}" 
-                                    data-representanteappaterno="{{representanteApPaterno}}" 
+                                    data-representanteappaterno="{{representanteApPaterno}}"
                                     data-representanteapmaterno="{{representanteApMaterno}}" 
                                     data-contactonumberfijo="{{contactoNumberFijo}}"
                                     data-contactocelular="{{contactoCelular}}"
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <form action="/SYS/clientes/create/cliente" method="POST">    
+    <form action="/SYS/clientes/create/cliente" method="POST">
         <!-- ////////////////////////////////////////////////////MODAL PASO 1/////////////////////////////////////////////////////////////// -->
         <div onkeyup="valuesGet()" onkeypress="valuesGet()" onkeyup="valuesGet()" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -63,25 +63,23 @@
                         <!-- ////////////////////////BODY MODAL////////////////////////// -->
                         <div class="modal-body1">
                             <h5 class="tittle-empresa">Empresa</h5>
-                            <div class="company-box"><input name="empresaRazonSocial" type="text" class="form-control" id="empresaName"  placeholder="{{solicitante.empresaName}}" disabled></div>
-                            <div class="trade-box"><input name="empresaNombreComercial" type="text" class="form-control" id="empresaTradeName" placeholder="{{solicitante.empresaTradeName}}" disabled></div>
+                            <div class="company-box"><input name="empresaRazonSocial" type="text" class="form-control" id="empresaName" readonly=""></div>
+                            <div class="trade-box"><input name="empresaNombreComercial" type="text" class="form-control" id="empresaTradeName" readonly=""></div>
                             <h5 class="tittle-representante">Representante</h5>
-                            <div class="name-box"><input name="representanteName" type="text" class="form-control" id="representanteName" placeholder="{{solicitante.representanteName}}" disabled></div>
-                            <div class="Lname-box"><input name="representanteApellidoPaterno" type="text" class="form-control" id="representanteApPaterno" placeholder="{{solicitante.representanteApPaterno}}" disabled></div>
-                            <div class="Lscndname-box"><input name="representanteApellidoMaterno" type="text" class="form-control" id="representanteApMaterno" placeholder="{{solicitante.representanteApMaterno}}" disabled></div>
+                            <div class="name-box"><input name="representanteName" type="text" class="form-control" id="representanteName" readonly=""></div>
+                            <div class="Lname-box"><input name="representanteApellidoPaterno" type="text" class="form-control" id="representanteApPaterno" readonly=""></div>
+                            <div class="Lscndname-box"><input name="representanteApellidoMaterno" type="text" class="form-control" id="representanteApMaterno" readonly=""></div>
                             <h5 class="title-contacto">Contacto</h5>
-                            <div class="phone-box"><input name="contactoNumeroFijo" type="text" class="form-control" id="contactoNumberFijo" placeholder="{{solicitante.contactoNumberFijo}}" disabled></div>
-                            <div class="cellphone-box"><input name="contactoNumeroCelular" type="text" class="form-control" id="contactoCelular" placeholder="{{solicitante.contactoCelular}}" disabled></div>
-                            <div class="mail-box"><input name="contactoCorreo" type="text" class="form-control" id="contactoCorreo" placeholder="{{solicitante.contactoCorreo}}" disabled></div>
-                            <div class="date-request"><input name="fechaSolicitud" type="text" class="form-control" id="dateRequest" placeholder="{{solicitante.FechaSolicitud}}" disabled></div>
+                            <div class="phone-box"><input name="contactoNumeroFijo" type="text" class="form-control" id="contactoNumberFijo" readonly=""></div>
+                            <div class="cellphone-box"><input name="contactoNumeroCelular" type="text" class="form-control" id="contactoCelular" readonly=""></div>
+                            <div class="mail-box"><input name="contactoCorreo" type="text" class="form-control" id="contactoCorreo" readonly=""></div>
                             <h5 class="title-cuenta">Cuenta</h5>
-                            <div class="ide-box"><input name="IDe" type="text" class="form-control" id="IDe" placeholder="{{solicitante._id}}" disabled></div>
-                            <div class="ida-box"><input name="IDa" type="text" class="form-control" id="IDa" placeholder="{{solicitante.id_autoIncrement}}" disabled></div>
-
-                            <div class="user"><input name="userName" type="text" class="form-control" id="user" placeholder="Usuario"></div>                            
+                            <div class="date-request"><input name="fechaSolicitud" type="text" class="form-control" id="dateRequest" placeholder="{{solicitante.FechaSolicitud}}" readonly=""></div>
+                            <div class="ide-box"><input name="IDe" type="text" class="form-control" id="IDe" placeholder="{{solicitante._id}}" readonly=""></div>
+                            <div class="ida-box"><input name="IDa" type="text" class="form-control" id="IDa" placeholder="{{solicitante.id_autoIncrement}}" readonly=""></div>
+                            <div class="user"><input name="userName" type="text" class="form-control" id="user" placeholder="Usuario"></div>
                             <div class="password"><input name="userPassword" type="text" class="form-control" id="password" placeholder="Contraseña"></div>
                             <div class="confirm-password"><input name="userPasswordConfirm" type="text" class="form-control" id="confirmPassword" placeholder="Confirmar Contraseña"></div>
-
                             <div class="form-group">
                                 <select name="userCuestion" id="option-question" class="form-control" id="sel1">
                                     <option>Selecciona una pregunta de seguridad</option>
@@ -103,7 +101,7 @@
                                     Restablecer
                                     <i class="fas fa-window-restore"></i>
                                 </button>
-                            <button id="next" type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target=".bd-example-modal-lg2">
+                            <button id="next" type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"  data-target=".bd-example-modal-lg2">
                                 <i class="fas fa-arrow-circle-right"></i>
                             </button>
                         </div>
@@ -111,7 +109,7 @@
                 </div>
             </div>
         </div>
-   </form>
+   
         <!-- ////////////MODAL PASO 2///////////// -->
         <div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -185,33 +183,33 @@
                             <h5 class="title-demo">Demo:</h5>
                             <div class="privilegios">
                                 <div class="form-check">
-                                    <h6 class="form-check-label"><br><input name="checkBoxDEMO1" id="module-demo-1" type="checkbox" class="form-check-input" value="">Option 1</h6>
-                                    <h6 class="form-check-label"><br><input name="checkBoxDEMO2" id="module-demo-2" type="checkbox" class="form-check-input" value="">Option 2</h6>
-                                    <h6 class="form-check-label"><br><input name="checkBoxDEMO3" id="module-demo-3" type="checkbox" class="form-check-input" value="">Option 3</h6>
-                                    <h6 class="form-check-label"><br><input name="checkBoxDEMO4" id="module-demo-4" type="checkbox" class="form-check-input" value="">Option 4</h6>
-                                    <h6 class="form-check-label"><br><input name="checkBoxDEMO5" id="module-demo-5" type="checkbox" class="form-check-input" value="">Option 5</h6>
+                                    <h6 class="form-check-label"><br><input name="checkBoxDEMO1" id="module-demo-1" type="checkbox" class="form-check-input" checked="false">Option 1</h6>
+                                    <h6 class="form-check-label"><br><input name="checkBoxDEMO2" id="module-demo-2" type="checkbox" class="form-check-input" checked="false">Option 2</h6>
+                                    <h6 class="form-check-label"><br><input name="checkBoxDEMO3" id="module-demo-3" type="checkbox" class="form-check-input" checked="false">Option 3</h6>
+                                    <h6 class="form-check-label"><br><input name="checkBoxDEMO4" id="module-demo-4" type="checkbox" class="form-check-input" checked="false">Option 4</h6>
+                                    <h6 class="form-check-label"><br><input name="checkBoxDEMO5" id="module-demo-5" type="checkbox" class="form-check-input" checked="false">Option 5</h6>
                                 </div>
                             </div>
                             <h5 class="title-otros">Otros:</h5>
                             <div class="privilegios2">
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS1" id="module-others-1" type="checkbox" class="form-check-input" value="">Option 1</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS2" id="module-others-2" type="checkbox" class="form-check-input" value="">Option 2</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS3" id="module-others-3" type="checkbox" class="form-check-input" value="">Option 3</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS4" id="module-others-4" type="checkbox" class="form-check-input" value="">Option 4</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS5" id="module-others-5" type="checkbox" class="form-check-input" value="">Option 5</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS6" id="module-others-6" type="checkbox" class="form-check-input" value="">Option 6</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS7" id="module-others-7" type="checkbox" class="form-check-input" value="">Option 7</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS8" id="module-others-8" type="checkbox" class="form-check-input" value="">Option 8</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS1" id="module-others-1" type="checkbox" class="form-check-input" checked="false">Option 1</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS2" id="module-others-2" type="checkbox" class="form-check-input" checked="false">Option 2</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS3" id="module-others-3" type="checkbox" class="form-check-input" checked="false">Option 3</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS4" id="module-others-4" type="checkbox" class="form-check-input" checked="false">Option 4</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS5" id="module-others-5" type="checkbox" class="form-check-input" checked="false">Option 5</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS6" id="module-others-6" type="checkbox" class="form-check-input" checked="false">Option 6</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS7" id="module-others-7" type="checkbox" class="form-check-input" checked="false">Option 7</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS8" id="module-others-8" type="checkbox" class="form-check-input" checked="false">Option 8</h6>
                             </div>
                             <div class="privilegios3">
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS9" id="module-others-9" type="checkbox" class="form-check-input" value="">Option 9</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS10" id="module-others-10" type="checkbox" class="form-check-input" value="">Option 10</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS11" id="module-others-11" type="checkbox" class="form-check-input" value="">Option 11</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS12" id="module-others-12" type="checkbox" class="form-check-input" value="">Option 12</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS13" id="module-others-13" type="checkbox" class="form-check-input" value="">Option 13</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS14" id="module-others-14" type="checkbox" class="form-check-input" value="">Option 14</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS15" id="module-others-15" type="checkbox" class="form-check-input" value="">Option 15</h6>
-                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS16" id="module-others-16" type="checkbox" class="form-check-input" value="">Option 16</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS9" id="module-others-9" type="checkbox" class="form-check-input" checked="false">Option 9</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS10" id="module-others-10" type="checkbox" class="form-check-input" checked="false">Option 10</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS11" id="module-others-11" type="checkbox" class="form-check-input" checked="false">Option 11</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS12" id="module-others-12" type="checkbox" class="form-check-input" checked="false">Option 12</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS13" id="module-others-13" type="checkbox" class="form-check-input" checked="false">Option 13</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS14" id="module-others-14" type="checkbox" class="form-check-input" checked="false">Option 14</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS15" id="module-others-15" type="checkbox" class="form-check-input" checked="false">Option 15</h6>
+                                <h6 class="form-check-label"><br><input name="checkBoxOTHERS16" id="module-others-16" type="checkbox" class="form-check-input" checked="false">Option 16</h6>
                             </div>
                         </div>
                         <!-- //////////////////////////////FOOTER MODAL////////////////////////////////////////// -->
@@ -225,7 +223,7 @@
                 </div>
             </div>
         </div>
- 
+    </form>
 
     <script>
     /*VARIABLES GLOBALES*/
@@ -237,6 +235,16 @@
     var _contactonumberfijo;
     var _contactocelular;
     var _contactocorreo;
+
+    var R_empresaname;
+    var R_empresatradename;
+    var R_representantename;
+    var R_representanteappaterno;
+    var R_representanteapmaterno;
+    var R_contactonumberfijo;
+    var R_contactocelular;
+    var R_contactocorreo;
+
     var _fechasolicitud;
     var _IDe;
     var _IDa;
@@ -295,24 +303,6 @@
     var checkModule_others_15;
     var checkModule_others_16;
 
-    /*console.log(
-    _empresaname + ' ' +
-    _empresatradename + ' ' +
-    _representantename + ' ' +
-    _representanteappaterno + ' ' +
-    _representanteapmaterno + ' ' +
-    _contactonumberfijo + ' ' +
-    _contactocelular + ' ' +
-    _contactocorreo + ' ' +
-    _fechasolicitud + ' ' +
-    _IDe + ' ' +
-    _IDa + ' ' +
-    _user + ' ' +
-    _password + ' ' +
-    _confirmpassword + ' ' +
-    _cuestion  + ' ' +
-    _cuestionrequest)*/
-
     $(document).on("click", "#id_Modal", function () {
         _empresaname = $(this).data('empresaname');
         _empresatradename = $(this).data('empresatradename');
@@ -325,7 +315,7 @@
         _fechasolicitud = $(this).data('fechasolicitud');
         _IDe = $(this).data('id');
         _IDa = $(this).data('autoincrement');
-
+        
         $('#empresaName').val(_empresaname);
         $('#empresaTradeName').val(_empresatradename);
         $('#representanteName').val(_representantename);
@@ -339,46 +329,59 @@
         $('#IDa').val(_IDa);
 
         //INPUTS MEX
-        document.getElementById("mex-FolioF").disabled = true;
-        document.getElementById("mex-FolioCP").disabled = true;
-        document.getElementById("mex-Empresa").disabled = true;
-        document.getElementById("mex-Colonia").disabled = true;
-        document.getElementById("mex-Calle").disabled = true;
-        document.getElementById("mex-NoExterior").disabled = true;
-        document.getElementById("mex-NoInterior").disabled = true;
-        document.getElementById("mex-EntreCalles").disabled = true;
-        document.getElementById("mex-DireccionFiscal").disabled = true;
-        document.getElementById("mex-RazonSocial").disabled = true;
-        document.getElementById("mex-EstadoMexicano").disabled = true;
-        document.getElementById("mex-ciudadMexicana").disabled = true;
-        document.getElementById("mex-RFC").disabled = true;
-        document.getElementById("mex-Telefono").disabled = true;
+        document.getElementById("mex-FolioF").readOnly = false;
+        document.getElementById("mex-FolioCP").readOnly = false;
+        document.getElementById("mex-Empresa").readOnly = false;
+        document.getElementById("mex-Colonia").readOnly = false;
+        document.getElementById("mex-Calle").readOnly = false;
+        document.getElementById("mex-NoExterior").readOnly = false;
+        document.getElementById("mex-NoInterior").readOnly = false;
+        document.getElementById("mex-EntreCalles").readOnly = false;
+        document.getElementById("mex-DireccionFiscal").readOnly = false;
+        document.getElementById("mex-RazonSocial").readOnly = false;
+        document.getElementById("mex-EstadoMexicano").readOnly = false;
+        document.getElementById("mex-ciudadMexicana").readOnly = false;
+        document.getElementById("mex-RFC").readOnly = false;
+        document.getElementById("mex-Telefono").readOnly = false;
         //INPUTS EUA
-        document.getElementById("eua-FolioF").disabled = true;
-        document.getElementById("eua-Empresa").disabled = true;
-        document.getElementById("eua-Colonia").disabled = true;
-        document.getElementById("eua-Calle").disabled = true;
-        document.getElementById("eua-NoExterior").disabled = true;
-        document.getElementById("eua-NoInterior").disabled = true;
-        document.getElementById("eua-EntreCalles").disabled = true;
-        document.getElementById("eua-CP").disabled = true;
-        document.getElementById("eua-TaxID").disabled = true;
-        document.getElementById("eua-telefono").disabled = true;
+        document.getElementById("eua-FolioF").readOnly = false;
+        document.getElementById("eua-Empresa").readOnly = false;
+        document.getElementById("eua-Colonia").readOnly = false;
+        document.getElementById("eua-Calle").readOnly = false;
+        document.getElementById("eua-NoExterior").readOnly = false;
+        document.getElementById("eua-NoInterior").readOnly = false;
+        document.getElementById("eua-EntreCalles").readOnly = false;
+        document.getElementById("eua-CP").readOnly = false;
+        document.getElementById("eua-TaxID").readOnly = false;
+        document.getElementById("eua-telefono").readOnly = false;
         //BUTTONS FOOTER
-        document.getElementById("mail").disabled = true;
-        document.getElementById("backOne").disabled = true;
-        document.getElementById("nextTwo").disabled = true;
+        document.getElementById("mail").readOnly = false;
+        document.getElementById("backOne").readOnly = false;
+        document.getElementById("nextTwo").readOnly = false;
     });
 
+    function respaldoInformacion(){
+
+        R_empresaname = _empresaname;
+        R_empresatradename = _empresatradename;
+        R_representantename = _representantename;
+        R_representanteappaterno = _representanteappaterno;
+        R_representanteapmaterno = _representanteapmaterno;
+        R_contactonumberfijo = _contactonumberfijo;
+        R_contactocelular = _contactocelular;
+        R_contactocorreo = _contactocorreo;
+    }
+
     $(document).on("click", "#restore", function () {
-        $('#empresaName').val(_empresaname);
-        $('#empresaTradeName').val(_empresatradename);
-        $('#representanteName').val(_representantename);
-        $('#representanteApPaterno').val(_representanteappaterno);
-        $('#representanteApMaterno').val(_representanteapmaterno);
-        $('#contactoNumberFijo').val(_contactonumberfijo);
-        $('#contactoCelular').val(_contactocelular);
-        $('#contactoCorreo').val(_contactocorreo);
+        
+        $('#empresaName').val(R_empresaname);
+        $('#empresaTradeName').val(R_empresatradename);
+        $('#representanteName').val(R_representantename);
+        $('#representanteApPaterno').val(R_representanteappaterno);
+        $('#representanteApMaterno').val(R_representanteapmaterno);
+        $('#contactoNumberFijo').val(R_contactonumberfijo);
+        $('#contactoCelular').val(R_contactocelular);
+        $('#contactoCorreo').val(R_contactocorreo);
     });
 
     $(document).on("click", "#validate-all", function () {
@@ -428,26 +431,26 @@
     });
 
     function disabledFalse(){
-        document.getElementById("empresaName").disabled = false;
-        document.getElementById("empresaTradeName").disabled = false;
-        document.getElementById("representanteName").disabled = false;
-        document.getElementById("representanteApPaterno").disabled = false;
-        document.getElementById("representanteApMaterno").disabled = false;
-        document.getElementById("contactoNumberFijo").disabled = false;
-        document.getElementById("contactoCelular").disabled = false;
-        document.getElementById("contactoCorreo").disabled = false;
+        document.getElementById("empresaName").readOnly = false;
+        document.getElementById("empresaTradeName").readOnly = false;
+        document.getElementById("representanteName").readOnly = false;
+        document.getElementById("representanteApPaterno").readOnly = false;
+        document.getElementById("representanteApMaterno").readOnly = false;
+        document.getElementById("contactoNumberFijo").readOnly = false;
+        document.getElementById("contactoCelular").readOnly = false;
+        document.getElementById("contactoCorreo").readOnly = false;
         document.getElementById("restore").disabled = false;
     }
 
     function disabledTrue(){
-        document.getElementById("empresaName").disabled = true;
-        document.getElementById("empresaTradeName").disabled = true;
-        document.getElementById("representanteName").disabled = true;
-        document.getElementById("representanteApPaterno").disabled = true;
-        document.getElementById("representanteApMaterno").disabled = true;
-        document.getElementById("contactoNumberFijo").disabled = true;
-        document.getElementById("contactoCelular").disabled = true;
-        document.getElementById("contactoCorreo").disabled = true;
+        document.getElementById("empresaName").readOnly = true;
+        document.getElementById("empresaTradeName").readOnly = true;
+        document.getElementById("representanteName").readOnly = true;
+        document.getElementById("representanteApPaterno").readOnly = true;
+        document.getElementById("representanteApMaterno").readOnly = true;
+        document.getElementById("contactoNumberFijo").readOnly = true;
+        document.getElementById("contactoCelular").readOnly = true;
+        document.getElementById("contactoCorreo").readOnly = true;
         document.getElementById("restore").disabled = true;
         document.getElementById("next").disabled = true;
     }
@@ -509,68 +512,68 @@
     }
 
     $(document).on("click", "#next", function () {
-        document.getElementById("mex-FolioF").disabled = false;
-        document.getElementById("mex-FolioCP").disabled = false;
-        document.getElementById("mex-Empresa").disabled = false;
-        document.getElementById("mex-Colonia").disabled = false;
-        document.getElementById("mex-Calle").disabled = false;
-        document.getElementById("mex-NoExterior").disabled = false;
-        document.getElementById("mex-NoInterior").disabled = false;
-        document.getElementById("mex-EntreCalles").disabled = false;
-        document.getElementById("mex-DireccionFiscal").disabled = false;
-        document.getElementById("mex-RazonSocial").disabled = false;
-        document.getElementById("mex-EstadoMexicano").disabled = false;
-        document.getElementById("mex-ciudadMexicana").disabled = false;
-        document.getElementById("mex-RFC").disabled = false;
-        document.getElementById("mex-Telefono").disabled = false;
+        document.getElementById("mex-FolioF").readOnly = false;
+        document.getElementById("mex-FolioCP").readOnly = false;
+        document.getElementById("mex-Empresa").readOnly = false;
+        document.getElementById("mex-Colonia").readOnly = false;
+        document.getElementById("mex-Calle").readOnly = false;
+        document.getElementById("mex-NoExterior").readOnly = false;
+        document.getElementById("mex-NoInterior").readOnly = false;
+        document.getElementById("mex-EntreCalles").readOnly = false;
+        document.getElementById("mex-DireccionFiscal").readOnly = false;
+        document.getElementById("mex-RazonSocial").readOnly = false;
+        document.getElementById("mex-EstadoMexicano").readOnly = false;
+        document.getElementById("mex-ciudadMexicana").readOnly = false;
+        document.getElementById("mex-RFC").readOnly = false;
+        document.getElementById("mex-Telefono").readOnly = false;
 
-        document.getElementById("eua-FolioF").disabled = false;
-        document.getElementById("eua-Empresa").disabled = false;
-        document.getElementById("eua-Colonia").disabled = false;
-        document.getElementById("eua-Calle").disabled = false;
-        document.getElementById("eua-NoExterior").disabled = false;
-        document.getElementById("eua-NoInterior").disabled = false;
-        document.getElementById("eua-EntreCalles").disabled = false;
-        document.getElementById("eua-CP").disabled = false;
-        document.getElementById("eua-TaxID").disabled = false;
-        document.getElementById("eua-telefono").disabled = false;
+        document.getElementById("eua-FolioF").readOnly = false;
+        document.getElementById("eua-Empresa").readOnly = false;
+        document.getElementById("eua-Colonia").readOnly = false;
+        document.getElementById("eua-Calle").readOnly = false;
+        document.getElementById("eua-NoExterior").readOnly = false;
+        document.getElementById("eua-NoInterior").readOnly = false;
+        document.getElementById("eua-EntreCalles").readOnly = false;
+        document.getElementById("eua-CP").readOnly = false;
+        document.getElementById("eua-TaxID").readOnly = false;
+        document.getElementById("eua-telefono").readOnly = false;
 
-        document.getElementById("mail").disabled = false;
-        document.getElementById("backOne").disabled = false;
-        document.getElementById("nextTwo").disabled = false;
+        document.getElementById("mail").readOnly = false;
+        document.getElementById("backOne").readOnly = false;
+        document.getElementById("nextTwo").readOnly = false;
     });
 
     function block(){
         //INPUTS MEX
-        document.getElementById("mex-FolioF").disabled = true;
-        document.getElementById("mex-FolioCP").disabled = true;
-        document.getElementById("mex-Empresa").disabled = true;
-        document.getElementById("mex-Colonia").disabled = true;
-        document.getElementById("mex-Calle").disabled = true;
-        document.getElementById("mex-NoExterior").disabled = true;
-        document.getElementById("mex-NoInterior").disabled = true;
-        document.getElementById("mex-EntreCalles").disabled = true;
-        document.getElementById("mex-DireccionFiscal").disabled = true;
-        document.getElementById("mex-RazonSocial").disabled = true;
-        document.getElementById("mex-EstadoMexicano").disabled = true;
-        document.getElementById("mex-ciudadMexicana").disabled = true;
-        document.getElementById("mex-RFC").disabled = true;
-        document.getElementById("mex-Telefono").disabled = true;
+        document.getElementById("mex-FolioF").readOnly = false;
+        document.getElementById("mex-FolioCP").readOnly = false;
+        document.getElementById("mex-Empresa").readOnly = false;
+        document.getElementById("mex-Colonia").readOnly = false;
+        document.getElementById("mex-Calle").readOnly = false;
+        document.getElementById("mex-NoExterior").readOnly = false;
+        document.getElementById("mex-NoInterior").readOnly = false;
+        document.getElementById("mex-EntreCalles").readOnly = false;
+        document.getElementById("mex-DireccionFiscal").readOnly = false;
+        document.getElementById("mex-RazonSocial").readOnly = false;
+        document.getElementById("mex-EstadoMexicano").readOnly = false;
+        document.getElementById("mex-ciudadMexicana").readOnly = false;
+        document.getElementById("mex-RFC").readOnly = false;
+        document.getElementById("mex-Telefono").readOnly = false;
         //INPUTS EUA
-        document.getElementById("eua-FolioF").disabled = true;
-        document.getElementById("eua-Empresa").disabled = true;
-        document.getElementById("eua-Colonia").disabled = true;
-        document.getElementById("eua-Calle").disabled = true;
-        document.getElementById("eua-NoExterior").disabled = true;
-        document.getElementById("eua-NoInterior").disabled = true;
-        document.getElementById("eua-EntreCalles").disabled = true;
-        document.getElementById("eua-CP").disabled = true;
-        document.getElementById("eua-TaxID").disabled = true;
-        document.getElementById("eua-telefono").disabled = true;
+        document.getElementById("eua-FolioF").readOnly = false;
+        document.getElementById("eua-Empresa").readOnly = false;
+        document.getElementById("eua-Colonia").readOnly = false;
+        document.getElementById("eua-Calle").readOnly = false;
+        document.getElementById("eua-NoExterior").readOnly = false;
+        document.getElementById("eua-NoInterior").readOnly = false;
+        document.getElementById("eua-EntreCalles").readOnly = false;
+        document.getElementById("eua-CP").readOnly = false;
+        document.getElementById("eua-TaxID").readOnly = false;
+        document.getElementById("eua-telefono").readOnly = false;
         //BUTTONS FOOTER
-        document.getElementById("mail").disabled = true;
-        document.getElementById("backOne").disabled = true;
-        document.getElementById("nextTwo").disabled = true;
+        document.getElementById("mail").readOnly = false;
+        document.getElementById("backOne").readOnly = false;
+        document.getElementById("nextTwo").readOnly = false;
     }
 
     function valuesModalTwo(){
