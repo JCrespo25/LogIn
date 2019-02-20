@@ -51,21 +51,18 @@ passport.use(new LocalStrategy({
     }
 }));
 
-passport.serializeUser((master, done) => {
-    done(null, master.id);
+passport.serializeUser((user, done) => {
+    done(null, user.id);
 
     passport.deserializeUser((id, done) => {
         if (point + ThreeChars == ".net") {
-
             UserInternal.findById(id, (err, master) => {
                 done(err, master);
             });
-        }
-
-        /*else {
-            UserClient.findById(id, (err, user) => {
-                done(err, user);
+        } else {
+            UserClient.findById(id, (err, cliente) => {
+                done(err, cliente);
             });
-        }*/
+        }
     });
 });
