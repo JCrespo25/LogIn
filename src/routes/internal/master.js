@@ -27,7 +27,6 @@ router.post('/users/master', async(req, res) => {
     var point = userMaster.charAt(firstCharOfThree - 1);
     var pointNet = point + ThreeChars;
 
-
     if (pointNet != ".net") {
 
         userMaster = userMaster + ".net"

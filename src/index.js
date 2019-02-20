@@ -40,6 +40,8 @@ app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
+    res.locals.master = req.user || null;
+    res.locals.cliente = req.user || null;
     res.locals.user = req.user || null;
     next();
 });
@@ -87,6 +89,7 @@ app.use(require('./routes/internal/sign_out')); //AFUERA
 app.use(require('./routes/internal/master')); //MASTER
 app.use(require('./routes/internal/empleados')); //EMPLEADOS
 app.use(require('./routes/internal/verempleados')); //VEREMPLEADOS
+
 
 //Static Files
 app.use(express.static(path.join(__dirname, 'public')));
